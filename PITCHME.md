@@ -3,13 +3,21 @@
 AutoTask SOAP API interface for Powershell
 
 ---
+## Features
 
-### Getting Started
+* Get Tickets and Tasks
+* Get Notes from Tickets and Tasks
+* Get Resources(users)
+* Get TimeEntries
+* DSL(Domain Specific Language) for building custom Queries
+* Automatic selection of reagion for spcified user account
 
-Install from the PSGallery and Import the module
+---
 
-    Install-Module AutotaskCLI
-    Import-Module AutotaskCLI
+## Planned Features
+
+* Add Update and Create functionality for other Entities
+* Add Query functionality for other Entities
 
 ---
 
