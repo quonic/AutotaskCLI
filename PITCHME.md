@@ -8,7 +8,6 @@ AutoTask SOAP API interface for Powershell
 * Get Tickets and Tasks
 * Get Notes from Tickets and Tasks
 * Get Resources(users)
-* Get TimeEntries
 * DSL(Domain Specific Language) for building custom Queries
 * Automatic selection of reagion for spcified user account
 
@@ -18,6 +17,7 @@ AutoTask SOAP API interface for Powershell
 
 * Add Update and Create functionality for other Entities
 * Add Query functionality for other Entities
+* Get TimeEntries
 
 ---
 
