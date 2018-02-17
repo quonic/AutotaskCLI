@@ -19,16 +19,14 @@ Task Clean {
 
 Task UnitTests {
     $TestResults = Invoke-Pester -Path Tests\*unit* -PassThru -Tag Build -ExcludeTag Slow
-    if ($TestResults.FailedCount -gt 0)
-    {
+    if ($TestResults.FailedCount -gt 0) {
         Write-Error "Failed [$($TestResults.FailedCount)] Pester tests"
     }
 }
 
 Task FullTests {
     $TestResults = Invoke-Pester -Path Tests -PassThru -OutputFormat NUnitXml -OutputFile $testFile -Tag Build
-    if ($TestResults.FailedCount -gt 0)
-    {
+    if ($TestResults.FailedCount -gt 0) {
         Write-Error "Failed [$($TestResults.FailedCount)] Pester tests"
     }
 }
@@ -36,8 +34,7 @@ Task FullTests {
 Task Specification {
     
     $TestResults = Invoke-Gherkin $PSScriptRoot\Spec -PassThru
-    if ($TestResults.FailedCount -gt 0)
-    {
+    if ($TestResults.FailedCount -gt 0) {
         Write-Error "[$($TestResults.FailedCount)] specification are incomplete"
     }
 }
@@ -48,12 +45,12 @@ Task CopyToOutput {
     $null = New-Item -Type Directory -Path $Destination -ErrorAction Ignore
 
     Get-ChildItem $source -File | 
-        where name -NotMatch "$ModuleName\.ps[dm]1" | 
+        Where-Object name -NotMatch "$ModuleName\.ps[dm]1" | 
         Copy-Item -Destination $Destination -Force -PassThru | 
         ForEach-Object { "  Create [.{0}]" -f $_.fullname.replace($PSScriptRoot, '')}
 
     Get-ChildItem $source -Directory | 
-        where name -NotIn $imports | 
+        Where-Object name -NotIn $imports | 
         Copy-Item -Destination $Destination -Recurse -Force -PassThru | 
         ForEach-Object { "  Create [.{0}]" -f $_.fullname.replace($PSScriptRoot, '')}
 }
@@ -61,13 +58,10 @@ Task CopyToOutput {
 Task BuildPSM1 -Inputs (Get-Item "$source\*\*.ps1") -Outputs $ModulePath {
 
     [System.Text.StringBuilder]$stringbuilder = [System.Text.StringBuilder]::new()    
-    foreach ($folder in $imports )
-    {
-        if (Test-Path "$source\$folder")
-        {
-            $fileList = Get-ChildItem "$source\$folder\*.ps1" | Where Name -NotLike '*.Tests.ps1'
-            foreach ($file in $fileList)
-            {
+    foreach ($folder in $imports ) {
+        if (Test-Path "$source\$folder") {
+            $fileList = Get-ChildItem "$source\$folder\*.ps1" | Where-Object Name -NotLike '*.Tests.ps1'
+            foreach ($file in $fileList) {
                 $shortName = $file.fullname.replace($PSScriptRoot, '')
                 Write-Output "  Importing [.$shortName]"
                 [void]$stringbuilder.AppendLine( "# .$shortName" ) 
@@ -102,47 +96,40 @@ Task BuildPSD1 -inputs (Get-ChildItem $Source -Recurse -File) -Outputs $Manifest
     Remove-Module $ModuleName
  
     Write-Output "    Calculating fingerprint"
-    $fingerprint = foreach ($command in $commandList )
-    {
-        foreach ($parameter in $command.parameters.keys)
-        {
+    $fingerprint = foreach ($command in $commandList ) {
+        foreach ($parameter in $command.parameters.keys) {
             '{0}:{1}' -f $command.name, $command.parameters[$parameter].Name
             $command.parameters[$parameter].aliases | Foreach-Object { '{0}:{1}' -f $command.name, $_}
         }
     }
      
-    if (Test-Path .\fingerprint)
-    {
+    if (Test-Path .\fingerprint) {
         $oldFingerprint = Get-Content .\fingerprint
     }
      
     $bumpVersionType = 'Patch'
     '    Detecting new features'
-    $fingerprint | Where {$_ -notin $oldFingerprint } | % {$bumpVersionType = 'Minor'; "      $_"}    
+    $fingerprint | Where-Object {$_ -notin $oldFingerprint } | ForEach-Object {$bumpVersionType = 'Minor'; "      $_"}    
     '    Detecting breaking changes'
-    $oldFingerprint | Where {$_ -notin $fingerprint } | % {$bumpVersionType = 'Major'; "      $_"}
+    $oldFingerprint | Where-Object {$_ -notin $fingerprint } | ForEach-Object {$bumpVersionType = 'Major'; "      $_"}
  
     Set-Content -Path .\fingerprint -Value $fingerprint
  
     # Bump the module version
     $version = [version] (Get-Metadata -Path $manifestPath -PropertyName 'ModuleVersion')
 
-    if ( $version -lt ([version]'1.0.0') )
-    {
+    if ( $version -lt ([version]'1.0.0') ) {
         '    Still in beta, don''t bump major version'
-        if ( $bumpVersionType -eq 'Major'  )
-        {
+        if ( $bumpVersionType -eq 'Major'  ) {
             $bumpVersionType = 'Minor'
         }
-        else 
-        {
+        else {
             $bumpVersionType = 'Patch'
         }       
     }
 
     $galleryVersion = Import-Clixml -Path "$output\version.xml"
-    if ( $version -lt $galleryVersion )
-    {
+    if ( $version -lt $galleryVersion ) {
         $version = $galleryVersion
     }
     Write-Output "  Stepping [$bumpVersionType] version [$version]"
@@ -157,15 +144,12 @@ Task UpdateSource {
 }
 
 Task ImportModule {
-    if ( -Not ( Test-Path $ManifestPath ) )
-    {
+    if ( -Not ( Test-Path $ManifestPath ) ) {
         Write-Output "  Modue [$ModuleName] is not built, cannot find [$ManifestPath]"
         Write-Error "Could not find module manifest [$ManifestPath]. You may need to build the module first"
     }
-    else
-    {
-        if (Get-Module $ModuleName)
-        {
+    else {
+        if (Get-Module $ModuleName) {
             Write-Output "  Unloading Module [$ModuleName] from previous import"
             Remove-Module $ModuleName
         }
@@ -180,8 +164,7 @@ Task Publish {
         $ENV:BHBuildSystem -ne 'Unknown' -and 
         $ENV:BHBranchName -eq "master" -and 
         $ENV:BHCommitMessage -match '!deploy'
-    )
-    {
+    ) {
         $Params = @{
             Path  = $BuildRoot
             Force = $true
@@ -189,8 +172,7 @@ Task Publish {
 
         Invoke-PSDeploy @Verbose @Params
     }
-    else
-    {
+    else {
         "Skipping deployment: To deploy, ensure that...`n" + 
         "`t* You are in a known build system (Current: $ENV:BHBuildSystem)`n" + 
         "`t* You are committing to the master branch (Current: $ENV:BHBranchName) `n" + 

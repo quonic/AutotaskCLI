@@ -148,8 +148,7 @@ using assembly System.Xml.Linq
 
 #>
 
-function New-XmlDocument
-{
+function New-XmlDocument {
     [CmdletBinding(PositionalBinding = $false, SupportsShouldProcess = $false)]
     [OutputType('System.Xml.Linq.XElement')]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseOutputTypeCorrectly', '')]
@@ -167,10 +166,8 @@ function New-XmlDocument
 
         $Namespace
     )
-    begin
-    {
-        function New-XmlElement
-        {
+    begin {
+        function New-XmlElement {
             [CmdletBinding(DefaultParameterSetName = 'Body')]
             [OutputType('System.Xml.Linq.XElement', ParameterSetName = 'Element')]
             [OutputType('System.Xml.Linq.XAttribute', ParameterSetName = 'Attribute')]
@@ -189,32 +186,24 @@ function New-XmlDocument
                 $Text
 
             )
-            end
-            {
+            end {
                 $elementName = [System.Xml.Linq.XName]($MyInvocation.InvocationName)
-                if ($Namespace)
-                {
+                if ($Namespace) {
                     $elementName = [System.Xml.Linq.XNamespace]$Namespace + $elementName
                 }
-                switch ($PSCmdlet.ParameterSetName)
-                {
-                    Attribute
-                    {
+                switch ($PSCmdlet.ParameterSetName) {
+                    Attribute {
                         [System.Xml.Linq.XAttribute]::new($MyInvocation.InvocationName, $Text)
                     }
-                    Element
-                    {
-                        if ($Body -and ($output = . $Body))
-                        {
+                    Element {
+                        if ($Body -and ($output = . $Body)) {
                             $element = [System.Xml.Linq.XElement]::new($elementName)
-                            foreach ($item in $output)
-                            {
+                            foreach ($item in $output) {
                                 $element.Add($item)
                             }
                             $element
                         }
-                        else
-                        {
+                        else {
                             [System.Xml.Linq.XElement]::new($elementName)
                         }
                     }
@@ -222,10 +211,8 @@ function New-XmlDocument
             }
         }
     }
-    end
-    {
-        try
-        {
+    end {
+        try {
             # Disable module autoloading so command lookup doesn't take forever to fail.
             $originalPreference = $PSModuleAutoLoadingPreference
             $PSModuleAutoLoadingPreference = 'ModuleQualified'
@@ -251,8 +238,7 @@ function New-XmlDocument
                 # Skip the commands that don't fit Noun-Verb format.
                 $isNonStandardFormat = $lookupEventArgs.Command.Name -notmatch '\w+-\w+'
 
-                if ($isPrependedGet -or $isAlias -or $isNonStandardFormat)
-                {
+                if ($isPrependedGet -or $isAlias -or $isNonStandardFormat) {
                     $lookupEventArgs.Command = $ExecutionContext.SessionState.InvokeCommand.GetCommand(
                         'New-XmlElement',
                         'Function')
@@ -279,17 +265,14 @@ function New-XmlDocument
 
             if (-not $xml) { return }
 
-            if ($FilePath)
-            {
-                try
-                {
+            if ($FilePath) {
+                try {
                     $resolved = $PSCmdlet.SessionState.Path.
                     GetUnresolvedProviderPathFromPSPath($FilePath)
 
                     $xml.Save($resolved)
                 }
-                catch
-                {
+                catch {
                     $exception = $PSItem -as [Exception]
                     if (-not $exception) { $exception = $PSItem.Exception }
                     if (-not $exception) { $exception = $PSItem.InnerException }
@@ -302,13 +285,11 @@ function New-XmlDocument
                 }
             }
 
-            if (-not $FilePath -or $PassThru.IsPresent)
-            {
+            if (-not $FilePath -or $PassThru.IsPresent) {
                 $xml # yield
             }
         }
-        finally
-        {
+        finally {
             $PSModuleAutoLoadingPreference = $originalPreference
             $ExecutionContext.SessionState.InvokeCommand.CommandNotFoundAction = $originalCNFA
             $ExecutionContext.SessionState.InvokeCommand.PostCommandLookupAction = $originalPCLA
