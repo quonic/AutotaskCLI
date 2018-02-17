@@ -1,0 +1,9 @@
+site_name: AutotaskCLI
+repo_url: https://github.com/quonic/AutotaskCLI
+theme: readthedocs
+pages:
+  - Home: index.md
+  - AutotaskCLI Basics:
+    - What is AutotaskCLI: about.md
+    - Quick Start: Quick-Start-Installation-and-Example.md
+  - Acknowledgements: acknowledgements.md
