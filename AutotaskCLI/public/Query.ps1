@@ -288,6 +288,42 @@ function Invoke-ATQuery {
     
     begin {
         $response = $AutoTask.query($Query)
+        # Check if we got exactly 500 results, and get more if so.
+        if ($response.EntityResults.Count -eq 500) {
+            # API spec says use last id as the starting point from last query
+            # Below does that
+            # TODO: Change this to be done by XML, convert to xml edit then convert to string
+            $LastID = $response.EntityResults[$response.EntityResults.Count - 1].id
+            $QuerySplit = ($Query -split "`r`n")
+            $LastThreeLines = $QuerySplit[($QuerySplit.Count - 3)..($QuerySplit.Count - 1)]
+            $LastTwoLines = $QuerySplit[($QuerySplit.Count - 2)..($QuerySplit.Count - 1)]
+            if ($LastThreeLines[0] -like "    </condition>") {$true}else {
+                $NewQuery = ($QuerySplit[0..($QuerySplit.Count - 4)] -join "`r`n") +
+                $("`r`n      <field>id<expression op=`"GreaterThan`">$LastID</expression></field>`r`n") +
+                ($LastThreeLines -join "`r`n")
+            }
+            else {
+                $NewQuery = ($QuerySplit[0..($QuerySplit.Count - 3)] -join "`r`n") +
+                $("`r`n    <field>id<expression op=`"GreaterThan`">$LastID</expression></field>`r`n") +
+                ($LastTwoLines -join "`r`n")
+            }
+            # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
+            Start-Sleep -Seconds 5
+            # Query again for next set of results. Recursion ;)
+            $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery
+            if ($newresponse.ReturnCode -eq 1) {
+                # No problems so add the past results to the new results as a new object
+                $ATWSResponse = New-Object ($Namespace + ".ATWSResponse")
+                $Namespace = $response.GetType().Namespace
+                $ATWSResponse.ReturnCode = 1
+                $ATWSResponse.EntityResults = $response.EntityResults + $newresponse.EntityResults
+                $ATWSResponse.EntityResultType = $response.EntityResultType
+                $ATWSResponse.Errors = $response.Errors + $newresponse.Errors
+                $ATWSResponse.EntityReturnInfoResults = $response.EntityReturnInfoResults + $newresponse.EntityReturnInfoResults
+                $response = $ATWSResponse
+                # Off to returning the results
+            }
+        }
     }
     
     end {
@@ -297,12 +333,6 @@ function Invoke-ATQuery {
             return $response
         }
         if ($response.EntityResults.Count -eq 0) {
-            return $response
-        }
-        if ($response.EntityResults.Count -eq 500) {
-            Write-Verbose -Message "Returned 500 results. TODO: write code to handle getting the other data"
-            # TODO: write code to handle getting the other data
-            #  To query for additional records over the 500 maximum for a given set of search criteria, repeat the query and filter by id value > the previous maximum id value retrieved.
             return $response
         }
         else {
