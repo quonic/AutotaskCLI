@@ -1,19 +1,19 @@
 # See http://www.appveyor.com/docs/appveyor-yml for many more options
-
-environment:
-  NugetApiKey:
-    secure: ***************
-
-# Allow WMF5 (i.e. PowerShellGallery functionality)
-os: WMF 5
-
+version: 1.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
+skip_tags: true
 # Skip on updates to the readme.
 # We can force this by adding [skip ci] or [ci skip] anywhere in commit message 
 skip_commits:
   message: /updated (readme|doc).*|update (readme|doc).*s/
+# Allow WMF5 (i.e. PowerShellGallery functionality)
+os: WMF 5
 
+environment:
+  NugetApiKey:
+    secure: f6umaBKprznJ18AxGjgGUYjaLiYQe7ApWQmYB9pOVum8XVMoYk99RB97z5UuoFc9
 build: false
-
 #Kick off the CI/CD pipeline
 test_script:
   - ps: . .\build.ps1
