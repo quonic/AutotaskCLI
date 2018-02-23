@@ -25,6 +25,7 @@ function Get-Ticket {
     )
     
     begin {
+        # Check if we can Query for tickets
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanQuery) {
             throw "You do not have Query permissions for Tickets."
         }
@@ -32,9 +33,11 @@ function Get-Ticket {
     
     process {
         if ($Query) {
+            # Query base on provided Query
             Invoke-ATQuery -AutoTask $AutoTask -Query $Query
         }
         elseif ($TicketNumber) {
+            # Get the ticket based on the Ticket number
             Invoke-ATQuery -AutoTask $AutoTask -Query $(
                 Query "Ticket" {
                     Field -Property "TicketNumber" -Equals -Value $TicketNumber

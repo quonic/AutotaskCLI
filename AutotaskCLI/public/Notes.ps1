@@ -16,6 +16,7 @@ function Get-Note {
     )
     
     begin {
+        # Check if we can Query Tickets
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanQuery) {
             throw "You do not have Query permissions for Tickets."
         }
@@ -23,10 +24,12 @@ function Get-Note {
     
     process {
         if ($Query) {
+            # We have a Query so do as asked
             Invoke-ATQuery -AutoTask $AutoTask -Query $Query
         }
         elseif ($TicketID) {
-            [Autotask.TicketNote]::new()
+            # Get the Notes for the specified Ticket
+            # TODO: Add logic to check if ticket exists or let Query handle this?
             Invoke-ATQuery -AutoTask $AutoTask -Query $(
                 Query "TicketNote" {
                     Field -Property "TicketID" -Equals -Value $TicketID

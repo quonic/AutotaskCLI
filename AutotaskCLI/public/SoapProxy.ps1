@@ -24,14 +24,17 @@ function Get-AutoTaskObject {
     }
     
     process {
-        # Get Correct Zone to work with for the current User Name
         try {
+            # According to the API we need to find the correct "Zone" that the user belongs to
             $ZoneFinder = New-WebServiceProxy -Uri "https://webservices.Autotask.net/atservices/1.5/atws.wsdl" -Namespace "AutotaskZoneFinder"
             $ZoneInfo = $ZoneFinder.getZoneInfo($Credential.UserName)
-            # $type = [System.AppDomain]::CurrentDomain.GetAssemblies() | % { $_.GetTypes() | where {$_.Name -Like '*Autotask*'}}
-            # ($type|ForEach-Object {$_::new.OverloadDefinitions -split ' '})[0]
-            # ($type|ForEach-Object {$_::new.OverloadDefinitions -split ' '})[0].Length
-            $Namespace = "Autotask"
+            # No need to define the namespace as defining it will create problems
+            # when a script tries to call it a second time. There isn't a way to
+            # Dispose of a namespace. The only method of doing this is to restart
+            # the session.
+            #$Namespace = "Autotask"
+
+            # Building the Splat
             $ProxyParams = @{
                 Uri        = [Uri]::new($ZoneInfo.URL.replace('.asmx', '.wsdl'))
                 Credential = $Credential
@@ -48,7 +51,6 @@ function Get-AutoTaskObject {
         catch {
             throw $_
         }
-        #$Global:ATEntityInfo = Get-EntityInfo -atws $webProxy -days (0 - $Refresh)
         return $webProxy
     }
     
@@ -58,6 +60,13 @@ function Get-AutoTaskObject {
 
 
 function Get-ATEntityInfo ([Object]$atws) {
+    # Build our own EntityInfo object.
+    
+    # This was intended to cache this info as to reduce the amount
+    # of API calls.
+
+    # This should probably be replace with something more robust.
+    # The API provides these objects already
     $atws.getEntityInfo() | ForEach-Object {
         [PSCustomObject]@{
             Name                 = $_.Name
@@ -84,10 +93,13 @@ function Get-ATEntityInfo ([Object]$atws) {
     }
 }
 function Get-EntityInfo ([Object]$atws, [int]$days) {
+    # This needs work as it doesn't work as intended.
+    
+    # Create the cache folder if it doesn't exsist
     if (-not (Test-Path -Path "$env:TEMP\AutotaskCLI\")) {
         New-Item -Path $env:TEMP -Name AutotaskCLI -ItemType Directory
     }
-
+    
     if (Test-Path -Path "$env:TEMP\AutotaskCLI\EntityInfo.clixml") {
         $EntityInfoData = Import-Clixml -Path "$env:TEMP\AutotaskCLI\EntityInfo.clixml"
         if ($EntityInfoData -and $EntityInfoData[0].LastUpdated -and $EntityInfoData[0].LastUpdated -lt (Get-Date).AddDays($days)) {

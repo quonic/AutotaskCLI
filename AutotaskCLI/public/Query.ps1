@@ -21,6 +21,8 @@ function Get-Query {
     }
     
     process {
+        # Create the Query and Invoke the other objects or code,
+        # such as Fields and other Conditions
         $sbString = "
         queryxml {
             version = `"1.0`"
@@ -31,10 +33,11 @@ function Get-Query {
                 $($ChildItem | ForEach-Object { $_.Invoke() })
             }
         }"
+        # Verify that the Query is valid to conver to XML
         $scriptB = [ScriptBlock]::Create($sbString)
         [System.Xml.Linq.XElement]$Xml = New-XmlDocument -ScriptBlock $scriptB
         try {
-            
+            # TODO: either remove this or create error handling code
         }
         catch {
             throw "Field is not formated correctly, see Get-Help New-XmlDocument."
@@ -83,6 +86,8 @@ function Get-Condition {
         if ($Or) {
             $Op = "OR"
         }
+        # Create the condition and Invoke the other objects or code,
+        # such as Fields and other Conditions
         $sbString = "
             condition{
                 operator = `"$Op`"
@@ -218,15 +223,18 @@ function Get-Field {
         $Field = ""
         $ProcessInputObject = $false
         if ($InputObject) {
+            # Process the InputObject
             [string]$Field = $InputObject.Property
             [string]$Value = $InputObject.Value
             [string]$binaryOperator = $InputObject.Operator
             $ProcessInputObject = $true
         }
         elseif ($Property -and $Value) {
+            # Prop and Value where provided so don't set Value to an empty string
             [string]$Field = $Property
         }
         else {
+            # Value wasn't provided so it must be an empty string per API
             [string]$Field = $Property
             $Value = ""
         }
