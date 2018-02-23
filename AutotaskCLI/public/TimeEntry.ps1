@@ -45,6 +45,10 @@ function New-TimeEntry {
     )
     
     begin {
+        # TODO: make this work
+        
+        # Do not use as is
+        throw "Don't call this as it isn't working"
         # All datetimes are in EST
         $DateWorked = $DateWorked.ToUniversalTime().AddHours(-5)
         if ($BillingApprovalDateTime) {$BillingApprovalDateTime = $BillingApprovalDateTime.ToUniversalTime().AddHours(-5)}
