@@ -303,9 +303,14 @@ function Invoke-ATQuery {
             # TODO: Change this to be done by XML, convert to xml edit then convert to string
             $LastID = $response.EntityResults[$response.EntityResults.Count - 1].id
             $QuerySplit = ($Query -split "`r`n")
+            # Remove any past queries that are from us getting more results
+            # Note: You should be querying on id anyways unless you are getting more results. "id" is not in the database. It's ephemeral to the results.
+            if ($QuerySplit -match "<field>id<expression op=`"GreaterThan`">[0-9]*<\/expression><\/field>") {
+                $QuerySplit = $QuerySplit | Where-Object {$_ -notmatch "<field>id<expression op=`"GreaterThan`">[0-9]*<\/expression><\/field>"}
+            }
             $LastThreeLines = $QuerySplit[($QuerySplit.Count - 3)..($QuerySplit.Count - 1)]
             $LastTwoLines = $QuerySplit[($QuerySplit.Count - 2)..($QuerySplit.Count - 1)]
-            if ($LastThreeLines[0] -like "    </condition>") {$true}else {
+            if ($LastThreeLines[0] -like "    </condition>") {
                 $NewQuery = ($QuerySplit[0..($QuerySplit.Count - 4)] -join "`r`n") +
                 $("`r`n      <field>id<expression op=`"GreaterThan`">$LastID</expression></field>`r`n") +
                 ($LastThreeLines -join "`r`n")
@@ -315,14 +320,16 @@ function Invoke-ATQuery {
                 $("`r`n    <field>id<expression op=`"GreaterThan`">$LastID</expression></field>`r`n") +
                 ($LastTwoLines -join "`r`n")
             }
+            
             # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
             Start-Sleep -Seconds 5
             # Query again for next set of results. Recursion ;)
             $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery
+            Start-Sleep -Seconds 1
+            $Namespace = $response.GetType().Namespace
             if ($newresponse.ReturnCode -eq 1) {
                 # No problems so add the past results to the new results as a new object
                 $ATWSResponse = New-Object ($Namespace + ".ATWSResponse")
-                $Namespace = $response.GetType().Namespace
                 $ATWSResponse.ReturnCode = 1
                 $ATWSResponse.EntityResults = $response.EntityResults + $newresponse.EntityResults
                 $ATWSResponse.EntityResultType = $response.EntityResultType
@@ -330,6 +337,9 @@ function Invoke-ATQuery {
                 $ATWSResponse.EntityReturnInfoResults = $response.EntityReturnInfoResults + $newresponse.EntityReturnInfoResults
                 $response = $ATWSResponse
                 # Off to returning the results
+            }
+            elseif ($newresponse.GetType().BaseType.Name -like "Array" -and $newresponse.Count -gt 1) {
+                $response = $response.EntityResults + $newresponse
             }
         }
     }
