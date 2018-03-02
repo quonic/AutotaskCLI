@@ -304,17 +304,19 @@ function Invoke-ATQuery {
             # Note: You should be querying on id anyways unless you are getting more results. "id" is not in the database. It's ephemeral to the results.
             [System.Xml.Linq.XElement]$Xml = $Query
             $IdElement = $Xml.Elements("query").Elements("field") | Where-Object {$_.FirstNode.Value -like "id"}
-            if ($IdElement) {
-                $LastID = $idElement.FirstNode.NextNode.Value
+            $LastID = $idElement.FirstNode.NextNode.Value
+            if ($IdElement -or $LastID) {
+                # Remove the id field from the query so we can add the next one
                 $IdElement.Remove()
-                $IdField = Get-Field "id" -GreaterThan "$LastID"
-                [System.Xml.Linq.XElement]$XmlID = New-XmlDocument -ScriptBlock [ScriptBlock]::Create($idField)
-                $Xml.LastNode.AddFirst($XmlID)
-                $NewQuery = $Xml.ToString()
             }
-            else {
-                throw "id not found in last Query"
-            }
+            # Get the id needed to put in the new query
+            $ID = $response.EntityResults[$response.EntityResults.Count - 1].id
+            # Create new id field
+            $IdField = Get-Field "id" -GreaterThan "$ID"
+            $IdFieldScript = [ScriptBlock]::Create($IdField)
+            [System.Xml.Linq.XElement]$XmlID = New-XmlDocument -ScriptBlock $IdFieldScript
+            $Xml.LastNode.AddFirst($XmlID)
+            $NewQuery = $Xml.ToString()
             
             # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
             $TAUI = $at.getThresholdAndUsageInfo()
