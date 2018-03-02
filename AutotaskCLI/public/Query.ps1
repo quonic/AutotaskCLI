@@ -300,32 +300,42 @@ function Invoke-ATQuery {
         if ($response.EntityResults.Count -eq 500) {
             # API spec says use last id as the starting point from last query
             # Below does that
-            # TODO: Change this to be done by XML, convert to xml edit then convert to string
-            $LastID = $response.EntityResults[$response.EntityResults.Count - 1].id
-            $QuerySplit = ($Query -split "`r`n")
             # Remove any past queries that are from us getting more results
             # Note: You should be querying on id anyways unless you are getting more results. "id" is not in the database. It's ephemeral to the results.
-            if ($QuerySplit -match "<field>id<expression op=`"GreaterThan`">[0-9]*<\/expression><\/field>") {
-                $QuerySplit = $QuerySplit | Where-Object {$_ -notmatch "<field>id<expression op=`"GreaterThan`">[0-9]*<\/expression><\/field>"}
+            [System.Xml.Linq.XElement]$Xml = $Query
+            $IdElement = $Xml.Elements("query").Elements("field") | Where-Object {$_.FirstNode.Value -like "id"}
+            $LastID = $idElement.FirstNode.NextNode.Value
+            if ($IdElement -or $LastID) {
+                # Remove the id field from the query so we can add the next one
+                $IdElement.Remove()
             }
-            $LastThreeLines = $QuerySplit[($QuerySplit.Count - 3)..($QuerySplit.Count - 1)]
-            $LastTwoLines = $QuerySplit[($QuerySplit.Count - 2)..($QuerySplit.Count - 1)]
-            if ($LastThreeLines[0] -like "    </condition>") {
-                $NewQuery = ($QuerySplit[0..($QuerySplit.Count - 4)] -join "`r`n") +
-                $("`r`n      <field>id<expression op=`"GreaterThan`">$LastID</expression></field>`r`n") +
-                ($LastThreeLines -join "`r`n")
-            }
-            else {
-                $NewQuery = ($QuerySplit[0..($QuerySplit.Count - 3)] -join "`r`n") +
-                $("`r`n    <field>id<expression op=`"GreaterThan`">$LastID</expression></field>`r`n") +
-                ($LastTwoLines -join "`r`n")
-            }
+            # Get the id needed to put in the new query
+            $ID = $response.EntityResults[$response.EntityResults.Count - 1].id
+            # Create new id field
+            $IdField = Get-Field "id" -GreaterThan "$ID"
+            $IdFieldScript = [ScriptBlock]::Create($IdField)
+            [System.Xml.Linq.XElement]$XmlID = New-XmlDocument -ScriptBlock $IdFieldScript
+            $Xml.LastNode.AddFirst($XmlID)
+            $NewQuery = $Xml.ToString()
             
             # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
-            Start-Sleep -Seconds 5
+            $TAUI = $at.getThresholdAndUsageInfo()
+            $Message = $TAUI.EntityReturnInfoResults.Message -Split ';'
+            $ThresholdOfExternalRequest = ($Message[0] -Split ': ')[1]
+            $numberOfExternalRequest = ($Message[2] -Split ': ')[1]
+            $Percentage = ($numberOfExternalRequest / $ThresholdOfExternalRequest) * 100
+            $SleepTime = [Math]::Round($([math]::log10($Percentage) * 10 + 1), 0)
+            # We will sleep from 1 to 21 seconds depending on the Threshold %
+            Start-Sleep -Seconds $SleepTime
             # Query again for next set of results. Recursion ;)
-            $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery
-            Start-Sleep -Seconds 1
+            if ($NewQuery) {
+                $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery
+            }
+            else {
+                # This shouldn't be thrown if $IdElement found an id in the old Query
+                throw "NewQuery wasn't created"
+            }
+            
             $Namespace = $response.GetType().Namespace
             if ($newresponse.ReturnCode -eq 1) {
                 # No problems so add the past results to the new results as a new object
@@ -339,6 +349,8 @@ function Invoke-ATQuery {
                 # Off to returning the results
             }
             elseif ($newresponse.GetType().BaseType.Name -like "Array" -and $newresponse.Count -gt 1) {
+                # Checking if the results are an array and are more than 1, else there might be an error.
+                # This would be from where we returned just EntityResults, so merge the two arrays of results.
                 $response = $response.EntityResults + $newresponse
             }
         }
