@@ -61,8 +61,8 @@ function New-TimeEntry {
         #$InternalAllocationCode
         #"InternalActivity"
         $Roles = Invoke-ATQuery -AutoTask $AutoTask -Query $(
-            Query "Role" {
-                Field -Property "Active" -Equals -Value $true
+            Get-Query "Role" {
+                Get-Field -Property "Active" -Equals -Value $true
             })
         $AppSpec = $Roles | Where-Object {$_.Name -like "Application Specialist"}
         $AutoTask = Get-AutoTaskObject

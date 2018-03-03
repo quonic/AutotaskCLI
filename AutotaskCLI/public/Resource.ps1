@@ -22,12 +22,12 @@ function Get-ATUser {
     )
     
     begin {
-        $Query = Query "Resource" {
+        $Query = Get-Query "Resource" {
             #Field "Active" -Equals $true
-            if ($FirstName) {Field "FirstName" -Like "$FirstName"}
-            if ($LastName) {Field "LastName" -Like "$LastName"}
-            if ($UserName) {Field "UserName" -Equals "$UserName"}
-            if ($Title) {Field "Title" -Like "$Title"}
+            if ($FirstName) {Get-Field "FirstName" -Like "$FirstName"}
+            if ($LastName) {Get-Field "LastName" -Like "$LastName"}
+            if ($UserName) {Get-Field "UserName" -Equals "$UserName"}
+            if ($Title) {Get-Field "Title" -Like "$Title"}
         }
     }
     

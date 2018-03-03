@@ -39,8 +39,8 @@ function Get-Ticket {
         elseif ($TicketNumber) {
             # Get the ticket based on the Ticket number
             Invoke-ATQuery -AutoTask $AutoTask -Query $(
-                Query "Ticket" {
-                    Field -Property "TicketNumber" -Equals -Value $TicketNumber
+                Get-Query "Ticket" {
+                    Get-Field -Property "TicketNumber" -Equals -Value $TicketNumber
                 })
         }
         else {

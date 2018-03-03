@@ -31,8 +31,8 @@ function Get-Note {
             # Get the Notes for the specified Ticket
             # TODO: Add logic to check if ticket exists or let Query handle this?
             Invoke-ATQuery -AutoTask $AutoTask -Query $(
-                Query "TicketNote" {
-                    Field -Property "TicketID" -Equals -Value $TicketID
+                Get-Query "TicketNote" {
+                    Get-Field -Property "TicketID" -Equals -Value $TicketID
                 })
         }
     }
