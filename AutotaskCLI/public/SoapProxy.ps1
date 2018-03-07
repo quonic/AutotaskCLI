@@ -36,7 +36,7 @@ function Get-AutoTaskObject {
 
             # Building the Splat
             $ProxyParams = @{
-                Uri        = [Uri]::new($ZoneInfo.URL.replace('.asmx', '.wsdl'))
+                Uri        = [Uri]::new($ZoneInfo.URL.replace('.asmx', '.wsdl')).AbsoluteUri
                 Credential = $Credential
                 #Namespace  = $Namespace
             }
