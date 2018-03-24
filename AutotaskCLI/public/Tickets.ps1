@@ -7,7 +7,7 @@ function Get-Ticket {
         [Object]
         $AutoTask,
         [Parameter(ParameterSetName = "TicketNumberSet")]
-        [Parameter(ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        #[Parameter(ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ValidateScript( {
                 If ($_ -match 'T[0-9]{8}.[0-9]{4}.[0-9]{3}|T[0-9]{8}.[0-9]{4}') {
                     $True
@@ -18,10 +18,15 @@ function Get-Ticket {
             })]
         [string]
         $TicketNumber,
+        [Parameter(ParameterSetName = "TicketIDSet")]
+        [string[]]
+        $TicketID,
         [Parameter(ParameterSetName = "QuerySet")]
         [Parameter(ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [string]
-        $Query
+        $Query,
+        [string]
+        $Status
     )
     
     begin {
@@ -38,9 +43,22 @@ function Get-Ticket {
         }
         elseif ($TicketNumber) {
             # Get the ticket based on the Ticket number
-            Invoke-ATQuery -AutoTask $AutoTask -Query $(
+            Invoke-ATQuery -AutoTask $AutoTask -Query (
                 Get-Query "Ticket" {
-                    Get-Field -Property "TicketNumber" -Equals -Value $TicketNumber
+                    $TicketNumber | ForEach-Object {
+                        Get-Field -Property "TicketNumber" -Equals -Value $_
+                    }
+                })
+        }
+        elseif ($TicketID) {
+            Invoke-ATQuery -AutoTask $AutoTask -Query (
+                Get-Query "Ticket" {
+                    if ($Status) {
+                        Get-Field -Property "Status" -Equals -Value $Status
+                    }
+                    $TicketID | ForEach-Object {
+                        Get-Field -Property "id" -Equals -Value $_
+                    }
                 })
         }
         else {
