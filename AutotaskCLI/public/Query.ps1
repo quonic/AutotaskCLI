@@ -298,6 +298,7 @@ function Invoke-ATQuery {
         $response = $AutoTask.query($Query)
         # Check if we got exactly 500 results, and get more if so.
         if ($response.EntityResults.Count -eq 500) {
+            Write-Debug -Message "More than 500 results"
             # API spec says use last id as the starting point from last query
             # Below does that
             # Remove any past queries that are from us getting more results
@@ -305,18 +306,22 @@ function Invoke-ATQuery {
             [System.Xml.Linq.XElement]$Xml = $Query
             $IdElement = $Xml.Elements("query").Elements("field") | Where-Object {$_.FirstNode.Value -like "id"}
             $LastID = $idElement.FirstNode.NextNode.Value
-            if ($IdElement -or $LastID) {
+            
+            if ($IdElement -and $LastID -or ($idElement.FirstNode.NextNode.FirstAttribute.Value -contains "GreaterThan")) {
                 # Remove the id field from the query so we can add the next one
+                Write-Debug -Message "Removing $($_.FirstNode.NextNode.FirstAttribute.Value)"
                 $IdElement.Remove()
             }
             # Get the id needed to put in the new query
             $ID = $response.EntityResults[$response.EntityResults.Count - 1].id
+            Write-Debug -Message "Adding $ID"
             # Create new id field
             $IdField = Get-Field "id" -GreaterThan "$ID"
             $IdFieldScript = [ScriptBlock]::Create($IdField)
             [System.Xml.Linq.XElement]$XmlID = New-XmlDocument -ScriptBlock $IdFieldScript
             $Xml.LastNode.AddFirst($XmlID)
             $NewQuery = $Xml.ToString()
+            Write-Debug -Message "Query:`r`n$NewQuery"
             
             # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
             $TAUI = $at.getThresholdAndUsageInfo()
