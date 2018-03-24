@@ -7,7 +7,7 @@ function Get-APIUsage {
     )
 
     process {
-        $TAUI = $atws.getThresholdAndUsageInfo()
+        $TAUI = $Autotask.getThresholdAndUsageInfo()
         $Message = $TAUI.EntityReturnInfoResults.Message -Split ';'
         $ThresholdOfExternalRequest = ($Message[0] -Split ': ')[1]
         $TimeframeOfLimitation = ($Message[1] -Split ': ')[1]
