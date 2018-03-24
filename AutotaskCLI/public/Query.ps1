@@ -324,12 +324,8 @@ function Invoke-ATQuery {
             Write-Debug -Message "Query:`r`n$NewQuery"
             
             # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
-            $TAUI = $at.getThresholdAndUsageInfo()
-            $Message = $TAUI.EntityReturnInfoResults.Message -Split ';'
-            $ThresholdOfExternalRequest = ($Message[0] -Split ': ')[1]
-            $numberOfExternalRequest = ($Message[2] -Split ': ')[1]
-            $Percentage = ($numberOfExternalRequest / $ThresholdOfExternalRequest) * 100
-            $SleepTime = [Math]::Round($([math]::log10($Percentage) * 10 + 1), 0)
+            $TAUI = Get-APIUsage -Autotask $AutoTask
+            $SleepTime = [Math]::Round($([math]::log10($TAUI.Percentage) * 10 + 1), 0)
             # We will sleep from 1 to 21 seconds depending on the Threshold %
             Start-Sleep -Seconds $SleepTime
             # Query again for next set of results. Recursion ;)
