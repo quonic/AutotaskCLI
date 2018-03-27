@@ -127,11 +127,144 @@ function New-Ticket {
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanCreate) {
             throw "You do not have Create permissions for Tickets."
         }
+        if (-not $PSBoundParameters.ContainsKey('Confirm')) {
+            $ConfirmPreference = $PSCmdlet.SessionState.PSVariable.GetValue('ConfirmPreference')
+        }
+        if (-not $PSBoundParameters.ContainsKey('WhatIf')) {
+            $WhatIfPreference = $PSCmdlet.SessionState.PSVariable.GetValue('WhatIfPreference')
+        }
     }
     
     process {
-        if ($pscmdlet.ShouldProcess($Title)) {
+
+        if ($PSCmdlet.ShouldProcess($Title)) {
+            $Namespace = $AutoTask.GetType().Namespace
+            #$ATWSResponse = New-Object ($Namespace + ".ATWSResponse")
+            $Ticket = New-Object ($Namespace + ".Ticket")
+        
+            $Ticket.DueDateTime = $DueDateTime
+            $Ticket.Status = $Status
+            $Ticket.Title = $Title
+            $Ticket.Priority = $Priority
+            $Ticket.AccountID = $AccountID
+
+        
+            if ($IssueType) {
+                $Ticket.IssueType = $IssueType
+            }
+            if ($SubIssueType) {
+                $Ticket.SubIssueType = $SubIssueType
+            }
+            if ($TicketCategory) {
+                $Ticket.TicketCategory = $TicketCategory
+            }
+            if ($TicketType) {
+                $Ticket.TicketType = $TicketType
+            }
+            if ($Description) {
+                $Ticket.Description = $Description
+            }
+            if ($QueueID) {
+                $Ticket.QueueID = $QueueID
+            }
+            if ($Source) {
+                $Ticket.Source = $Source
+            }
+            if ($Fields) {
+                $Ticket.Fields = $Fields
+            }
+            if ($UserDefinedFields) {
+                $Ticket.UserDefinedFields = $UserDefinedFields
+            }
+            if ($AllocationCodeID) {
+                $Ticket.AllocationCodeID = $AllocationCodeID
+            }
+            if ($AssignedResourceID) {
+                $Ticket.AssignedResourceID = $AssignedResourceID
+            }
+            if ($AssignedResourceRoleID) {
+                $Ticket.AssignedResourceRoleID = $AssignedResourceRoleID
+            }
+            if ($ChangeApprovalBoard) {
+                $Ticket.ChangeApprovalBoard = $ChangeApprovalBoard
+            }
+            if ($ChangeApprovalStatus) {
+                $Ticket.ChangeApprovalStatus = $ChangeApprovalStatus
+            }
+            if ($ChangeApprovalType) {
+                $Ticket.ChangeApprovalType = $ChangeApprovalType
+            }
+            if ($ChangeInfoField1) {
+                $Ticket.ChangeInfoField1 = $ChangeInfoField1
+            }
+            if ($ChangeInfoField2) {
+                $Ticket.ChangeInfoField2 = $ChangeInfoField2
+            }
+            if ($ChangeInfoField3) {
+                $Ticket.ChangeInfoField3 = $ChangeInfoField3
+            }
+            if ($ChangeInfoField4) {
+                $Ticket.ChangeInfoField4 = $ChangeInfoField4
+            }
+            if ($ChangeInfoField5) {
+                $Ticket.ChangeInfoField5 = $ChangeInfoField5
+            }
+            if ($ContactID) {
+                $Ticket.ContactID = $ContactID
+            }
+            if ($ContractID) {
+                $Ticket.ContractID = $ContractID
+            }
+            if ($ContractServiceBundleID) {
+                $Ticket.ContractServiceBundleID = $ContractServiceBundleID
+            }
+            if ($ContractServiceID) {
+                $Ticket.ContractServiceID = $ContractServiceID
+            }
+            if ($EstimatedHours) {
+                $Ticket.EstimatedHours = $EstimatedHours
+            }
+            if ($ExternalID) {
+                $Ticket.ExternalID = $ExternalID
+            }
+            if ($InstalledProductID) {
+                $Ticket.InstalledProductID = $InstalledProductID
+            }
+            if ($OpportunityId) {
+                $Ticket.OpportunityId = $OpportunityId
+            }
+            if ($ProblemTicketId) {
+                $Ticket.ProblemTicketId = $ProblemTicketId
+            }
+            if ($ProjectID) {
+                $Ticket.ProjectID = $ProjectID
+            }
+            if ($PurchaseOrderNumber) {
+                $Ticket.PurchaseOrderNumber = $PurchaseOrderNumber
+            }
+            if ($Resolution) {
+                $Ticket.Resolution = $Resolution
+            }
+            if ($ServiceLevelAgreementID) {
+                $Ticket.ServiceLevelAgreementID = $ServiceLevelAgreementID
+            }
             
+            
+            $TicketArray = $Ticket | ForEach-Object {
+                New-Object ($Namespace + ".Ticket") -ArgumentList $_
+            }
+            
+            $entityArray = New-Object ($Namespace + ".Entity") -ArgumentList $TicketArray
+            
+            $Response = $AutoTask.Create($entityArray)
+            
+            if ($Response.ReturnCode -eq 1) {
+                return $true
+            }
+            else {
+                $Response
+                return $false
+            }
         }
     }
     
