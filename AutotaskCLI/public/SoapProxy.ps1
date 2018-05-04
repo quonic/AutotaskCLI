@@ -21,6 +21,16 @@ function Get-AutoTaskObject {
         # else {
         #     $Creds = $Credential
         # }
+
+        try {
+            # Check if TLS 1.2 is available, if not add it.
+            if ([Net.ServicePointManager]::SecurityProtocol -notcontains 'Tls12') {
+                [Net.ServicePointManager]::SecurityProtocol += [Net.SecurityProtocolType]::Tls12
+            }
+        }
+        catch {
+            throw "Can not enable Tls12"
+        }
     }
     
     process {
