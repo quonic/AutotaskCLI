@@ -75,6 +75,7 @@ function New-Ticket {
         SupportsShouldProcess,
         ConfirmImpact = 'Medium'
     )]
+    [OutputType([Object], [bool])]
     param (
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [Object]
