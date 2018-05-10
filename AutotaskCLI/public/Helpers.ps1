@@ -129,56 +129,60 @@ function Get-FieldInfo {
     }
     
     process {
-        $Autotask.GetFieldInfo($Entity) | ForEach-Object {
-            $Field = $_
-            $FieldItem = New-Object -TypeName PSCustomObject -Property @{
-                Name                     = $Field.Name
-                Label                    = $Field.Label
-                Type                     = $Field.Type
-                Length                   = $Field.Length
-                Description              = $Field.Description
-                IsRequired               = $Field.IsRequired
-                IsReadOnly               = $Field.IsReadOnly
-                IsQueryable              = $Field.IsQueryable
-                IsReference              = $Field.IsReference
-                ReferenceEntityType      = $Field.ReferenceEntityType
-                IsPickList               = $Field.IsPickList
-                PicklistValues           = $(
-                    $Picklistvalues = $null
-                    if ($Field.IsPickList) {
-                        $Picklistvalues = $Field.Picklistvalues | Where-Object {$_.IsActive}
-                    }
-                    elseif ($IncludeNonActive) {
-                        $Picklistvalues = $Field.Picklistvalues
-                    }
-                    if ($Picklistvalues) {
-                        $Picklistvalues | ForEach-Object {
-                            New-Object -TypeName PSCustomObject -Property @{
-                                Value             = $_.Value
-                                Label             = $_.Label
-                                IsDefaultValue    = $_.IsDefaultValue
-                                SortOrder         = $_.SortOrder
-                                parentValue       = $_.parentValue
-                                IsActive          = $_.IsActive
-                                IsActiveSpecified = $_.IsActiveSpecified
-                                IsSystem          = $_.IsSystem
-                                IsSystemSpecified = $_.IsSystemSpecified
+        $Entity | ForEach-Object {
+            $ThisEntity = $_
+            $Autotask.GetFieldInfo($ThisEntity) | ForEach-Object {
+                $Field = $_
+                $FieldItem = New-Object -TypeName PSCustomObject -Property @{
+                    Name                     = $Field.Name
+                    Label                    = $Field.Label
+                    Type                     = $Field.Type
+                    Length                   = $Field.Length
+                    Description              = $Field.Description
+                    IsRequired               = $Field.IsRequired
+                    IsReadOnly               = $Field.IsReadOnly
+                    IsQueryable              = $Field.IsQueryable
+                    IsReference              = $Field.IsReference
+                    ReferenceEntityType      = $Field.ReferenceEntityType
+                    IsPickList               = $Field.IsPickList
+                    PicklistValues           = $(
+                        $Picklistvalues = $null
+                        if ($Field.IsPickList) {
+                            $Picklistvalues = $Field.Picklistvalues | Where-Object {$_.IsActive}
+                        }
+                        elseif ($IncludeNonActive) {
+                            $Picklistvalues = $Field.Picklistvalues
+                        }
+                        if ($Picklistvalues) {
+                            $Picklistvalues | ForEach-Object {
+                                New-Object -TypeName PSCustomObject -Property @{
+                                    Value             = $_.Value
+                                    Label             = $_.Label
+                                    IsDefaultValue    = $_.IsDefaultValue
+                                    SortOrder         = $_.SortOrder
+                                    parentValue       = $_.parentValue
+                                    IsActive          = $_.IsActive
+                                    IsActiveSpecified = $_.IsActiveSpecified
+                                    IsSystem          = $_.IsSystem
+                                    IsSystemSpecified = $_.IsSystemSpecified
+                                }
                             }
                         }
-                    }
-                )
-                PicklistParentValueField = $Field.PicklistParentValueField
-                DefaultValue             = $Field.DefaultValue
+                    )
+                    PicklistParentValueField = $Field.PicklistParentValueField
+                    DefaultValue             = $Field.DefaultValue
+                }
+    
+                if ($PickListOnly -and $Field.IsPickList) {
+                    $FieldItem
+                }
+                elseif (-not $PickListOnly) {
+                    $FieldItem
+                }
+                
             }
-
-            if ($PickListOnly -and $Field.IsPickList) {
-                $FieldItem
-            }
-            elseif (-not $PickListOnly) {
-                $FieldItem
-            }
-            
         }
+        
     }
     
     end {
