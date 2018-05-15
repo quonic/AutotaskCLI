@@ -1,4 +1,4 @@
-enum Entities {
+enum ATEntities {
     Account
     AccountAlert
     AccountLocation
@@ -116,7 +116,7 @@ function Get-FieldInfo {
         [Object]
         $Autotask,
         [parameter(Mandatory = $true)]
-        [Entities[]]
+        [ATEntities[]]
         $Entity,
         [switch]
         $IncludeNonActive,
