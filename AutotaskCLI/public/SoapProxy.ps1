@@ -57,6 +57,8 @@ function Get-AutoTaskObject {
         }
         try {
             $webProxy = New-WebServiceProxy @ProxyParams
+            # preauthenticates webProxy every time
+            $webProxy.PreAuthenticate = $True
         }
         catch {
             throw $_

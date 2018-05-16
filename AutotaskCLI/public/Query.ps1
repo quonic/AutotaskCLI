@@ -372,4 +372,4 @@ function Invoke-ATQuery {
         
     }
 }
-New-Alias -Name "Query" -Value "Get-Query" -Force -Scope Global -Option ReadOnly
+New-Alias -Name "ATQuery" -Value "Get-Query" -Force -Scope Global -Option ReadOnly

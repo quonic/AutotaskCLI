@@ -137,7 +137,7 @@ function New-Ticket {
     }
     
     process {
-
+        
         if ($PSCmdlet.ShouldProcess($Title)) {
             $Namespace = $AutoTask.GetType().Namespace
             #$ATWSResponse = New-Object ($Namespace + ".ATWSResponse")
@@ -256,20 +256,26 @@ function New-Ticket {
             }
             
             $entityArray = New-Object ($Namespace + ".Entity") -ArgumentList $TicketArray
-            
-            $Response = $AutoTask.Create($entityArray)
-            
-            if ($Response.ReturnCode -eq 1) {
-                return $true
+            if ([bool]$WhatIfPreference.IsPresent) {
+                Write-Verbose "WhatIf: Would be creating ticket titled `"$Title`""
             }
             else {
-                $Response
-                return $false
+                $Response = $AutoTask.Create($entityArray)
             }
+            
+        }
+        else {
+            return
         }
     }
     
     end {
+        if ($Response.ReturnCode) {
+            return $Response
+        }
+        else {
+            throw $Response.Errors
+        }
     }
 }
 
