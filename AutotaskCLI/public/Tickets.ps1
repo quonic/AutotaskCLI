@@ -26,7 +26,9 @@ function Get-Ticket {
         [string]
         $Query,
         [string]
-        $Status
+        $Status,
+        [switch]
+        $IgnoreThresholdCheck
     )
     
     begin {
@@ -39,7 +41,7 @@ function Get-Ticket {
     process {
         if ($Query) {
             # Query base on provided Query
-            Invoke-ATQuery -AutoTask $AutoTask -Query $Query
+            Invoke-ATQuery -AutoTask $AutoTask -Query $Query -IgnoreThresholdCheck:$IgnoreThresholdCheck
         }
         elseif ($TicketNumber) {
             # Get the ticket based on the Ticket number
@@ -48,7 +50,7 @@ function Get-Ticket {
                     $TicketNumber | ForEach-Object {
                         Get-Field -Property "TicketNumber" -Equals -Value $_
                     }
-                })
+                }) -IgnoreThresholdCheck:$IgnoreThresholdCheck
         }
         elseif ($TicketID) {
             Invoke-ATQuery -AutoTask $AutoTask -Query (
@@ -59,7 +61,7 @@ function Get-Ticket {
                     $TicketID | ForEach-Object {
                         Get-Field -Property "id" -Equals -Value $_
                     }
-                })
+                }) -IgnoreThresholdCheck:$IgnoreThresholdCheck
         }
         else {
             throw "Query and TicketNumber where not defined."

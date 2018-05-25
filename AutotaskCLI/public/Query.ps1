@@ -291,7 +291,9 @@ function Invoke-ATQuery {
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         $AutoTask,
         [string]
-        $Query
+        $Query,
+        [switch]
+        $IgnoreThresholdCheck
     )
     
     begin {
@@ -323,11 +325,20 @@ function Invoke-ATQuery {
             $NewQuery = $Xml.ToString()
             Write-Debug -Message "Query:`r`n$NewQuery"
             
-            # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
             $TAUI = Get-APIUsage -Autotask $AutoTask
-            $SleepTime = [Math]::Round($([math]::log10($TAUI.Percentage) * 10 + 1), 0)
-            # We will sleep from 1 to 21 seconds depending on the Threshold %
-            Start-Sleep -Seconds $SleepTime
+            
+            if ($IgnoreThresholdCheck) {
+                Write-Verbose -Message "Threshold%: $($TAUI.Percentage)"
+                Start-Sleep -Seconds 1
+            }
+            else {
+                # Sleep as we don't want to make 1000 calls in 60 seconds and get banned
+                $SleepTime = [Math]::Round($([math]::log10($TAUI.Percentage) * 10 + 1), 0)
+                Write-Verbose -Message "Threshold%: $($TAUI.Percentage), Sleeping for $SleepTime seconds"
+                # We will sleep from 1 to 21 seconds depending on the Threshold %
+                Start-Sleep -Seconds $SleepTime
+            }
+            
             # Query again for next set of results. Recursion ;)
             if ($NewQuery) {
                 $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery
