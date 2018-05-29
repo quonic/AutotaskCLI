@@ -336,12 +336,18 @@ function Invoke-ATQuery {
                 $SleepTime = [Math]::Round($([math]::log10($TAUI.Percentage) * 10 + 1), 0)
                 Write-Verbose -Message "Threshold%: $($TAUI.Percentage), Sleeping for $SleepTime seconds"
                 # We will sleep from 1 to 21 seconds depending on the Threshold %
-                Start-Sleep -Seconds $SleepTime
+                if ($SleepTime -le 0) {
+                    Start-Sleep -Seconds 1
+                }
+                else {
+                    Start-Sleep -Seconds $SleepTime
+                }
+                
             }
             
             # Query again for next set of results. Recursion ;)
             if ($NewQuery) {
-                $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery
+                $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery -IgnoreThresholdCheck:$IgnoreThresholdCheck
             }
             else {
                 # This shouldn't be thrown if $IdElement found an id in the old Query
