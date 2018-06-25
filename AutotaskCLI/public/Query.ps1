@@ -156,7 +156,7 @@ function Get-Field {
         [Parameter(Mandatory = $true, Position = 2, ParameterSetName = "LikeSet")]
         [Parameter(Mandatory = $true, Position = 2, ParameterSetName = "NotLikeSet")]
         [Parameter(Mandatory = $true, Position = 2, ParameterSetName = "SoundsLikeSet")]
-        [String]
+        [Object]
         $Value,
         # Expects Property, Value, and Operator as properties
         [Parameter(ParameterSetName = "InputObjectSet")]
@@ -232,6 +232,9 @@ function Get-Field {
         elseif ($Property -and $Value) {
             # Prop and Value where provided so don't set Value to an empty string
             [string]$Field = $Property
+            if ($Value.value__) {
+                $Value = $Value.value__
+            }
         }
         else {
             # Value wasn't provided so it must be an empty string per API
