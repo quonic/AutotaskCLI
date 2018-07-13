@@ -101,15 +101,38 @@ $Queues = ($TicketFields | Where-Object {$_.Name -eq "QueueID"}).PicklistValues
 
 # Create two Here-strings with C# code to create Enums
 Add-Type -TypeDefinition @"
-public enum E_Status
+public enum E_Queue
 {
-    `n`r$(foreach ($status in $Statuses){if($status.Value -ne 26){"`t$($status.Label.Replace(' ','').Replace('*','')) = $($status.Value)`,`n`r"}})
+    $(
+    foreach ($status in $Statuses){
+        if($status.Value -ne 26){ # Status 26 isn't ever used as the Label is '----------'
+            $Name = $status.Label | ForEach-Object {$_ -replace '[^\w\d]', ''}
+            $Comma = if($status -ne $Statuses[-1]){
+                ','
+            }
+            $Value = $status.Value
+            "`t$Name = $($Value)$($Comma)`n`r"
+            }
+        }
+    )
 }
 "@
+
 Add-Type -TypeDefinition @"
 public enum E_Queue
 {
-    `n`r$(foreach ($Queue in $Queues){if($Queue.Value -ne 26){"`t$($Queue.Label.Replace(' ','').Replace('*','')) = $($Queue.Value)`,`n`r"}})
+    $(
+    foreach ($Queue in $Queues){
+        if($Queue.Value -ne 26){ # Status 26 isn't ever used as the Label is '----------'
+            $Name = $Queue.Label | ForEach-Object {$_ -replace '[^\w\d]', ''}
+            $Comma = if($Queue -ne $Queues[-1]){
+                ','
+            }
+            $Value = $Queue.Value
+            "`t$Name = $($Value)$($Comma)`n`r"
+            }
+        }
+    )
 }
 "@
 
