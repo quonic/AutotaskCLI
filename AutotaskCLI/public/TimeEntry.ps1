@@ -53,7 +53,7 @@ function New-TimeEntry {
         if ($BillingApprovalDateTime) {$BillingApprovalDateTime = $BillingApprovalDateTime.ToUniversalTime().AddHours(-5)}
         if ($EndDateTime) {$EndDateTime = $EndDateTime.ToUniversalTime().AddHours(-5)}
         if ($StartDateTime) {$StartDateTime = $StartDateTime.ToUniversalTime().AddHours(-5)}
-        [int]$id = 0
+        #[int]$id = 0
         if ($EndDateTime -le $StartDateTime) {
             throw "EndDateTime must be greater than StartDateTime"
         }
