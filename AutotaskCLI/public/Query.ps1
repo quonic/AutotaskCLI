@@ -209,13 +209,13 @@ function Get-Field {
     }
     process {
         $Field = ""
-        $ProcessInputObject = $false
+        #$ProcessInputObject = $false
         if ($InputObject) {
             # Process the InputObject
             [string]$Field = $InputObject.Property
             [string]$Value = $InputObject.Value
             [string]$binaryOperator = $InputObject.Operator
-            $ProcessInputObject = $true
+            #$ProcessInputObject = $true
         }
         elseif ($Property -and $Value) {
             # Prop and Value where provided so don't set Value to an empty string
