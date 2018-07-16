@@ -32,7 +32,6 @@ Task FullTests {
 }
 
 Task Specification {
-    
     $TestResults = Invoke-Gherkin $PSScriptRoot\Spec -PassThru
     if ($TestResults.FailedCount -gt 0) {
         Write-Error "[$($TestResults.FailedCount)] specification are incomplete"
@@ -40,7 +39,6 @@ Task Specification {
 }
 
 Task CopyToOutput {
-
     Write-Output "  Create Directory [$Destination]"
     $null = New-Item -Type Directory -Path $Destination -ErrorAction Ignore
 
@@ -70,31 +68,31 @@ Task BuildPSM1 -Inputs (Get-Item "$source\*\*.ps1") -Outputs $ModulePath {
         }
         [void]$stringbuilder.AppendLine( "Write-Verbose 'Importing from [$Source\$folder]'" )
     }
-    
+
     Write-Output "  Creating module [$ModulePath]"
     Set-Content -Path  $ModulePath -Value $stringbuilder.ToString() 
 }
 
 Task NextPSGalleryVersion -if (-Not ( Test-Path "$output\version.xml" ) ) -Before BuildPSD1 {
-    $galleryVersion = Get-NextPSGalleryVersion -Name $ModuleName
+    $galleryVersion = Get-NextNugetPackageVersion -Name $ModuleName
     $galleryVersion | Export-Clixml -Path "$output\version.xml"
 }
 
 Task BuildPSD1 -inputs (Get-ChildItem $Source -Recurse -File) -Outputs $ManifestPath {
-    
+
     Write-Output "  Update [$ManifestPath]"
     Copy-Item "$source\$ModuleName.psd1" -Destination $ManifestPath
- 
- 
+
+
     $functions = Get-ChildItem "$ModuleName\Public\*.ps1" | Where-Object { $_.name -notmatch 'Tests'} | Select-Object -ExpandProperty basename      
     Set-ModuleFunctions -Name $ManifestPath -FunctionsToExport $functions
- 
+
     Write-Output "  Detecting semantic versioning"
- 
+
     Import-Module ".\$ModuleName"
     $commandList = Get-Command -Module $ModuleName
     Remove-Module $ModuleName
- 
+
     Write-Output "    Calculating fingerprint"
     $fingerprint = foreach ($command in $commandList ) {
         foreach ($parameter in $command.parameters.keys) {
@@ -102,19 +100,19 @@ Task BuildPSD1 -inputs (Get-ChildItem $Source -Recurse -File) -Outputs $Manifest
             $command.parameters[$parameter].aliases | Foreach-Object { '{0}:{1}' -f $command.name, $_}
         }
     }
-     
+
     if (Test-Path .\fingerprint) {
         $oldFingerprint = Get-Content .\fingerprint
     }
-     
+
     $bumpVersionType = 'Patch'
     '    Detecting new features'
-    $fingerprint | Where-Object {$_ -notin $oldFingerprint } | ForEach-Object {$bumpVersionType = 'Minor'; "      $_"}    
+    $fingerprint | Where-Object {$_ -notin $oldFingerprint } | ForEach-Object {$bumpVersionType = 'Minor'; "      $_"}
     '    Detecting breaking changes'
     $oldFingerprint | Where-Object {$_ -notin $fingerprint } | ForEach-Object {$bumpVersionType = 'Major'; "      $_"}
- 
+
     Set-Content -Path .\fingerprint -Value $fingerprint
- 
+
     # Bump the module version
     $version = [version] (Get-Metadata -Path $manifestPath -PropertyName 'ModuleVersion')
 
@@ -125,7 +123,7 @@ Task BuildPSD1 -inputs (Get-ChildItem $Source -Recurse -File) -Outputs $Manifest
         }
         else {
             $bumpVersionType = 'Patch'
-        }       
+        }
     }
 
     $galleryVersion = Import-Clixml -Path "$output\version.xml"

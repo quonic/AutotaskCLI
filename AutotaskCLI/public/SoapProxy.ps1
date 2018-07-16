@@ -7,7 +7,6 @@ function Get-AutoTaskObject {
         [int]
         $Refresh = 1
     )
-    
     begin {
         # if (-not $Credential) {
         #     $Creds = Get-Credential
@@ -32,7 +31,6 @@ function Get-AutoTaskObject {
             throw "Can not enable Tls12"
         }
     }
-    
     process {
         try {
             # According to the API we need to find the correct "Zone" that the user belongs to
@@ -50,7 +48,6 @@ function Get-AutoTaskObject {
                 Credential = $Credential
                 #Namespace  = $Namespace
             }
-            
         }
         catch {
             throw $_
@@ -65,7 +62,6 @@ function Get-AutoTaskObject {
         }
         return $webProxy
     }
-    
     end {
     }
 }
