@@ -123,11 +123,8 @@ function Get-FieldInfo {
         [switch]
         $PickListOnly
     )
-    
     begin {
-        
     }
-    
     process {
         $Entity | ForEach-Object {
             $ThisEntity = $_
@@ -172,19 +169,15 @@ function Get-FieldInfo {
                     PicklistParentValueField = $Field.PicklistParentValueField
                     DefaultValue             = $Field.DefaultValue
                 }
-    
                 if ($PickListOnly -and $Field.IsPickList) {
                     $FieldItem
                 }
                 elseif (-not $PickListOnly) {
                     $FieldItem
                 }
-                
             }
         }
-        
     }
-    
     end {
     }
 }

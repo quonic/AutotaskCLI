@@ -20,7 +20,6 @@ function Get-ATUser {
         [Parameter(ParameterSetName = "TitleSearch", ValueFromPipelineByPropertyName)]
         $Title
     )
-    
     begin {
         $Query = Get-Query "Resource" {
             #Field "Active" -Equals $true
@@ -30,10 +29,8 @@ function Get-ATUser {
             if ($Title) {Get-Field "Title" -Like "$Title"}
         }
     }
-    
     process {
     }
-    
     end {
         return Invoke-ATQuery -AutoTask $AutoTask -Query $Query
     }

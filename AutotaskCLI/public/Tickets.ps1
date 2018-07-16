@@ -30,14 +30,12 @@ function Get-Ticket {
         [switch]
         $IgnoreThresholdCheck
     )
-    
     begin {
         # Check if we can Query for tickets
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanQuery) {
             throw "You do not have Query permissions for Tickets."
         }
     }
-    
     process {
         if ($Query) {
             # Query base on provided Query
@@ -67,7 +65,6 @@ function Get-Ticket {
             throw "Query and TicketNumber where not defined."
         }
     }
-    
     end {
     }
 }
@@ -125,7 +122,6 @@ function New-Ticket {
         # Priority must be an active priority.
         # AllocationCodeID is required on create() and update() if your company has enabled the Autotask system setting that requires a Work Type on a Ticket.
     )
-    
     begin {
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanCreate) {
             throw "You do not have Create permissions for Tickets."
@@ -137,21 +133,17 @@ function New-Ticket {
             $WhatIfPreference = $PSCmdlet.SessionState.PSVariable.GetValue('WhatIfPreference')
         }
     }
-    
     process {
-        
         if ($PSCmdlet.ShouldProcess($Title)) {
             $Namespace = $AutoTask.GetType().Namespace
             #$ATWSResponse = New-Object ($Namespace + ".ATWSResponse")
             $Ticket = New-Object ($Namespace + ".Ticket")
-        
             $Ticket.DueDateTime = $DueDateTime
             $Ticket.Status = $Status
             $Ticket.Title = $Title
             $Ticket.Priority = $Priority
             $Ticket.AccountID = $AccountID
 
-        
             if ($IssueType) {
                 $Ticket.IssueType = $IssueType
             }
@@ -251,12 +243,11 @@ function New-Ticket {
             if ($ServiceLevelAgreementID) {
                 $Ticket.ServiceLevelAgreementID = $ServiceLevelAgreementID
             }
-            
-            
+
             $TicketArray = $Ticket | ForEach-Object {
                 New-Object ($Namespace + ".Ticket") -ArgumentList $_
             }
-            
+
             $entityArray = New-Object ($Namespace + ".Entity") -ArgumentList $TicketArray
             if ([bool]$WhatIfPreference.IsPresent) {
                 Write-Verbose "WhatIf: Would be creating ticket titled `"$Title`""
@@ -264,13 +255,11 @@ function New-Ticket {
             else {
                 $Response = $AutoTask.Create($entityArray)
             }
-            
         }
         else {
             return
         }
     }
-    
     end {
         if ($Response.ReturnCode) {
             return $Response
@@ -305,19 +294,15 @@ function Update-Ticket {
         [string]
         $TicketNumber
     )
-    
     begin {
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanUpdate) {
             throw "You do not have Create permissions for Tickets."
         }
     }
-    
     process {
         if ($pscmdlet.ShouldProcess($TicketNumber)) {
-            
         }
     }
-    
     end {
     }
 }

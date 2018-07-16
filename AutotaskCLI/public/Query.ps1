@@ -16,10 +16,8 @@ function Get-Query {
         [scriptblock]
         $ChildItem
     )
-    
     begin {
     }
-    
     process {
         # Create the Query and Invoke the other objects or code,
         # such as Fields and other Conditions
@@ -43,7 +41,6 @@ function Get-Query {
             throw "Field is not formated correctly, see Get-Help New-XmlDocument."
         }
     }
-    
     end {
         return $Xml.ToString()
     }
@@ -54,14 +51,12 @@ function Get-Condition {
     [OutputType([string])]
     param (
         [Parameter(
-            
             Position = 0,
             ParameterSetName = "AndSet"
         )]
         [switch]
         $And,
         [Parameter(
-            
             Position = 0,
             ParameterSetName = "OrSet"
         )]
@@ -77,10 +72,8 @@ function Get-Condition {
         [scriptblock]
         $ChildItem
     )
-    
     begin {
     }
-    
     process {
         $Op = "AND"
         if ($Or) {
@@ -94,7 +87,6 @@ function Get-Condition {
                 $($ChildItem | ForEach-Object { $_.Invoke() })
             }"
     }
-    
     end {
         return $sbString
     }
@@ -167,10 +159,8 @@ function Get-Field {
         # [ScriptBlock]
         # $Filter
     )
-    
     begin {
         $binaryOperator = $null
-        
         if ($Equals) {
             $binaryOperator = "Equals"
         }
@@ -216,9 +206,7 @@ function Get-Field {
         elseif ($SoundsLike) {
             $binaryOperator = "SoundsLike"
         }
-        
     }
-    
     process {
         $Field = ""
         $ProcessInputObject = $false
@@ -250,7 +238,6 @@ function Get-Field {
             }
         }"
     }
-    
     end {
         return $sbString
     }
@@ -298,7 +285,6 @@ function Invoke-ATQuery {
         [switch]
         $IgnoreThresholdCheck
     )
-    
     begin {
         $response = $AutoTask.query($Query)
         # Check if we got exactly 500 results, and get more if so.
@@ -311,7 +297,7 @@ function Invoke-ATQuery {
             [System.Xml.Linq.XElement]$Xml = $Query
             $IdElement = $Xml.Elements("query").Elements("field") | Where-Object {$_.FirstNode.Value -like "id"}
             $LastID = $idElement.FirstNode.NextNode.Value
-            
+
             if ($IdElement -and $LastID -or ($idElement.FirstNode.NextNode.FirstAttribute.Value -contains "GreaterThan")) {
                 # Remove the id field from the query so we can add the next one
                 Write-Debug -Message "Removing $($_.FirstNode.NextNode.FirstAttribute.Value)"
@@ -327,9 +313,9 @@ function Invoke-ATQuery {
             $Xml.LastNode.AddFirst($XmlID)
             $NewQuery = $Xml.ToString()
             Write-Debug -Message "Query:`r`n$NewQuery"
-            
+
             $TAUI = Get-APIUsage -Autotask $AutoTask
-            
+
             if ($IgnoreThresholdCheck) {
                 Write-Verbose -Message "Threshold%: $($TAUI.Percentage)"
                 Start-Sleep -Seconds 1
@@ -345,9 +331,7 @@ function Invoke-ATQuery {
                 else {
                     Start-Sleep -Seconds $SleepTime
                 }
-                
             }
-            
             # Query again for next set of results. Recursion ;)
             if ($NewQuery) {
                 $newresponse = Invoke-ATQuery -AutoTask $AutoTask -Query $NewQuery -IgnoreThresholdCheck:$IgnoreThresholdCheck
@@ -356,7 +340,7 @@ function Invoke-ATQuery {
                 # This shouldn't be thrown if $IdElement found an id in the old Query
                 throw "NewQuery wasn't created"
             }
-            
+
             $Namespace = $response.GetType().Namespace
             if ($newresponse.ReturnCode -eq 1) {
                 # No problems so add the past results to the new results as a new object
@@ -376,7 +360,6 @@ function Invoke-ATQuery {
             }
         }
     }
-    
     end {
         Write-Verbose -Message "Return Code:$($response.ReturnCode)"
         Write-Verbose -Message "Count:$($response.EntityResults.Count)"
@@ -389,7 +372,6 @@ function Invoke-ATQuery {
         else {
             return $response.EntityResults
         }
-        
     }
 }
 New-Alias -Name "ATQuery" -Value "Get-Query" -Force -Scope Global -Option ReadOnly

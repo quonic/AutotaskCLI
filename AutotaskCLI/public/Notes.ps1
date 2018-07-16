@@ -14,14 +14,12 @@ function Get-Note {
         [string]
         $Query
     )
-    
     begin {
         # Check if we can Query Tickets
         if (-not ($AutoTask.getEntityInfo() | Where-Object {$_.Name -like "Ticket"}).CanQuery) {
             throw "You do not have Query permissions for Tickets."
         }
     }
-    
     process {
         if ($Query) {
             # We have a Query so do as asked
@@ -36,7 +34,6 @@ function Get-Note {
                 })
         }
     }
-    
     end {
     }
 }

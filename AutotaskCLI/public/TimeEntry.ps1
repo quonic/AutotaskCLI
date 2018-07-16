@@ -43,10 +43,9 @@ function New-TimeEntry {
 
 
     )
-    
     begin {
         # TODO: make this work
-        
+
         # Do not use as is
         throw "Don't call this as it isn't working"
         # All datetimes are in EST
@@ -72,10 +71,8 @@ function New-TimeEntry {
             $Resource.id
         }
     }
-    
     process {
     }
-    
     end {
         return $true
     }
