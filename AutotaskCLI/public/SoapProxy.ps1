@@ -23,7 +23,7 @@ function Get-AutoTaskObject {
 
         try {
             # Check if TLS 1.2 is available, if not add it.
-            if ([Net.ServicePointManager]::SecurityProtocol -notcontains 'Tls12') {
+            if ([Net.ServicePointManager]::SecurityProtocol -notcontains 'Tls12' -and ([Net.ServicePointManager]::SecurityProtocol -split ', ') -notcontains 'Tls12') {
                 [Net.ServicePointManager]::SecurityProtocol += [Net.SecurityProtocolType]::Tls12
             }
         }
