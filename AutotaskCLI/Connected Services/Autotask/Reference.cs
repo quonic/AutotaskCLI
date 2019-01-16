@@ -204,13 +204,7 @@ namespace AutotaskCLI.Autotask {
         private int ciField;
         
         private string webUrlField;
-        private string v;
-
-        public ATWSZoneInfo(string v)
-        {
-            this.v = v;
-        }
-
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string URL {

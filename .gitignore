@@ -5,3 +5,8 @@
 /.vs/AutotaskCLI/v15
 /AutotaskCLI/obj/Debug/TempPE
 /AutotaskCLI/obj/Debug
+/AutotaskCLI/obj/Release
+/output
+*.sqlite
+/scratch.ps1
+/temp.ps1
