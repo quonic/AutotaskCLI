@@ -1,3 +1,5 @@
-/output/
-scratch.ps1
-temp.ps1
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/AutotaskCLI/v15
