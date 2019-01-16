@@ -12,119 +12,147 @@ namespace AutotaskCLI.Autotask {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://autotask.net/ATWS/v1_5/", ConfigurationName="Autotask.ATWSSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://autotask.net/ATWS/v1_6/", ConfigurationName="Autotask.ATWSSoap")]
     public interface ATWSSoap {
         
         // CODEGEN: Generating message contract since message GetAttachmentRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetAttachment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetAttachmentResponse GetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetAttachment", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetAttachmentResponse> GetAttachmentAsync(AutotaskCLI.Autotask.GetAttachmentRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetAttachment", ReplyAction="*")]
+        System.IAsyncResult BeginGetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.GetAttachmentResponse EndGetAttachment(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message CreateAttachmentRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/CreateAttachment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/CreateAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.CreateAttachmentResponse CreateAttachment(AutotaskCLI.Autotask.CreateAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/CreateAttachment", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.CreateAttachmentResponse> CreateAttachmentAsync(AutotaskCLI.Autotask.CreateAttachmentRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/CreateAttachment", ReplyAction="*")]
+        System.IAsyncResult BeginCreateAttachment(AutotaskCLI.Autotask.CreateAttachmentRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.CreateAttachmentResponse EndCreateAttachment(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message DeleteAttachmentRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/DeleteAttachment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/DeleteAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.DeleteAttachmentResponse DeleteAttachment(AutotaskCLI.Autotask.DeleteAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/DeleteAttachment", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.DeleteAttachmentResponse> DeleteAttachmentAsync(AutotaskCLI.Autotask.DeleteAttachmentRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/DeleteAttachment", ReplyAction="*")]
+        System.IAsyncResult BeginDeleteAttachment(AutotaskCLI.Autotask.DeleteAttachmentRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.DeleteAttachmentResponse EndDeleteAttachment(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since the wrapper name (GetEntityInfo) of message GetEntityInfo does not match the default value (getEntityInfo)
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetEntityInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetEntityInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetEntityInfo1 getEntityInfo(AutotaskCLI.Autotask.GetEntityInfo request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetEntityInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetEntityInfo1> getEntityInfoAsync(AutotaskCLI.Autotask.GetEntityInfo request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetEntityInfo", ReplyAction="*")]
+        System.IAsyncResult BegingetEntityInfo(AutotaskCLI.Autotask.GetEntityInfo request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.GetEntityInfo1 EndgetEntityInfo(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message GetFieldInfoRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetFieldInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetFieldInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetFieldInfoResponse GetFieldInfo(AutotaskCLI.Autotask.GetFieldInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetFieldInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetFieldInfoResponse> GetFieldInfoAsync(AutotaskCLI.Autotask.GetFieldInfoRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetFieldInfo", ReplyAction="*")]
+        System.IAsyncResult BeginGetFieldInfo(AutotaskCLI.Autotask.GetFieldInfoRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.GetFieldInfoResponse EndGetFieldInfo(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message getUDFInfoRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getUDFInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getUDFInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.getUDFInfoResponse getUDFInfo(AutotaskCLI.Autotask.getUDFInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getUDFInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getUDFInfoResponse> getUDFInfoAsync(AutotaskCLI.Autotask.getUDFInfoRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/getUDFInfo", ReplyAction="*")]
+        System.IAsyncResult BegingetUDFInfo(AutotaskCLI.Autotask.getUDFInfoRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.getUDFInfoResponse EndgetUDFInfo(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message queryRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/query", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/query", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.queryResponse query(AutotaskCLI.Autotask.queryRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/query", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.queryResponse> queryAsync(AutotaskCLI.Autotask.queryRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/query", ReplyAction="*")]
+        System.IAsyncResult Beginquery(AutotaskCLI.Autotask.queryRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.queryResponse Endquery(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message createRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/create", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/create", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.createResponse create(AutotaskCLI.Autotask.createRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/create", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.createResponse> createAsync(AutotaskCLI.Autotask.createRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/create", ReplyAction="*")]
+        System.IAsyncResult Begincreate(AutotaskCLI.Autotask.createRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.createResponse Endcreate(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message updateRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/update", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.updateResponse update(AutotaskCLI.Autotask.updateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/update", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.updateResponse> updateAsync(AutotaskCLI.Autotask.updateRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/update", ReplyAction="*")]
+        System.IAsyncResult Beginupdate(AutotaskCLI.Autotask.updateRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.updateResponse Endupdate(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message deleteRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/delete", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.deleteResponse delete(AutotaskCLI.Autotask.deleteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/delete", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.deleteResponse> deleteAsync(AutotaskCLI.Autotask.deleteRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/delete", ReplyAction="*")]
+        System.IAsyncResult Begindelete(AutotaskCLI.Autotask.deleteRequest request, System.AsyncCallback callback, object asyncState);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getZoneInfo", ReplyAction="*")]
+        AutotaskCLI.Autotask.deleteResponse Enddelete(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getZoneInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.ATWSZoneInfo getZoneInfo(string UserName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getZoneInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.ATWSZoneInfo> getZoneInfoAsync(string UserName);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/getZoneInfo", ReplyAction="*")]
+        System.IAsyncResult BegingetZoneInfo(string UserName, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.ATWSZoneInfo EndgetZoneInfo(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message getThresholdAndUsageInfoRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getThresholdAndUsageInfo", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse getThresholdAndUsageInfo(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/getThresholdAndUsageInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse> getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo", ReplyAction="*")]
+        System.IAsyncResult BegingetThresholdAndUsageInfo(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse EndgetThresholdAndUsageInfo(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message GetWsdlVersionRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetWsdlVersion", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetWsdlVersion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetWsdlVersionResponse GetWsdlVersion(AutotaskCLI.Autotask.GetWsdlVersionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetWsdlVersion", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetWsdlVersionResponse> GetWsdlVersionAsync(AutotaskCLI.Autotask.GetWsdlVersionRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetWsdlVersion", ReplyAction="*")]
+        System.IAsyncResult BeginGetWsdlVersion(AutotaskCLI.Autotask.GetWsdlVersionRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.GetWsdlVersionResponse EndGetWsdlVersion(System.IAsyncResult result);
         
         // CODEGEN: Generating message contract since message GetInvoiceMarkupRequest has headers
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetInvoiceMarkup", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetInvoiceMarkupResponse GetInvoiceMarkup(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_5/GetInvoiceMarkup", ReplyAction="*")]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetInvoiceMarkupResponse> GetInvoiceMarkupAsync(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup", ReplyAction="*")]
+        System.IAsyncResult BeginGetInvoiceMarkup(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request, System.AsyncCallback callback, object asyncState);
+        
+        AutotaskCLI.Autotask.GetInvoiceMarkupResponse EndGetInvoiceMarkup(System.IAsyncResult result);
     }
     
     /// <remarks/>
@@ -132,12 +160,16 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AutotaskIntegrations : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string partnerIDField;
         
         private string integrationCodeField;
+        
+        private int impersonateAsResourceIDField;
+        
+        private bool impersonateAsResourceIDFieldSpecified;
         
         private System.Xml.XmlAttribute[] anyAttrField;
         
@@ -162,6 +194,30 @@ namespace AutotaskCLI.Autotask {
             set {
                 this.integrationCodeField = value;
                 this.RaisePropertyChanged("IntegrationCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int ImpersonateAsResourceID {
+            get {
+                return this.impersonateAsResourceIDField;
+            }
+            set {
+                this.impersonateAsResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonateAsResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ImpersonateAsResourceIDSpecified {
+            get {
+                return this.impersonateAsResourceIDFieldSpecified;
+            }
+            set {
+                this.impersonateAsResourceIDFieldSpecified = value;
+                this.RaisePropertyChanged("ImpersonateAsResourceIDSpecified");
             }
         }
         
@@ -192,7 +248,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ATWSZoneInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string uRLField;
@@ -280,7 +336,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class EntityDuplicateStatus : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool foundField;
@@ -340,7 +396,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class EntityReturnInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long entityIdField;
@@ -412,7 +468,7 @@ namespace AutotaskCLI.Autotask {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public enum EntityReturnInfoDatabaseAction {
         
         /// <remarks/>
@@ -430,7 +486,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ATWSError : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string messageField;
@@ -462,7 +518,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ATWSResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int returnCodeField;
@@ -546,6 +602,10 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketAdditionalInstalledProduct))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TicketHistory))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContactGroupContact))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContactGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResourceServiceDeskRole))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SurveyResults))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Survey))]
@@ -674,7 +734,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public abstract partial class Entity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private Field[] fieldsField;
@@ -734,7 +794,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Field : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -948,7 +1008,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PickListValue : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string valueField;
@@ -1092,7 +1152,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class UserDefinedField : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -1138,7 +1198,197 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
+    public partial class TicketAdditionalInstalledProduct : Entity {
+        
+        private object ticketIDField;
+        
+        private object installedProductIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public object TicketID {
+            get {
+                return this.ticketIDField;
+            }
+            set {
+                this.ticketIDField = value;
+                this.RaisePropertyChanged("TicketID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public object InstalledProductID {
+            get {
+                return this.installedProductIDField;
+            }
+            set {
+                this.installedProductIDField = value;
+                this.RaisePropertyChanged("InstalledProductID");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
+    public partial class TicketHistory : Entity {
+        
+        private object ticketIDField;
+        
+        private object actionField;
+        
+        private object detailField;
+        
+        private object resourceIDField;
+        
+        private object dateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public object TicketID {
+            get {
+                return this.ticketIDField;
+            }
+            set {
+                this.ticketIDField = value;
+                this.RaisePropertyChanged("TicketID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public object Action {
+            get {
+                return this.actionField;
+            }
+            set {
+                this.actionField = value;
+                this.RaisePropertyChanged("Action");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public object Detail {
+            get {
+                return this.detailField;
+            }
+            set {
+                this.detailField = value;
+                this.RaisePropertyChanged("Detail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public object ResourceID {
+            get {
+                return this.resourceIDField;
+            }
+            set {
+                this.resourceIDField = value;
+                this.RaisePropertyChanged("ResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public object Date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+                this.RaisePropertyChanged("Date");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
+    public partial class ContactGroupContact : Entity {
+        
+        private object contactGroupIDField;
+        
+        private object contactIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public object ContactGroupID {
+            get {
+                return this.contactGroupIDField;
+            }
+            set {
+                this.contactGroupIDField = value;
+                this.RaisePropertyChanged("ContactGroupID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public object ContactID {
+            get {
+                return this.contactIDField;
+            }
+            set {
+                this.contactIDField = value;
+                this.RaisePropertyChanged("ContactID");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
+    public partial class ContactGroup : Entity {
+        
+        private object nameField;
+        
+        private object activeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public object Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public object Active {
+            get {
+                return this.activeField;
+            }
+            set {
+                this.activeField = value;
+                this.RaisePropertyChanged("Active");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceServiceDeskRole : Entity {
         
         private object resourceIDField;
@@ -1203,7 +1453,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class SurveyResults : Entity {
         
         private object accountIDField;
@@ -1352,7 +1602,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Survey : Entity {
         
         private object nameField;
@@ -1403,7 +1653,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseApproval : Entity {
         
         private object costTypeField;
@@ -1454,7 +1704,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceLevelAgreementResults : Entity {
         
         private object ticketIDField;
@@ -1631,7 +1881,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketCategoryFieldDefaults : Entity {
         
         private object businessDivisionSubdivisionIDField;
@@ -1864,7 +2114,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketCategory : Entity {
         
         private object nameField;
@@ -1943,7 +2193,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketChecklistItem : Entity {
         
         private object completedField;
@@ -2064,7 +2314,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountPhysicalLocation : Entity {
         
         private object accountIDField;
@@ -2297,7 +2547,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessDivisionSubdivisionResource : Entity {
         
         private object businessDivisionSubdivisionIDField;
@@ -2334,7 +2584,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessDivisionSubdivision : Entity {
         
         private object businessDivisionIDField;
@@ -2385,7 +2635,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessSubdivision : Entity {
         
         private object nameField;
@@ -2436,7 +2686,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessDivision : Entity {
         
         private object nameField;
@@ -2487,7 +2737,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BusinessLocation : Entity {
         
         private object nameField;
@@ -3112,7 +3362,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Holiday : Entity {
         
         private object holidayNameField;
@@ -3163,7 +3413,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class HolidaySet : Entity {
         
         private object holidaySetNameField;
@@ -3200,7 +3450,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceRoleQueue : Entity {
         
         private object resourceIDField;
@@ -3279,7 +3529,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceRoleDepartment : Entity {
         
         private object departmentIDField;
@@ -3372,7 +3622,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListWorkTypeModifier : Entity {
         
         private object workTypeModifierIDField;
@@ -3451,7 +3701,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListServiceBundle : Entity {
         
         private object serviceBundleIDField;
@@ -3516,7 +3766,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListRole : Entity {
         
         private object roleIDField;
@@ -3581,7 +3831,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListMaterialCode : Entity {
         
         private object allocationCodeIDField;
@@ -3646,7 +3896,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListProduct : Entity {
         
         private object productIDField;
@@ -3711,7 +3961,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PriceListService : Entity {
         
         private object serviceIDField;
@@ -3776,7 +4026,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Currency : Entity {
         
         private object nameField;
@@ -3925,7 +4175,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class WorkTypeModifier : Entity {
         
         private object modifierValueField;
@@ -3962,7 +4212,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class NotificationHistory : Entity {
         
         private object notificationSentTimeField;
@@ -4237,7 +4487,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountAlert : Entity {
         
         private object accountIDField;
@@ -4288,7 +4538,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceBundleService : Entity {
         
         private object serviceBundleIDField;
@@ -4325,7 +4575,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceRole : Entity {
         
         private object departmentIDField;
@@ -4404,7 +4654,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketSecondaryResource : Entity {
         
         private object ticketIDField;
@@ -4455,7 +4705,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketAdditionalContact : Entity {
         
         private object contactIDField;
@@ -4492,7 +4742,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaskSecondaryResource : Entity {
         
         private object taskIDField;
@@ -4543,7 +4793,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaskPredecessor : Entity {
         
         private object lagDaysField;
@@ -4594,7 +4844,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Department : Entity {
         
         private object nameField;
@@ -4659,7 +4909,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PaymentTerm : Entity {
         
         private object nameField;
@@ -4724,7 +4974,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InvoiceTemplate : Entity {
         
         private object displayTaxCategoryField;
@@ -5083,7 +5333,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AdditionalInvoiceFieldValue : Entity {
         
         private object additionalInvoiceFieldIDField;
@@ -5134,7 +5384,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class UserDefinedFieldListItem : Entity {
         
         private object udfFieldIdField;
@@ -5199,7 +5449,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class UserDefinedFieldDefinition : Entity {
         
         private object nameField;
@@ -5446,7 +5696,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InternalLocation : Entity {
         
         private object nameField;
@@ -5609,7 +5859,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketCost : Entity {
         
         private object allocationCodeIDField;
@@ -5982,7 +6232,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketChangeRequestApproval : Entity {
         
         private object ticketIDField;
@@ -6075,7 +6325,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ChangeRequestLink : Entity {
         
         private object changeRequestTicketIDField;
@@ -6112,7 +6362,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ProjectCost : Entity {
         
         private object allocationCodeIDField;
@@ -6499,7 +6749,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractCost : Entity {
         
         private object allocationCodeIDField;
@@ -6872,7 +7122,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BillingItemApprovalLevel : Entity {
         
         private object timeEntryIDField;
@@ -6937,7 +7187,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ProjectNote : Entity {
         
         private object creatorResourceIDField;
@@ -6955,6 +7205,12 @@ namespace AutotaskCLI.Autotask {
         private object titleField;
         
         private object announceField;
+        
+        private object impersonatorCreatorResourceIDField;
+        
+        private object impersonatorUpdaterResourceIDField;
+        
+        private object createDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -7051,6 +7307,42 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("Announce");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public object ImpersonatorCreatorResourceID {
+            get {
+                return this.impersonatorCreatorResourceIDField;
+            }
+            set {
+                this.impersonatorCreatorResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorCreatorResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public object ImpersonatorUpdaterResourceID {
+            get {
+                return this.impersonatorUpdaterResourceIDField;
+            }
+            set {
+                this.impersonatorUpdaterResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorUpdaterResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public object CreateDateTime {
+            get {
+                return this.createDateTimeField;
+            }
+            set {
+                this.createDateTimeField = value;
+                this.RaisePropertyChanged("CreateDateTime");
+            }
+        }
     }
     
     /// <remarks/>
@@ -7058,7 +7350,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaskNote : Entity {
         
         private object creatorResourceIDField;
@@ -7074,6 +7366,12 @@ namespace AutotaskCLI.Autotask {
         private object taskIDField;
         
         private object titleField;
+        
+        private object impersonatorCreatorResourceIDField;
+        
+        private object impersonatorUpdaterResourceIDField;
+        
+        private object createDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -7158,6 +7456,42 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("Title");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public object ImpersonatorCreatorResourceID {
+            get {
+                return this.impersonatorCreatorResourceIDField;
+            }
+            set {
+                this.impersonatorCreatorResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorCreatorResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public object ImpersonatorUpdaterResourceID {
+            get {
+                return this.impersonatorUpdaterResourceIDField;
+            }
+            set {
+                this.impersonatorUpdaterResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorUpdaterResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public object CreateDateTime {
+            get {
+                return this.createDateTimeField;
+            }
+            set {
+                this.createDateTimeField = value;
+                this.RaisePropertyChanged("CreateDateTime");
+            }
+        }
     }
     
     /// <remarks/>
@@ -7165,7 +7499,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ExpenseItem : Entity {
         
         private object expenseReportIDField;
@@ -7552,7 +7886,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ExpenseReport : Entity {
         
         private object nameField;
@@ -7813,7 +8147,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ClientPortalUser : Entity {
         
         private object securityLevelField;
@@ -7934,7 +8268,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class BillingItem : Entity {
         
         private object accountManagerWhenApprovedIDField;
@@ -7956,8 +8290,6 @@ namespace AutotaskCLI.Autotask {
         private object ourCostField;
         
         private object itemDateField;
-        
-        private object approvedTimeField;
         
         private object invoiceIDField;
         
@@ -8149,18 +8481,6 @@ namespace AutotaskCLI.Autotask {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public object ApprovedTime {
-            get {
-                return this.approvedTimeField;
-            }
-            set {
-                this.approvedTimeField = value;
-                this.RaisePropertyChanged("ApprovedTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public object InvoiceID {
             get {
                 return this.invoiceIDField;
@@ -8172,7 +8492,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public object ItemApproverID {
             get {
                 return this.itemApproverIDField;
@@ -8184,7 +8504,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public object AccountID {
             get {
                 return this.accountIDField;
@@ -8196,7 +8516,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public object TicketID {
             get {
                 return this.ticketIDField;
@@ -8208,7 +8528,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public object TaskID {
             get {
                 return this.taskIDField;
@@ -8220,7 +8540,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public object ProjectID {
             get {
                 return this.projectIDField;
@@ -8232,7 +8552,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public object AllocationCodeID {
             get {
                 return this.allocationCodeIDField;
@@ -8244,7 +8564,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public object RoleID {
             get {
                 return this.roleIDField;
@@ -8256,7 +8576,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public object TimeEntryID {
             get {
                 return this.timeEntryIDField;
@@ -8268,7 +8588,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public object ContractID {
             get {
                 return this.contractIDField;
@@ -8280,7 +8600,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public object WebServiceDate {
             get {
                 return this.webServiceDateField;
@@ -8292,7 +8612,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public object NonBillable {
             get {
                 return this.nonBillableField;
@@ -8304,7 +8624,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public object TaxDollars {
             get {
                 return this.taxDollarsField;
@@ -8316,7 +8636,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public object PurchaseOrderNumber {
             get {
                 return this.purchaseOrderNumberField;
@@ -8328,7 +8648,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public object ExtendedPrice {
             get {
                 return this.extendedPriceField;
@@ -8340,7 +8660,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public object ExpenseItemID {
             get {
                 return this.expenseItemIDField;
@@ -8352,7 +8672,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public object ContractCostID {
             get {
                 return this.contractCostIDField;
@@ -8364,7 +8684,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public object ProjectCostID {
             get {
                 return this.projectCostIDField;
@@ -8376,7 +8696,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public object TicketCostID {
             get {
                 return this.ticketCostIDField;
@@ -8388,7 +8708,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public object LineItemID {
             get {
                 return this.lineItemIDField;
@@ -8400,7 +8720,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public object MilestoneID {
             get {
                 return this.milestoneIDField;
@@ -8412,7 +8732,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public object ServiceID {
             get {
                 return this.serviceIDField;
@@ -8424,7 +8744,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public object ServiceBundleID {
             get {
                 return this.serviceBundleIDField;
@@ -8436,7 +8756,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public object VendorID {
             get {
                 return this.vendorIDField;
@@ -8448,7 +8768,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public object LineItemFullDescription {
             get {
                 return this.lineItemFullDescriptionField;
@@ -8460,7 +8780,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
         public object LineItemGroupDescription {
             get {
                 return this.lineItemGroupDescriptionField;
@@ -8472,7 +8792,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
         public object InstalledProductID {
             get {
                 return this.installedProductIDField;
@@ -8484,7 +8804,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public object InternalCurrencyExtendedPrice {
             get {
                 return this.internalCurrencyExtendedPriceField;
@@ -8496,7 +8816,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public object InternalCurrencyRate {
             get {
                 return this.internalCurrencyRateField;
@@ -8508,7 +8828,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
         public object InternalCurrencyTaxDollars {
             get {
                 return this.internalCurrencyTaxDollarsField;
@@ -8520,7 +8840,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
         public object InternalCurrencyTotalAmount {
             get {
                 return this.internalCurrencyTotalAmountField;
@@ -8532,7 +8852,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
         public object BusinessDivisionSubdivisionID {
             get {
                 return this.businessDivisionSubdivisionIDField;
@@ -8544,7 +8864,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public object PostedOnTime {
             get {
                 return this.postedOnTimeField;
@@ -8556,7 +8876,7 @@ namespace AutotaskCLI.Autotask {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
         public object PostedDate {
             get {
                 return this.postedDateField;
@@ -8573,7 +8893,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Resource : Entity {
         
         private object activeField;
@@ -9072,7 +9392,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class SubscriptionPeriod : Entity {
         
         private object subscriptionIDField;
@@ -9165,7 +9485,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Subscription : Entity {
         
         private object subscriptionNameField;
@@ -9384,7 +9704,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InstalledProductTypeUdfAssociation : Entity {
         
         private object installedProductTypeIdField;
@@ -9449,7 +9769,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InstalledProductType : Entity {
         
         private object nameField;
@@ -9486,7 +9806,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InstalledProduct : Entity {
         
         private object createDateField;
@@ -9551,59 +9871,59 @@ namespace AutotaskCLI.Autotask {
         
         private object accountPhysicalLocationIDField;
         
-        private object aEMDeviceIDField;
+        private object rMMDeviceIDField;
         
-        private object aEMDeviceUIDField;
+        private object rMMDeviceUIDField;
         
-        private object aEMDeviceAuditArchitectureIDField;
+        private object rMMDeviceAuditArchitectureIDField;
         
-        private object aEMDeviceAuditDescriptionField;
+        private object rMMDeviceAuditDescriptionField;
         
-        private object aEMDeviceAuditDisplayAdaptorIDField;
+        private object rMMDeviceAuditDisplayAdaptorIDField;
         
-        private object aEMDeviceAuditDomainIDField;
+        private object rMMDeviceAuditDomainIDField;
         
-        private object aEMDeviceAuditExternalIPAddressField;
+        private object rMMDeviceAuditExternalIPAddressField;
         
-        private object aEMDeviceAuditHostnameField;
+        private object rMMDeviceAuditHostnameField;
         
-        private object aEMDeviceAuditIPAddressField;
+        private object rMMDeviceAuditIPAddressField;
         
-        private object aEMDeviceAuditMacAddressField;
+        private object rMMDeviceAuditMacAddressField;
         
-        private object aEMDeviceAuditManufacturerIDField;
+        private object rMMDeviceAuditManufacturerIDField;
         
-        private object aEMDeviceAuditMemoryBytesField;
+        private object rMMDeviceAuditMemoryBytesField;
         
-        private object aEMDeviceAuditModelIDField;
+        private object rMMDeviceAuditModelIDField;
         
-        private object aEMDeviceAuditMotherboardIDField;
+        private object rMMDeviceAuditMotherboardIDField;
         
-        private object aEMDeviceAuditOperatingSystemField;
+        private object rMMDeviceAuditOperatingSystemField;
         
-        private object aEMDeviceAuditProcessorIDField;
+        private object rMMDeviceAuditProcessorIDField;
         
-        private object aEMDeviceAuditServicePackIDField;
+        private object rMMDeviceAuditServicePackIDField;
         
-        private object aEMDeviceAuditStorageBytesField;
+        private object rMMDeviceAuditStorageBytesField;
         
-        private object aEMDeviceAuditDeviceTypeIDField;
+        private object rMMDeviceAuditDeviceTypeIDField;
         
-        private object aEMDeviceAuditSNMPLocationField;
+        private object rMMDeviceAuditSNMPLocationField;
         
-        private object aEMDeviceAuditSNMPNameField;
+        private object rMMDeviceAuditSNMPNameField;
         
-        private object aEMDeviceAuditSNMPContactField;
+        private object rMMDeviceAuditSNMPContactField;
         
-        private object aEMDeviceAuditMobileNetworkOperatorIDField;
+        private object rMMDeviceAuditMobileNetworkOperatorIDField;
         
-        private object aEMDeviceAuditMobileNumberField;
+        private object rMMDeviceAuditMobileNumberField;
         
-        private object aEMDeviceAuditMissingPatchCountField;
+        private object rMMDeviceAuditMissingPatchCountField;
         
-        private object aEMOpenAlertCountField;
+        private object rMMOpenAlertCountField;
         
-        private object aEMDeviceAuditLastUserField;
+        private object rMMDeviceAuditLastUserField;
         
         private object dattoSerialNumberField;
         
@@ -9645,13 +9965,17 @@ namespace AutotaskCLI.Autotask {
         
         private object dattoLastCheckInDateTimeField;
         
-        private object aEMDeviceAuditAntivirusStatusIDField;
+        private object rMMDeviceAuditAntivirusStatusIDField;
         
-        private object aEMDeviceAuditBackupStatusIDField;
+        private object rMMDeviceAuditBackupStatusIDField;
         
-        private object aEMDeviceAuditPatchStatusIDField;
+        private object rMMDeviceAuditPatchStatusIDField;
         
-        private object aEMDeviceAuditSoftwareStatusIDField;
+        private object rMMDeviceAuditSoftwareStatusIDField;
+        
+        private object lastActivityPersonIDField;
+        
+        private object lastActivityPersonTypeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -10027,325 +10351,325 @@ namespace AutotaskCLI.Autotask {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=31)]
-        public object AEMDeviceID {
+        public object RMMDeviceID {
             get {
-                return this.aEMDeviceIDField;
+                return this.rMMDeviceIDField;
             }
             set {
-                this.aEMDeviceIDField = value;
-                this.RaisePropertyChanged("AEMDeviceID");
+                this.rMMDeviceIDField = value;
+                this.RaisePropertyChanged("RMMDeviceID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=32)]
-        public object AEMDeviceUID {
+        public object RMMDeviceUID {
             get {
-                return this.aEMDeviceUIDField;
+                return this.rMMDeviceUIDField;
             }
             set {
-                this.aEMDeviceUIDField = value;
-                this.RaisePropertyChanged("AEMDeviceUID");
+                this.rMMDeviceUIDField = value;
+                this.RaisePropertyChanged("RMMDeviceUID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=33)]
-        public object AEMDeviceAuditArchitectureID {
+        public object RMMDeviceAuditArchitectureID {
             get {
-                return this.aEMDeviceAuditArchitectureIDField;
+                return this.rMMDeviceAuditArchitectureIDField;
             }
             set {
-                this.aEMDeviceAuditArchitectureIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditArchitectureID");
+                this.rMMDeviceAuditArchitectureIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditArchitectureID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=34)]
-        public object AEMDeviceAuditDescription {
+        public object RMMDeviceAuditDescription {
             get {
-                return this.aEMDeviceAuditDescriptionField;
+                return this.rMMDeviceAuditDescriptionField;
             }
             set {
-                this.aEMDeviceAuditDescriptionField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditDescription");
+                this.rMMDeviceAuditDescriptionField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditDescription");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=35)]
-        public object AEMDeviceAuditDisplayAdaptorID {
+        public object RMMDeviceAuditDisplayAdaptorID {
             get {
-                return this.aEMDeviceAuditDisplayAdaptorIDField;
+                return this.rMMDeviceAuditDisplayAdaptorIDField;
             }
             set {
-                this.aEMDeviceAuditDisplayAdaptorIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditDisplayAdaptorID");
+                this.rMMDeviceAuditDisplayAdaptorIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditDisplayAdaptorID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=36)]
-        public object AEMDeviceAuditDomainID {
+        public object RMMDeviceAuditDomainID {
             get {
-                return this.aEMDeviceAuditDomainIDField;
+                return this.rMMDeviceAuditDomainIDField;
             }
             set {
-                this.aEMDeviceAuditDomainIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditDomainID");
+                this.rMMDeviceAuditDomainIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditDomainID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=37)]
-        public object AEMDeviceAuditExternalIPAddress {
+        public object RMMDeviceAuditExternalIPAddress {
             get {
-                return this.aEMDeviceAuditExternalIPAddressField;
+                return this.rMMDeviceAuditExternalIPAddressField;
             }
             set {
-                this.aEMDeviceAuditExternalIPAddressField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditExternalIPAddress");
+                this.rMMDeviceAuditExternalIPAddressField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditExternalIPAddress");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=38)]
-        public object AEMDeviceAuditHostname {
+        public object RMMDeviceAuditHostname {
             get {
-                return this.aEMDeviceAuditHostnameField;
+                return this.rMMDeviceAuditHostnameField;
             }
             set {
-                this.aEMDeviceAuditHostnameField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditHostname");
+                this.rMMDeviceAuditHostnameField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditHostname");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=39)]
-        public object AEMDeviceAuditIPAddress {
+        public object RMMDeviceAuditIPAddress {
             get {
-                return this.aEMDeviceAuditIPAddressField;
+                return this.rMMDeviceAuditIPAddressField;
             }
             set {
-                this.aEMDeviceAuditIPAddressField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditIPAddress");
+                this.rMMDeviceAuditIPAddressField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditIPAddress");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=40)]
-        public object AEMDeviceAuditMacAddress {
+        public object RMMDeviceAuditMacAddress {
             get {
-                return this.aEMDeviceAuditMacAddressField;
+                return this.rMMDeviceAuditMacAddressField;
             }
             set {
-                this.aEMDeviceAuditMacAddressField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditMacAddress");
+                this.rMMDeviceAuditMacAddressField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditMacAddress");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=41)]
-        public object AEMDeviceAuditManufacturerID {
+        public object RMMDeviceAuditManufacturerID {
             get {
-                return this.aEMDeviceAuditManufacturerIDField;
+                return this.rMMDeviceAuditManufacturerIDField;
             }
             set {
-                this.aEMDeviceAuditManufacturerIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditManufacturerID");
+                this.rMMDeviceAuditManufacturerIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditManufacturerID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=42)]
-        public object AEMDeviceAuditMemoryBytes {
+        public object RMMDeviceAuditMemoryBytes {
             get {
-                return this.aEMDeviceAuditMemoryBytesField;
+                return this.rMMDeviceAuditMemoryBytesField;
             }
             set {
-                this.aEMDeviceAuditMemoryBytesField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditMemoryBytes");
+                this.rMMDeviceAuditMemoryBytesField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditMemoryBytes");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=43)]
-        public object AEMDeviceAuditModelID {
+        public object RMMDeviceAuditModelID {
             get {
-                return this.aEMDeviceAuditModelIDField;
+                return this.rMMDeviceAuditModelIDField;
             }
             set {
-                this.aEMDeviceAuditModelIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditModelID");
+                this.rMMDeviceAuditModelIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditModelID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=44)]
-        public object AEMDeviceAuditMotherboardID {
+        public object RMMDeviceAuditMotherboardID {
             get {
-                return this.aEMDeviceAuditMotherboardIDField;
+                return this.rMMDeviceAuditMotherboardIDField;
             }
             set {
-                this.aEMDeviceAuditMotherboardIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditMotherboardID");
+                this.rMMDeviceAuditMotherboardIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditMotherboardID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=45)]
-        public object AEMDeviceAuditOperatingSystem {
+        public object RMMDeviceAuditOperatingSystem {
             get {
-                return this.aEMDeviceAuditOperatingSystemField;
+                return this.rMMDeviceAuditOperatingSystemField;
             }
             set {
-                this.aEMDeviceAuditOperatingSystemField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditOperatingSystem");
+                this.rMMDeviceAuditOperatingSystemField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditOperatingSystem");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=46)]
-        public object AEMDeviceAuditProcessorID {
+        public object RMMDeviceAuditProcessorID {
             get {
-                return this.aEMDeviceAuditProcessorIDField;
+                return this.rMMDeviceAuditProcessorIDField;
             }
             set {
-                this.aEMDeviceAuditProcessorIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditProcessorID");
+                this.rMMDeviceAuditProcessorIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditProcessorID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=47)]
-        public object AEMDeviceAuditServicePackID {
+        public object RMMDeviceAuditServicePackID {
             get {
-                return this.aEMDeviceAuditServicePackIDField;
+                return this.rMMDeviceAuditServicePackIDField;
             }
             set {
-                this.aEMDeviceAuditServicePackIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditServicePackID");
+                this.rMMDeviceAuditServicePackIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditServicePackID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=48)]
-        public object AEMDeviceAuditStorageBytes {
+        public object RMMDeviceAuditStorageBytes {
             get {
-                return this.aEMDeviceAuditStorageBytesField;
+                return this.rMMDeviceAuditStorageBytesField;
             }
             set {
-                this.aEMDeviceAuditStorageBytesField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditStorageBytes");
+                this.rMMDeviceAuditStorageBytesField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditStorageBytes");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=49)]
-        public object AEMDeviceAuditDeviceTypeID {
+        public object RMMDeviceAuditDeviceTypeID {
             get {
-                return this.aEMDeviceAuditDeviceTypeIDField;
+                return this.rMMDeviceAuditDeviceTypeIDField;
             }
             set {
-                this.aEMDeviceAuditDeviceTypeIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditDeviceTypeID");
+                this.rMMDeviceAuditDeviceTypeIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditDeviceTypeID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=50)]
-        public object AEMDeviceAuditSNMPLocation {
+        public object RMMDeviceAuditSNMPLocation {
             get {
-                return this.aEMDeviceAuditSNMPLocationField;
+                return this.rMMDeviceAuditSNMPLocationField;
             }
             set {
-                this.aEMDeviceAuditSNMPLocationField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditSNMPLocation");
+                this.rMMDeviceAuditSNMPLocationField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditSNMPLocation");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=51)]
-        public object AEMDeviceAuditSNMPName {
+        public object RMMDeviceAuditSNMPName {
             get {
-                return this.aEMDeviceAuditSNMPNameField;
+                return this.rMMDeviceAuditSNMPNameField;
             }
             set {
-                this.aEMDeviceAuditSNMPNameField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditSNMPName");
+                this.rMMDeviceAuditSNMPNameField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditSNMPName");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=52)]
-        public object AEMDeviceAuditSNMPContact {
+        public object RMMDeviceAuditSNMPContact {
             get {
-                return this.aEMDeviceAuditSNMPContactField;
+                return this.rMMDeviceAuditSNMPContactField;
             }
             set {
-                this.aEMDeviceAuditSNMPContactField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditSNMPContact");
+                this.rMMDeviceAuditSNMPContactField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditSNMPContact");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=53)]
-        public object AEMDeviceAuditMobileNetworkOperatorID {
+        public object RMMDeviceAuditMobileNetworkOperatorID {
             get {
-                return this.aEMDeviceAuditMobileNetworkOperatorIDField;
+                return this.rMMDeviceAuditMobileNetworkOperatorIDField;
             }
             set {
-                this.aEMDeviceAuditMobileNetworkOperatorIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditMobileNetworkOperatorID");
+                this.rMMDeviceAuditMobileNetworkOperatorIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditMobileNetworkOperatorID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=54)]
-        public object AEMDeviceAuditMobileNumber {
+        public object RMMDeviceAuditMobileNumber {
             get {
-                return this.aEMDeviceAuditMobileNumberField;
+                return this.rMMDeviceAuditMobileNumberField;
             }
             set {
-                this.aEMDeviceAuditMobileNumberField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditMobileNumber");
+                this.rMMDeviceAuditMobileNumberField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditMobileNumber");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=55)]
-        public object AEMDeviceAuditMissingPatchCount {
+        public object RMMDeviceAuditMissingPatchCount {
             get {
-                return this.aEMDeviceAuditMissingPatchCountField;
+                return this.rMMDeviceAuditMissingPatchCountField;
             }
             set {
-                this.aEMDeviceAuditMissingPatchCountField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditMissingPatchCount");
+                this.rMMDeviceAuditMissingPatchCountField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditMissingPatchCount");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=56)]
-        public object AEMOpenAlertCount {
+        public object RMMOpenAlertCount {
             get {
-                return this.aEMOpenAlertCountField;
+                return this.rMMOpenAlertCountField;
             }
             set {
-                this.aEMOpenAlertCountField = value;
-                this.RaisePropertyChanged("AEMOpenAlertCount");
+                this.rMMOpenAlertCountField = value;
+                this.RaisePropertyChanged("RMMOpenAlertCount");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=57)]
-        public object AEMDeviceAuditLastUser {
+        public object RMMDeviceAuditLastUser {
             get {
-                return this.aEMDeviceAuditLastUserField;
+                return this.rMMDeviceAuditLastUserField;
             }
             set {
-                this.aEMDeviceAuditLastUserField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditLastUser");
+                this.rMMDeviceAuditLastUserField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditLastUser");
             }
         }
         
@@ -10591,49 +10915,73 @@ namespace AutotaskCLI.Autotask {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=78)]
-        public object AEMDeviceAuditAntivirusStatusID {
+        public object RMMDeviceAuditAntivirusStatusID {
             get {
-                return this.aEMDeviceAuditAntivirusStatusIDField;
+                return this.rMMDeviceAuditAntivirusStatusIDField;
             }
             set {
-                this.aEMDeviceAuditAntivirusStatusIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditAntivirusStatusID");
+                this.rMMDeviceAuditAntivirusStatusIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditAntivirusStatusID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=79)]
-        public object AEMDeviceAuditBackupStatusID {
+        public object RMMDeviceAuditBackupStatusID {
             get {
-                return this.aEMDeviceAuditBackupStatusIDField;
+                return this.rMMDeviceAuditBackupStatusIDField;
             }
             set {
-                this.aEMDeviceAuditBackupStatusIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditBackupStatusID");
+                this.rMMDeviceAuditBackupStatusIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditBackupStatusID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=80)]
-        public object AEMDeviceAuditPatchStatusID {
+        public object RMMDeviceAuditPatchStatusID {
             get {
-                return this.aEMDeviceAuditPatchStatusIDField;
+                return this.rMMDeviceAuditPatchStatusIDField;
             }
             set {
-                this.aEMDeviceAuditPatchStatusIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditPatchStatusID");
+                this.rMMDeviceAuditPatchStatusIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditPatchStatusID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=81)]
-        public object AEMDeviceAuditSoftwareStatusID {
+        public object RMMDeviceAuditSoftwareStatusID {
             get {
-                return this.aEMDeviceAuditSoftwareStatusIDField;
+                return this.rMMDeviceAuditSoftwareStatusIDField;
             }
             set {
-                this.aEMDeviceAuditSoftwareStatusIDField = value;
-                this.RaisePropertyChanged("AEMDeviceAuditSoftwareStatusID");
+                this.rMMDeviceAuditSoftwareStatusIDField = value;
+                this.RaisePropertyChanged("RMMDeviceAuditSoftwareStatusID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=82)]
+        public object LastActivityPersonID {
+            get {
+                return this.lastActivityPersonIDField;
+            }
+            set {
+                this.lastActivityPersonIDField = value;
+                this.RaisePropertyChanged("LastActivityPersonID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=83)]
+        public object LastActivityPersonType {
+            get {
+                return this.lastActivityPersonTypeField;
+            }
+            set {
+                this.lastActivityPersonTypeField = value;
+                this.RaisePropertyChanged("LastActivityPersonType");
             }
         }
     }
@@ -10643,7 +10991,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractExclusionRole : Entity {
         
         private object contractIDField;
@@ -10680,7 +11028,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractExclusionAllocationCode : Entity {
         
         private object contractIDField;
@@ -10717,7 +11065,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Contract : Entity {
         
         private object accountIDField;
@@ -11146,7 +11494,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountTeam : Entity {
         
         private object accountIDField;
@@ -11183,7 +11531,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Account : Entity {
         
         private object address1Field;
@@ -11920,7 +12268,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ActionType : Entity {
         
         private object nameField;
@@ -11985,7 +12333,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountToDo : Entity {
         
         private object accountIDField;
@@ -12190,7 +12538,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountNote : Entity {
         
         private object accountIDField;
@@ -12214,6 +12562,12 @@ namespace AutotaskCLI.Autotask {
         private object noteField;
         
         private object lastModifiedDateField;
+        
+        private object impersonatorCreatorResourceIDField;
+        
+        private object impersonatorUpdaterResourceIDField;
+        
+        private object createDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -12346,6 +12700,42 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("LastModifiedDate");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public object ImpersonatorCreatorResourceID {
+            get {
+                return this.impersonatorCreatorResourceIDField;
+            }
+            set {
+                this.impersonatorCreatorResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorCreatorResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public object ImpersonatorUpdaterResourceID {
+            get {
+                return this.impersonatorUpdaterResourceIDField;
+            }
+            set {
+                this.impersonatorUpdaterResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorUpdaterResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public object CreateDateTime {
+            get {
+                return this.createDateTimeField;
+            }
+            set {
+                this.createDateTimeField = value;
+                this.RaisePropertyChanged("CreateDateTime");
+            }
+        }
     }
     
     /// <remarks/>
@@ -12353,7 +12743,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TicketNote : Entity {
         
         private object creatorResourceIDField;
@@ -12369,6 +12759,12 @@ namespace AutotaskCLI.Autotask {
         private object ticketIDField;
         
         private object titleField;
+        
+        private object impersonatorCreatorResourceIDField;
+        
+        private object impersonatorUpdaterResourceIDField;
+        
+        private object createDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -12453,6 +12849,42 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("Title");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public object ImpersonatorCreatorResourceID {
+            get {
+                return this.impersonatorCreatorResourceIDField;
+            }
+            set {
+                this.impersonatorCreatorResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorCreatorResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public object ImpersonatorUpdaterResourceID {
+            get {
+                return this.impersonatorUpdaterResourceIDField;
+            }
+            set {
+                this.impersonatorUpdaterResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorUpdaterResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public object CreateDateTime {
+            get {
+                return this.createDateTimeField;
+            }
+            set {
+                this.createDateTimeField = value;
+                this.RaisePropertyChanged("CreateDateTime");
+            }
+        }
     }
     
     /// <remarks/>
@@ -12460,7 +12892,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Contact : Entity {
         
         private object activeField;
@@ -13043,7 +13475,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Ticket : Entity {
         
         private object accountIDField;
@@ -13171,6 +13603,12 @@ namespace AutotaskCLI.Autotask {
         private object lastActivityResourceIDField;
         
         private object serviceLevelAgreementPausedNextEventHoursField;
+        
+        private object currentServiceThermometerRatingField;
+        
+        private object previousServiceThermometerRatingField;
+        
+        private object serviceThermometerTemperatureField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -13927,6 +14365,42 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("ServiceLevelAgreementPausedNextEventHours");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=63)]
+        public object CurrentServiceThermometerRating {
+            get {
+                return this.currentServiceThermometerRatingField;
+            }
+            set {
+                this.currentServiceThermometerRatingField = value;
+                this.RaisePropertyChanged("CurrentServiceThermometerRating");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=64)]
+        public object PreviousServiceThermometerRating {
+            get {
+                return this.previousServiceThermometerRatingField;
+            }
+            set {
+                this.previousServiceThermometerRatingField = value;
+                this.RaisePropertyChanged("PreviousServiceThermometerRating");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=65)]
+        public object ServiceThermometerTemperature {
+            get {
+                return this.serviceThermometerTemperatureField;
+            }
+            set {
+                this.serviceThermometerTemperatureField = value;
+                this.RaisePropertyChanged("ServiceThermometerTemperature");
+            }
+        }
     }
     
     /// <remarks/>
@@ -13934,7 +14408,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AllocationCode : Entity {
         
         private object generalLedgerCodeField;
@@ -14153,7 +14627,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Invoice : Entity {
         
         private object accountIDField;
@@ -14470,7 +14944,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Role : Entity {
         
         private object nameField;
@@ -14605,7 +15079,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Phase : Entity {
         
         private object createDateField;
@@ -14796,7 +15270,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Project : Entity {
         
         private object projectNameField;
@@ -15379,7 +15853,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ProductVendor : Entity {
         
         private object productIDField;
@@ -15472,7 +15946,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Product : Entity {
         
         private object nameField;
@@ -15775,7 +16249,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Task : Entity {
         
         private object allocationCodeIDField;
@@ -16232,7 +16706,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTicketResource : Entity {
         
         private object serviceCallTicketIDField;
@@ -16269,7 +16743,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTaskResource : Entity {
         
         private object serviceCallTaskIDField;
@@ -16306,7 +16780,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCall : Entity {
         
         private object accountIDField;
@@ -16511,7 +16985,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTicket : Entity {
         
         private object serviceCallIDField;
@@ -16548,7 +17022,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceCallTask : Entity {
         
         private object serviceCallIDField;
@@ -16585,7 +17059,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Appointment : Entity {
         
         private object resourceIDField;
@@ -16706,7 +17180,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TimeEntry : Entity {
         
         private object taskIDField;
@@ -16762,6 +17236,10 @@ namespace AutotaskCLI.Autotask {
         private object contractServiceIDField;
         
         private object contractServiceBundleIDField;
+        
+        private object impersonatorCreatorResourceIDField;
+        
+        private object impersonatorUpdaterResourceIDField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -17086,6 +17564,30 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("ContractServiceBundleID");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public object ImpersonatorCreatorResourceID {
+            get {
+                return this.impersonatorCreatorResourceIDField;
+            }
+            set {
+                this.impersonatorCreatorResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorCreatorResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public object ImpersonatorUpdaterResourceID {
+            get {
+                return this.impersonatorUpdaterResourceIDField;
+            }
+            set {
+                this.impersonatorUpdaterResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorUpdaterResourceID");
+            }
+        }
     }
     
     /// <remarks/>
@@ -17093,7 +17595,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractService : Entity {
         
         private object contractIDField;
@@ -17242,7 +17744,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceBundle : Entity {
         
         private object contractIDField;
@@ -17377,7 +17879,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractNote : Entity {
         
         private object contractIDField;
@@ -17389,6 +17891,12 @@ namespace AutotaskCLI.Autotask {
         private object titleField;
         
         private object descriptionField;
+        
+        private object impersonatorCreatorResourceIDField;
+        
+        private object impersonatorUpdaterResourceIDField;
+        
+        private object createDateTimeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -17449,6 +17957,42 @@ namespace AutotaskCLI.Autotask {
                 this.RaisePropertyChanged("Description");
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public object ImpersonatorCreatorResourceID {
+            get {
+                return this.impersonatorCreatorResourceIDField;
+            }
+            set {
+                this.impersonatorCreatorResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorCreatorResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public object ImpersonatorUpdaterResourceID {
+            get {
+                return this.impersonatorUpdaterResourceIDField;
+            }
+            set {
+                this.impersonatorUpdaterResourceIDField = value;
+                this.RaisePropertyChanged("ImpersonatorUpdaterResourceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public object CreateDateTime {
+            get {
+                return this.createDateTimeField;
+            }
+            set {
+                this.createDateTimeField = value;
+                this.RaisePropertyChanged("CreateDateTime");
+            }
+        }
     }
     
     /// <remarks/>
@@ -17456,7 +18000,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractMilestone : Entity {
         
         private object createDateField;
@@ -17633,7 +18177,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractRoleCost : Entity {
         
         private object contractIDField;
@@ -17698,7 +18242,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractRate : Entity {
         
         private object roleIDField;
@@ -17763,7 +18307,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractFactor : Entity {
         
         private object roleIDField;
@@ -17814,7 +18358,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractTicketPurchase : Entity {
         
         private object contractIDField;
@@ -17991,7 +18535,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractBlock : Entity {
         
         private object contractIDField;
@@ -18168,7 +18712,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractRetainer : Entity {
         
         private object contractIDField;
@@ -18373,7 +18917,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceBundleAdjustment : Entity {
         
         private object contractIDField;
@@ -18494,7 +19038,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceAdjustment : Entity {
         
         private object contractIDField;
@@ -18629,7 +19173,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceUnit : Entity {
         
         private object contractIDField;
@@ -18806,7 +19350,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ContractServiceBundleUnit : Entity {
         
         private object contractIDField;
@@ -18969,7 +19513,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Opportunity : Entity {
         
         private object accountIDField;
@@ -19734,7 +20278,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryLocation : Entity {
         
         private object locationNameField;
@@ -19799,7 +20343,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryItem : Entity {
         
         private object productIDField;
@@ -19962,7 +20506,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryItemSerialNumber : Entity {
         
         private object inventoryItemIDField;
@@ -19999,7 +20543,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class InventoryTransfer : Entity {
         
         private object productIDField;
@@ -20134,7 +20678,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseOrderReceive : Entity {
         
         private object purchaseOrderItemIDField;
@@ -20241,7 +20785,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseOrder : Entity {
         
         private object vendorIDField;
@@ -20628,7 +21172,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class PurchaseOrderItem : Entity {
         
         private object orderIDField;
@@ -20805,7 +21349,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class QuoteItem : Entity {
         
         private object averageCostField;
@@ -21206,7 +21750,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Country : Entity {
         
         private object addressFormatIDField;
@@ -21327,7 +21871,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class SalesOrder : Entity {
         
         private object accountIDField;
@@ -21686,7 +22230,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class QuoteTemplate : Entity {
         
         private object activeField;
@@ -21975,7 +22519,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Quote : Entity {
         
         private object accountIDField;
@@ -22418,7 +22962,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Skill : Entity {
         
         private object activeField;
@@ -22483,7 +23027,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ShippingType : Entity {
         
         private object nameField;
@@ -22548,7 +23092,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ServiceBundle : Entity {
         
         private object allocationCodeIDField;
@@ -22781,7 +23325,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Service : Entity {
         
         private object nameField;
@@ -23000,7 +23544,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ResourceSkill : Entity {
         
         private object resourceIDField;
@@ -23065,7 +23609,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AccountLocation : Entity {
         
         private object locationNameField;
@@ -23102,7 +23646,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaxRegion : Entity {
         
         private object nameField;
@@ -23139,7 +23683,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class TaxCategory : Entity {
         
         private object nameField;
@@ -23190,7 +23734,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Tax : Entity {
         
         private object taxRegionIDField;
@@ -23269,7 +23813,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class ClassificationIcon : Entity {
         
         private object activeField;
@@ -23348,7 +23892,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class QuoteLocation : Entity {
         
         private object address1Field;
@@ -23427,7 +23971,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class AttachmentInfo : Entity {
         
         private object parentIDField;
@@ -23604,7 +24148,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class EntityInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -23706,7 +24250,7 @@ namespace AutotaskCLI.Autotask {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public partial class Attachment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private byte[] dataField;
@@ -23750,13 +24294,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetAttachmentRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public long attachmentId;
         
         public GetAttachmentRequest() {
@@ -23771,10 +24315,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetAttachmentResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Attachment GetAttachmentResult;
         
         public GetAttachmentResponse() {
@@ -23788,13 +24332,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class CreateAttachmentRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Attachment attachment;
         
         public CreateAttachmentRequest() {
@@ -23809,10 +24353,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class CreateAttachmentResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public long CreateAttachmentResult;
         
         public CreateAttachmentResponse() {
@@ -23826,13 +24370,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachment", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class DeleteAttachmentRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public long attachmentId;
         
         public DeleteAttachmentRequest() {
@@ -23847,10 +24391,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteAttachmentResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class DeleteAttachmentResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string DeleteAttachmentResult;
         
         public DeleteAttachmentResponse() {
@@ -23864,10 +24408,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetEntityInfo {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
         public GetEntityInfo() {
@@ -23881,10 +24425,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEntityInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetEntityInfo1 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.EntityInfo[] GetEntityInfoResult;
         
         public GetEntityInfo1() {
@@ -23898,13 +24442,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetFieldInfoRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string psObjectType;
         
         public GetFieldInfoRequest() {
@@ -23919,10 +24463,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetFieldInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetFieldInfoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Field[] GetFieldInfoResult;
         
         public GetFieldInfoResponse() {
@@ -23936,13 +24480,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getUDFInfoRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string psTable;
         
         public getUDFInfoRequest() {
@@ -23957,10 +24501,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUDFInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getUDFInfoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Field[] getUDFInfoResult;
         
         public getUDFInfoResponse() {
@@ -23974,13 +24518,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="query", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="query", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class queryRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string sXML;
         
         public queryRequest() {
@@ -23995,10 +24539,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="queryResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="queryResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class queryResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.ATWSResponse queryResult;
         
         public queryResponse() {
@@ -24012,13 +24556,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="create", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="create", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class createRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Entity[] Entities;
         
         public createRequest() {
@@ -24033,10 +24577,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="createResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="createResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class createResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.ATWSResponse createResult;
         
         public createResponse() {
@@ -24050,13 +24594,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="update", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="update", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class updateRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Entity[] Entities;
         
         public updateRequest() {
@@ -24071,10 +24615,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="updateResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="updateResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class updateResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.ATWSResponse updateResult;
         
         public updateResponse() {
@@ -24088,13 +24632,13 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="delete", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="delete", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class deleteRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.Entity[] Entities;
         
         public deleteRequest() {
@@ -24109,10 +24653,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="deleteResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class deleteResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.ATWSResponse deleteResult;
         
         public deleteResponse() {
@@ -24126,10 +24670,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfo", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfo", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getThresholdAndUsageInfoRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
         public getThresholdAndUsageInfoRequest() {
@@ -24143,10 +24687,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getThresholdAndUsageInfoResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class getThresholdAndUsageInfoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public AutotaskCLI.Autotask.ATWSResponse getThresholdAndUsageInfoResult;
         
         public getThresholdAndUsageInfoResponse() {
@@ -24160,10 +24704,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersion", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersion", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetWsdlVersionRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
         public GetWsdlVersionRequest() {
@@ -24177,10 +24721,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersionResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWsdlVersionResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetWsdlVersionResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string GetWsdlVersionResult;
         
         public GetWsdlVersionResponse() {
@@ -24194,16 +24738,16 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkup", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkup", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetInvoiceMarkupRequest {
         
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_5/")]
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
         public AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public int InvoiceId;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=1)]
         public string Format;
         
         public GetInvoiceMarkupRequest() {
@@ -24219,10 +24763,10 @@ namespace AutotaskCLI.Autotask {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkupResponse", WrapperNamespace="http://autotask.net/ATWS/v1_5/", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceMarkupResponse", WrapperNamespace="http://autotask.net/ATWS/v1_6/", IsWrapped=true)]
     public partial class GetInvoiceMarkupResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_5/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://autotask.net/ATWS/v1_6/", Order=0)]
         public string GetInvoiceMarkupResult;
         
         public GetInvoiceMarkupResponse() {
@@ -24239,7 +24783,357 @@ namespace AutotaskCLI.Autotask {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAttachmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAttachmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.Attachment Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.Attachment)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateAttachmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateAttachmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public long Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((long)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DeleteAttachmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DeleteAttachmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getEntityInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getEntityInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.EntityInfo[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.EntityInfo[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetFieldInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetFieldInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.Field[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.Field[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getUDFInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getUDFInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.Field[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.Field[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class queryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public queryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.ATWSResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class createCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public createCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.ATWSResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class updateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public updateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.ATWSResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class deleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public deleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.ATWSResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getZoneInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getZoneInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.ATWSZoneInfo Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.ATWSZoneInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getThresholdAndUsageInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getThresholdAndUsageInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public AutotaskCLI.Autotask.ATWSResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetWsdlVersionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetWsdlVersionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetInvoiceMarkupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetInvoiceMarkupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ATWSSoapClient : System.ServiceModel.ClientBase<AutotaskCLI.Autotask.ATWSSoap>, AutotaskCLI.Autotask.ATWSSoap {
+        
+        private BeginOperationDelegate onBeginGetAttachmentDelegate;
+        
+        private EndOperationDelegate onEndGetAttachmentDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAttachmentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateAttachmentDelegate;
+        
+        private EndOperationDelegate onEndCreateAttachmentDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateAttachmentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDeleteAttachmentDelegate;
+        
+        private EndOperationDelegate onEndDeleteAttachmentDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteAttachmentCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetEntityInfoDelegate;
+        
+        private EndOperationDelegate onEndgetEntityInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetEntityInfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetFieldInfoDelegate;
+        
+        private EndOperationDelegate onEndGetFieldInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetFieldInfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetUDFInfoDelegate;
+        
+        private EndOperationDelegate onEndgetUDFInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetUDFInfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginqueryDelegate;
+        
+        private EndOperationDelegate onEndqueryDelegate;
+        
+        private System.Threading.SendOrPostCallback onqueryCompletedDelegate;
+        
+        private BeginOperationDelegate onBegincreateDelegate;
+        
+        private EndOperationDelegate onEndcreateDelegate;
+        
+        private System.Threading.SendOrPostCallback oncreateCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginupdateDelegate;
+        
+        private EndOperationDelegate onEndupdateDelegate;
+        
+        private System.Threading.SendOrPostCallback onupdateCompletedDelegate;
+        
+        private BeginOperationDelegate onBegindeleteDelegate;
+        
+        private EndOperationDelegate onEnddeleteDelegate;
+        
+        private System.Threading.SendOrPostCallback ondeleteCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetZoneInfoDelegate;
+        
+        private EndOperationDelegate onEndgetZoneInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetZoneInfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetThresholdAndUsageInfoDelegate;
+        
+        private EndOperationDelegate onEndgetThresholdAndUsageInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetThresholdAndUsageInfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetWsdlVersionDelegate;
+        
+        private EndOperationDelegate onEndGetWsdlVersionDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetWsdlVersionCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetInvoiceMarkupDelegate;
+        
+        private EndOperationDelegate onEndGetInvoiceMarkupDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetInvoiceMarkupCompletedDelegate;
         
         public ATWSSoapClient() {
         }
@@ -24260,6 +25154,34 @@ namespace AutotaskCLI.Autotask {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<GetAttachmentCompletedEventArgs> GetAttachmentCompleted;
+        
+        public event System.EventHandler<CreateAttachmentCompletedEventArgs> CreateAttachmentCompleted;
+        
+        public event System.EventHandler<DeleteAttachmentCompletedEventArgs> DeleteAttachmentCompleted;
+        
+        public event System.EventHandler<getEntityInfoCompletedEventArgs> getEntityInfoCompleted;
+        
+        public event System.EventHandler<GetFieldInfoCompletedEventArgs> GetFieldInfoCompleted;
+        
+        public event System.EventHandler<getUDFInfoCompletedEventArgs> getUDFInfoCompleted;
+        
+        public event System.EventHandler<queryCompletedEventArgs> queryCompleted;
+        
+        public event System.EventHandler<createCompletedEventArgs> createCompleted;
+        
+        public event System.EventHandler<updateCompletedEventArgs> updateCompleted;
+        
+        public event System.EventHandler<deleteCompletedEventArgs> deleteCompleted;
+        
+        public event System.EventHandler<getZoneInfoCompletedEventArgs> getZoneInfoCompleted;
+        
+        public event System.EventHandler<getThresholdAndUsageInfoCompletedEventArgs> getThresholdAndUsageInfoCompleted;
+        
+        public event System.EventHandler<GetWsdlVersionCompletedEventArgs> GetWsdlVersionCompleted;
+        
+        public event System.EventHandler<GetInvoiceMarkupCompletedEventArgs> GetInvoiceMarkupCompleted;
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AutotaskCLI.Autotask.GetAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.GetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request) {
             return base.Channel.GetAttachment(request);
@@ -24274,15 +25196,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetAttachmentResponse> AutotaskCLI.Autotask.ATWSSoap.GetAttachmentAsync(AutotaskCLI.Autotask.GetAttachmentRequest request) {
-            return base.Channel.GetAttachmentAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAttachment(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetAttachmentResponse> GetAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAttachment(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.GetAttachmentRequest inValue = new AutotaskCLI.Autotask.GetAttachmentRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.attachmentId = attachmentId;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetAttachmentAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetAttachment(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.GetAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.EndGetAttachment(System.IAsyncResult result) {
+            return base.Channel.EndGetAttachment(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.Attachment EndGetAttachment(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.GetAttachmentResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetAttachment(result);
+            return retVal.GetAttachmentResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetAttachment(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            long attachmentId = ((long)(inValues[1]));
+            return this.BeginGetAttachment(AutotaskIntegrations, attachmentId, callback, asyncState);
+        }
+        
+        private object[] OnEndGetAttachment(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.Attachment retVal = this.EndGetAttachment(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAttachmentCompleted(object state) {
+            if ((this.GetAttachmentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAttachmentCompleted(this, new GetAttachmentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
+            this.GetAttachmentAsync(AutotaskIntegrations, attachmentId, null);
+        }
+        
+        public void GetAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, object userState) {
+            if ((this.onBeginGetAttachmentDelegate == null)) {
+                this.onBeginGetAttachmentDelegate = new BeginOperationDelegate(this.OnBeginGetAttachment);
+            }
+            if ((this.onEndGetAttachmentDelegate == null)) {
+                this.onEndGetAttachmentDelegate = new EndOperationDelegate(this.OnEndGetAttachment);
+            }
+            if ((this.onGetAttachmentCompletedDelegate == null)) {
+                this.onGetAttachmentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAttachmentCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAttachmentDelegate, new object[] {
+                        AutotaskIntegrations,
+                        attachmentId}, this.onEndGetAttachmentDelegate, this.onGetAttachmentCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24299,15 +25271,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.CreateAttachmentResponse> AutotaskCLI.Autotask.ATWSSoap.CreateAttachmentAsync(AutotaskCLI.Autotask.CreateAttachmentRequest request) {
-            return base.Channel.CreateAttachmentAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginCreateAttachment(AutotaskCLI.Autotask.CreateAttachmentRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateAttachment(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.CreateAttachmentResponse> CreateAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateAttachment(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.CreateAttachmentRequest inValue = new AutotaskCLI.Autotask.CreateAttachmentRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.attachment = attachment;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).CreateAttachmentAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginCreateAttachment(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.CreateAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.EndCreateAttachment(System.IAsyncResult result) {
+            return base.Channel.EndCreateAttachment(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public long EndCreateAttachment(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.CreateAttachmentResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndCreateAttachment(result);
+            return retVal.CreateAttachmentResult;
+        }
+        
+        private System.IAsyncResult OnBeginCreateAttachment(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            AutotaskCLI.Autotask.Attachment attachment = ((AutotaskCLI.Autotask.Attachment)(inValues[1]));
+            return this.BeginCreateAttachment(AutotaskIntegrations, attachment, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateAttachment(System.IAsyncResult result) {
+            long retVal = this.EndCreateAttachment(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateAttachmentCompleted(object state) {
+            if ((this.CreateAttachmentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateAttachmentCompleted(this, new CreateAttachmentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment) {
+            this.CreateAttachmentAsync(AutotaskIntegrations, attachment, null);
+        }
+        
+        public void CreateAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment, object userState) {
+            if ((this.onBeginCreateAttachmentDelegate == null)) {
+                this.onBeginCreateAttachmentDelegate = new BeginOperationDelegate(this.OnBeginCreateAttachment);
+            }
+            if ((this.onEndCreateAttachmentDelegate == null)) {
+                this.onEndCreateAttachmentDelegate = new EndOperationDelegate(this.OnEndCreateAttachment);
+            }
+            if ((this.onCreateAttachmentCompletedDelegate == null)) {
+                this.onCreateAttachmentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateAttachmentCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateAttachmentDelegate, new object[] {
+                        AutotaskIntegrations,
+                        attachment}, this.onEndCreateAttachmentDelegate, this.onCreateAttachmentCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24324,15 +25346,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.DeleteAttachmentResponse> AutotaskCLI.Autotask.ATWSSoap.DeleteAttachmentAsync(AutotaskCLI.Autotask.DeleteAttachmentRequest request) {
-            return base.Channel.DeleteAttachmentAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginDeleteAttachment(AutotaskCLI.Autotask.DeleteAttachmentRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteAttachment(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.DeleteAttachmentResponse> DeleteAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDeleteAttachment(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.DeleteAttachmentRequest inValue = new AutotaskCLI.Autotask.DeleteAttachmentRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.attachmentId = attachmentId;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).DeleteAttachmentAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginDeleteAttachment(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.DeleteAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.EndDeleteAttachment(System.IAsyncResult result) {
+            return base.Channel.EndDeleteAttachment(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndDeleteAttachment(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.DeleteAttachmentResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndDeleteAttachment(result);
+            return retVal.DeleteAttachmentResult;
+        }
+        
+        private System.IAsyncResult OnBeginDeleteAttachment(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            long attachmentId = ((long)(inValues[1]));
+            return this.BeginDeleteAttachment(AutotaskIntegrations, attachmentId, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteAttachment(System.IAsyncResult result) {
+            string retVal = this.EndDeleteAttachment(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDeleteAttachmentCompleted(object state) {
+            if ((this.DeleteAttachmentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteAttachmentCompleted(this, new DeleteAttachmentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
+            this.DeleteAttachmentAsync(AutotaskIntegrations, attachmentId, null);
+        }
+        
+        public void DeleteAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, object userState) {
+            if ((this.onBeginDeleteAttachmentDelegate == null)) {
+                this.onBeginDeleteAttachmentDelegate = new BeginOperationDelegate(this.OnBeginDeleteAttachment);
+            }
+            if ((this.onEndDeleteAttachmentDelegate == null)) {
+                this.onEndDeleteAttachmentDelegate = new EndOperationDelegate(this.OnEndDeleteAttachment);
+            }
+            if ((this.onDeleteAttachmentCompletedDelegate == null)) {
+                this.onDeleteAttachmentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteAttachmentCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteAttachmentDelegate, new object[] {
+                        AutotaskIntegrations,
+                        attachmentId}, this.onEndDeleteAttachmentDelegate, this.onDeleteAttachmentCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24348,14 +25420,62 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetEntityInfo1> AutotaskCLI.Autotask.ATWSSoap.getEntityInfoAsync(AutotaskCLI.Autotask.GetEntityInfo request) {
-            return base.Channel.getEntityInfoAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BegingetEntityInfo(AutotaskCLI.Autotask.GetEntityInfo request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetEntityInfo(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetEntityInfo1> getEntityInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetEntityInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.GetEntityInfo inValue = new AutotaskCLI.Autotask.GetEntityInfo();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).getEntityInfoAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BegingetEntityInfo(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.GetEntityInfo1 AutotaskCLI.Autotask.ATWSSoap.EndgetEntityInfo(System.IAsyncResult result) {
+            return base.Channel.EndgetEntityInfo(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.EntityInfo[] EndgetEntityInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.GetEntityInfo1 retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndgetEntityInfo(result);
+            return retVal.GetEntityInfoResult;
+        }
+        
+        private System.IAsyncResult OnBegingetEntityInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            return this.BegingetEntityInfo(AutotaskIntegrations, callback, asyncState);
+        }
+        
+        private object[] OnEndgetEntityInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.EntityInfo[] retVal = this.EndgetEntityInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetEntityInfoCompleted(object state) {
+            if ((this.getEntityInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getEntityInfoCompleted(this, new getEntityInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getEntityInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
+            this.getEntityInfoAsync(AutotaskIntegrations, null);
+        }
+        
+        public void getEntityInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, object userState) {
+            if ((this.onBegingetEntityInfoDelegate == null)) {
+                this.onBegingetEntityInfoDelegate = new BeginOperationDelegate(this.OnBegingetEntityInfo);
+            }
+            if ((this.onEndgetEntityInfoDelegate == null)) {
+                this.onEndgetEntityInfoDelegate = new EndOperationDelegate(this.OnEndgetEntityInfo);
+            }
+            if ((this.ongetEntityInfoCompletedDelegate == null)) {
+                this.ongetEntityInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetEntityInfoCompleted);
+            }
+            base.InvokeAsync(this.onBegingetEntityInfoDelegate, new object[] {
+                        AutotaskIntegrations}, this.onEndgetEntityInfoDelegate, this.ongetEntityInfoCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24372,15 +25492,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetFieldInfoResponse> AutotaskCLI.Autotask.ATWSSoap.GetFieldInfoAsync(AutotaskCLI.Autotask.GetFieldInfoRequest request) {
-            return base.Channel.GetFieldInfoAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetFieldInfo(AutotaskCLI.Autotask.GetFieldInfoRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetFieldInfo(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetFieldInfoResponse> GetFieldInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetFieldInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.GetFieldInfoRequest inValue = new AutotaskCLI.Autotask.GetFieldInfoRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.psObjectType = psObjectType;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetFieldInfoAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetFieldInfo(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.GetFieldInfoResponse AutotaskCLI.Autotask.ATWSSoap.EndGetFieldInfo(System.IAsyncResult result) {
+            return base.Channel.EndGetFieldInfo(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.Field[] EndGetFieldInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.GetFieldInfoResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetFieldInfo(result);
+            return retVal.GetFieldInfoResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetFieldInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            string psObjectType = ((string)(inValues[1]));
+            return this.BeginGetFieldInfo(AutotaskIntegrations, psObjectType, callback, asyncState);
+        }
+        
+        private object[] OnEndGetFieldInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.Field[] retVal = this.EndGetFieldInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetFieldInfoCompleted(object state) {
+            if ((this.GetFieldInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetFieldInfoCompleted(this, new GetFieldInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetFieldInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType) {
+            this.GetFieldInfoAsync(AutotaskIntegrations, psObjectType, null);
+        }
+        
+        public void GetFieldInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType, object userState) {
+            if ((this.onBeginGetFieldInfoDelegate == null)) {
+                this.onBeginGetFieldInfoDelegate = new BeginOperationDelegate(this.OnBeginGetFieldInfo);
+            }
+            if ((this.onEndGetFieldInfoDelegate == null)) {
+                this.onEndGetFieldInfoDelegate = new EndOperationDelegate(this.OnEndGetFieldInfo);
+            }
+            if ((this.onGetFieldInfoCompletedDelegate == null)) {
+                this.onGetFieldInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFieldInfoCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetFieldInfoDelegate, new object[] {
+                        AutotaskIntegrations,
+                        psObjectType}, this.onEndGetFieldInfoDelegate, this.onGetFieldInfoCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24397,15 +25567,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getUDFInfoResponse> AutotaskCLI.Autotask.ATWSSoap.getUDFInfoAsync(AutotaskCLI.Autotask.getUDFInfoRequest request) {
-            return base.Channel.getUDFInfoAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BegingetUDFInfo(AutotaskCLI.Autotask.getUDFInfoRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetUDFInfo(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.getUDFInfoResponse> getUDFInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetUDFInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.getUDFInfoRequest inValue = new AutotaskCLI.Autotask.getUDFInfoRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.psTable = psTable;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).getUDFInfoAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BegingetUDFInfo(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.getUDFInfoResponse AutotaskCLI.Autotask.ATWSSoap.EndgetUDFInfo(System.IAsyncResult result) {
+            return base.Channel.EndgetUDFInfo(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.Field[] EndgetUDFInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.getUDFInfoResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndgetUDFInfo(result);
+            return retVal.getUDFInfoResult;
+        }
+        
+        private System.IAsyncResult OnBegingetUDFInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            string psTable = ((string)(inValues[1]));
+            return this.BegingetUDFInfo(AutotaskIntegrations, psTable, callback, asyncState);
+        }
+        
+        private object[] OnEndgetUDFInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.Field[] retVal = this.EndgetUDFInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetUDFInfoCompleted(object state) {
+            if ((this.getUDFInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getUDFInfoCompleted(this, new getUDFInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getUDFInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable) {
+            this.getUDFInfoAsync(AutotaskIntegrations, psTable, null);
+        }
+        
+        public void getUDFInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable, object userState) {
+            if ((this.onBegingetUDFInfoDelegate == null)) {
+                this.onBegingetUDFInfoDelegate = new BeginOperationDelegate(this.OnBegingetUDFInfo);
+            }
+            if ((this.onEndgetUDFInfoDelegate == null)) {
+                this.onEndgetUDFInfoDelegate = new EndOperationDelegate(this.OnEndgetUDFInfo);
+            }
+            if ((this.ongetUDFInfoCompletedDelegate == null)) {
+                this.ongetUDFInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetUDFInfoCompleted);
+            }
+            base.InvokeAsync(this.onBegingetUDFInfoDelegate, new object[] {
+                        AutotaskIntegrations,
+                        psTable}, this.onEndgetUDFInfoDelegate, this.ongetUDFInfoCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24422,15 +25642,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.queryResponse> AutotaskCLI.Autotask.ATWSSoap.queryAsync(AutotaskCLI.Autotask.queryRequest request) {
-            return base.Channel.queryAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Beginquery(AutotaskCLI.Autotask.queryRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginquery(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.queryResponse> queryAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginquery(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.queryRequest inValue = new AutotaskCLI.Autotask.queryRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.sXML = sXML;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).queryAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Beginquery(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.queryResponse AutotaskCLI.Autotask.ATWSSoap.Endquery(System.IAsyncResult result) {
+            return base.Channel.Endquery(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.ATWSResponse Endquery(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.queryResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Endquery(result);
+            return retVal.queryResult;
+        }
+        
+        private System.IAsyncResult OnBeginquery(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            string sXML = ((string)(inValues[1]));
+            return this.Beginquery(AutotaskIntegrations, sXML, callback, asyncState);
+        }
+        
+        private object[] OnEndquery(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.ATWSResponse retVal = this.Endquery(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnqueryCompleted(object state) {
+            if ((this.queryCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.queryCompleted(this, new queryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void queryAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML) {
+            this.queryAsync(AutotaskIntegrations, sXML, null);
+        }
+        
+        public void queryAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML, object userState) {
+            if ((this.onBeginqueryDelegate == null)) {
+                this.onBeginqueryDelegate = new BeginOperationDelegate(this.OnBeginquery);
+            }
+            if ((this.onEndqueryDelegate == null)) {
+                this.onEndqueryDelegate = new EndOperationDelegate(this.OnEndquery);
+            }
+            if ((this.onqueryCompletedDelegate == null)) {
+                this.onqueryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnqueryCompleted);
+            }
+            base.InvokeAsync(this.onBeginqueryDelegate, new object[] {
+                        AutotaskIntegrations,
+                        sXML}, this.onEndqueryDelegate, this.onqueryCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24447,15 +25717,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.createResponse> AutotaskCLI.Autotask.ATWSSoap.createAsync(AutotaskCLI.Autotask.createRequest request) {
-            return base.Channel.createAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Begincreate(AutotaskCLI.Autotask.createRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begincreate(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.createResponse> createAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begincreate(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.createRequest inValue = new AutotaskCLI.Autotask.createRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.Entities = Entities;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).createAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Begincreate(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.createResponse AutotaskCLI.Autotask.ATWSSoap.Endcreate(System.IAsyncResult result) {
+            return base.Channel.Endcreate(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.ATWSResponse Endcreate(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.createResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Endcreate(result);
+            return retVal.createResult;
+        }
+        
+        private System.IAsyncResult OnBegincreate(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            AutotaskCLI.Autotask.Entity[] Entities = ((AutotaskCLI.Autotask.Entity[])(inValues[1]));
+            return this.Begincreate(AutotaskIntegrations, Entities, callback, asyncState);
+        }
+        
+        private object[] OnEndcreate(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.ATWSResponse retVal = this.Endcreate(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OncreateCompleted(object state) {
+            if ((this.createCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.createCompleted(this, new createCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void createAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
+            this.createAsync(AutotaskIntegrations, Entities, null);
+        }
+        
+        public void createAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, object userState) {
+            if ((this.onBegincreateDelegate == null)) {
+                this.onBegincreateDelegate = new BeginOperationDelegate(this.OnBegincreate);
+            }
+            if ((this.onEndcreateDelegate == null)) {
+                this.onEndcreateDelegate = new EndOperationDelegate(this.OnEndcreate);
+            }
+            if ((this.oncreateCompletedDelegate == null)) {
+                this.oncreateCompletedDelegate = new System.Threading.SendOrPostCallback(this.OncreateCompleted);
+            }
+            base.InvokeAsync(this.onBegincreateDelegate, new object[] {
+                        AutotaskIntegrations,
+                        Entities}, this.onEndcreateDelegate, this.oncreateCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24472,15 +25792,65 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.updateResponse> AutotaskCLI.Autotask.ATWSSoap.updateAsync(AutotaskCLI.Autotask.updateRequest request) {
-            return base.Channel.updateAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Beginupdate(AutotaskCLI.Autotask.updateRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginupdate(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.updateResponse> updateAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginupdate(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.updateRequest inValue = new AutotaskCLI.Autotask.updateRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.Entities = Entities;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).updateAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Beginupdate(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.updateResponse AutotaskCLI.Autotask.ATWSSoap.Endupdate(System.IAsyncResult result) {
+            return base.Channel.Endupdate(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.ATWSResponse Endupdate(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.updateResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Endupdate(result);
+            return retVal.updateResult;
+        }
+        
+        private System.IAsyncResult OnBeginupdate(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            AutotaskCLI.Autotask.Entity[] Entities = ((AutotaskCLI.Autotask.Entity[])(inValues[1]));
+            return this.Beginupdate(AutotaskIntegrations, Entities, callback, asyncState);
+        }
+        
+        private object[] OnEndupdate(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.ATWSResponse retVal = this.Endupdate(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnupdateCompleted(object state) {
+            if ((this.updateCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.updateCompleted(this, new updateCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void updateAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
+            this.updateAsync(AutotaskIntegrations, Entities, null);
+        }
+        
+        public void updateAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, object userState) {
+            if ((this.onBeginupdateDelegate == null)) {
+                this.onBeginupdateDelegate = new BeginOperationDelegate(this.OnBeginupdate);
+            }
+            if ((this.onEndupdateDelegate == null)) {
+                this.onEndupdateDelegate = new EndOperationDelegate(this.OnEndupdate);
+            }
+            if ((this.onupdateCompletedDelegate == null)) {
+                this.onupdateCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateCompleted);
+            }
+            base.InvokeAsync(this.onBeginupdateDelegate, new object[] {
+                        AutotaskIntegrations,
+                        Entities}, this.onEndupdateDelegate, this.onupdateCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24497,23 +25867,115 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.deleteResponse> AutotaskCLI.Autotask.ATWSSoap.deleteAsync(AutotaskCLI.Autotask.deleteRequest request) {
-            return base.Channel.deleteAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Begindelete(AutotaskCLI.Autotask.deleteRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begindelete(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.deleteResponse> deleteAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begindelete(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.deleteRequest inValue = new AutotaskCLI.Autotask.deleteRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.Entities = Entities;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).deleteAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Begindelete(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.deleteResponse AutotaskCLI.Autotask.ATWSSoap.Enddelete(System.IAsyncResult result) {
+            return base.Channel.Enddelete(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.ATWSResponse Enddelete(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.deleteResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Enddelete(result);
+            return retVal.deleteResult;
+        }
+        
+        private System.IAsyncResult OnBegindelete(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            AutotaskCLI.Autotask.Entity[] Entities = ((AutotaskCLI.Autotask.Entity[])(inValues[1]));
+            return this.Begindelete(AutotaskIntegrations, Entities, callback, asyncState);
+        }
+        
+        private object[] OnEnddelete(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.ATWSResponse retVal = this.Enddelete(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OndeleteCompleted(object state) {
+            if ((this.deleteCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.deleteCompleted(this, new deleteCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void deleteAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
+            this.deleteAsync(AutotaskIntegrations, Entities, null);
+        }
+        
+        public void deleteAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, object userState) {
+            if ((this.onBegindeleteDelegate == null)) {
+                this.onBegindeleteDelegate = new BeginOperationDelegate(this.OnBegindelete);
+            }
+            if ((this.onEnddeleteDelegate == null)) {
+                this.onEnddeleteDelegate = new EndOperationDelegate(this.OnEnddelete);
+            }
+            if ((this.ondeleteCompletedDelegate == null)) {
+                this.ondeleteCompletedDelegate = new System.Threading.SendOrPostCallback(this.OndeleteCompleted);
+            }
+            base.InvokeAsync(this.onBegindeleteDelegate, new object[] {
+                        AutotaskIntegrations,
+                        Entities}, this.onEnddeleteDelegate, this.ondeleteCompletedDelegate, userState);
         }
         
         public AutotaskCLI.Autotask.ATWSZoneInfo getZoneInfo(string UserName) {
             return base.Channel.getZoneInfo(UserName);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.ATWSZoneInfo> getZoneInfoAsync(string UserName) {
-            return base.Channel.getZoneInfoAsync(UserName);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetZoneInfo(string UserName, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetZoneInfo(UserName, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.ATWSZoneInfo EndgetZoneInfo(System.IAsyncResult result) {
+            return base.Channel.EndgetZoneInfo(result);
+        }
+        
+        private System.IAsyncResult OnBegingetZoneInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string UserName = ((string)(inValues[0]));
+            return this.BegingetZoneInfo(UserName, callback, asyncState);
+        }
+        
+        private object[] OnEndgetZoneInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.ATWSZoneInfo retVal = this.EndgetZoneInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetZoneInfoCompleted(object state) {
+            if ((this.getZoneInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getZoneInfoCompleted(this, new getZoneInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getZoneInfoAsync(string UserName) {
+            this.getZoneInfoAsync(UserName, null);
+        }
+        
+        public void getZoneInfoAsync(string UserName, object userState) {
+            if ((this.onBegingetZoneInfoDelegate == null)) {
+                this.onBegingetZoneInfoDelegate = new BeginOperationDelegate(this.OnBegingetZoneInfo);
+            }
+            if ((this.onEndgetZoneInfoDelegate == null)) {
+                this.onEndgetZoneInfoDelegate = new EndOperationDelegate(this.OnEndgetZoneInfo);
+            }
+            if ((this.ongetZoneInfoCompletedDelegate == null)) {
+                this.ongetZoneInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetZoneInfoCompleted);
+            }
+            base.InvokeAsync(this.onBegingetZoneInfoDelegate, new object[] {
+                        UserName}, this.onEndgetZoneInfoDelegate, this.ongetZoneInfoCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24529,14 +25991,62 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse> AutotaskCLI.Autotask.ATWSSoap.getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request) {
-            return base.Channel.getThresholdAndUsageInfoAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BegingetThresholdAndUsageInfo(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetThresholdAndUsageInfo(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse> getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BegingetThresholdAndUsageInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest inValue = new AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).getThresholdAndUsageInfoAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BegingetThresholdAndUsageInfo(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse AutotaskCLI.Autotask.ATWSSoap.EndgetThresholdAndUsageInfo(System.IAsyncResult result) {
+            return base.Channel.EndgetThresholdAndUsageInfo(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public AutotaskCLI.Autotask.ATWSResponse EndgetThresholdAndUsageInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndgetThresholdAndUsageInfo(result);
+            return retVal.getThresholdAndUsageInfoResult;
+        }
+        
+        private System.IAsyncResult OnBegingetThresholdAndUsageInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            return this.BegingetThresholdAndUsageInfo(AutotaskIntegrations, callback, asyncState);
+        }
+        
+        private object[] OnEndgetThresholdAndUsageInfo(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.ATWSResponse retVal = this.EndgetThresholdAndUsageInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetThresholdAndUsageInfoCompleted(object state) {
+            if ((this.getThresholdAndUsageInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getThresholdAndUsageInfoCompleted(this, new getThresholdAndUsageInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
+            this.getThresholdAndUsageInfoAsync(AutotaskIntegrations, null);
+        }
+        
+        public void getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, object userState) {
+            if ((this.onBegingetThresholdAndUsageInfoDelegate == null)) {
+                this.onBegingetThresholdAndUsageInfoDelegate = new BeginOperationDelegate(this.OnBegingetThresholdAndUsageInfo);
+            }
+            if ((this.onEndgetThresholdAndUsageInfoDelegate == null)) {
+                this.onEndgetThresholdAndUsageInfoDelegate = new EndOperationDelegate(this.OnEndgetThresholdAndUsageInfo);
+            }
+            if ((this.ongetThresholdAndUsageInfoCompletedDelegate == null)) {
+                this.ongetThresholdAndUsageInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetThresholdAndUsageInfoCompleted);
+            }
+            base.InvokeAsync(this.onBegingetThresholdAndUsageInfoDelegate, new object[] {
+                        AutotaskIntegrations}, this.onEndgetThresholdAndUsageInfoDelegate, this.ongetThresholdAndUsageInfoCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24552,14 +26062,62 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetWsdlVersionResponse> AutotaskCLI.Autotask.ATWSSoap.GetWsdlVersionAsync(AutotaskCLI.Autotask.GetWsdlVersionRequest request) {
-            return base.Channel.GetWsdlVersionAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetWsdlVersion(AutotaskCLI.Autotask.GetWsdlVersionRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetWsdlVersion(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetWsdlVersionResponse> GetWsdlVersionAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetWsdlVersion(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.GetWsdlVersionRequest inValue = new AutotaskCLI.Autotask.GetWsdlVersionRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetWsdlVersionAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetWsdlVersion(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.GetWsdlVersionResponse AutotaskCLI.Autotask.ATWSSoap.EndGetWsdlVersion(System.IAsyncResult result) {
+            return base.Channel.EndGetWsdlVersion(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGetWsdlVersion(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.GetWsdlVersionResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetWsdlVersion(result);
+            return retVal.GetWsdlVersionResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetWsdlVersion(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            return this.BeginGetWsdlVersion(AutotaskIntegrations, callback, asyncState);
+        }
+        
+        private object[] OnEndGetWsdlVersion(System.IAsyncResult result) {
+            string retVal = this.EndGetWsdlVersion(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetWsdlVersionCompleted(object state) {
+            if ((this.GetWsdlVersionCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetWsdlVersionCompleted(this, new GetWsdlVersionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetWsdlVersionAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
+            this.GetWsdlVersionAsync(AutotaskIntegrations, null);
+        }
+        
+        public void GetWsdlVersionAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, object userState) {
+            if ((this.onBeginGetWsdlVersionDelegate == null)) {
+                this.onBeginGetWsdlVersionDelegate = new BeginOperationDelegate(this.OnBeginGetWsdlVersion);
+            }
+            if ((this.onEndGetWsdlVersionDelegate == null)) {
+                this.onEndGetWsdlVersionDelegate = new EndOperationDelegate(this.OnEndGetWsdlVersion);
+            }
+            if ((this.onGetWsdlVersionCompletedDelegate == null)) {
+                this.onGetWsdlVersionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetWsdlVersionCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetWsdlVersionDelegate, new object[] {
+                        AutotaskIntegrations}, this.onEndGetWsdlVersionDelegate, this.onGetWsdlVersionCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -24577,16 +26135,68 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetInvoiceMarkupResponse> AutotaskCLI.Autotask.ATWSSoap.GetInvoiceMarkupAsync(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request) {
-            return base.Channel.GetInvoiceMarkupAsync(request);
+        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetInvoiceMarkup(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetInvoiceMarkup(request, callback, asyncState);
         }
         
-        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetInvoiceMarkupResponse> GetInvoiceMarkupAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetInvoiceMarkup(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format, System.AsyncCallback callback, object asyncState) {
             AutotaskCLI.Autotask.GetInvoiceMarkupRequest inValue = new AutotaskCLI.Autotask.GetInvoiceMarkupRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.InvoiceId = InvoiceId;
             inValue.Format = Format;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetInvoiceMarkupAsync(inValue);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetInvoiceMarkup(inValue, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AutotaskCLI.Autotask.GetInvoiceMarkupResponse AutotaskCLI.Autotask.ATWSSoap.EndGetInvoiceMarkup(System.IAsyncResult result) {
+            return base.Channel.EndGetInvoiceMarkup(result);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGetInvoiceMarkup(System.IAsyncResult result) {
+            AutotaskCLI.Autotask.GetInvoiceMarkupResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetInvoiceMarkup(result);
+            return retVal.GetInvoiceMarkupResult;
+        }
+        
+        private System.IAsyncResult OnBeginGetInvoiceMarkup(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
+            int InvoiceId = ((int)(inValues[1]));
+            string Format = ((string)(inValues[2]));
+            return this.BeginGetInvoiceMarkup(AutotaskIntegrations, InvoiceId, Format, callback, asyncState);
+        }
+        
+        private object[] OnEndGetInvoiceMarkup(System.IAsyncResult result) {
+            string retVal = this.EndGetInvoiceMarkup(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetInvoiceMarkupCompleted(object state) {
+            if ((this.GetInvoiceMarkupCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetInvoiceMarkupCompleted(this, new GetInvoiceMarkupCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetInvoiceMarkupAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format) {
+            this.GetInvoiceMarkupAsync(AutotaskIntegrations, InvoiceId, Format, null);
+        }
+        
+        public void GetInvoiceMarkupAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format, object userState) {
+            if ((this.onBeginGetInvoiceMarkupDelegate == null)) {
+                this.onBeginGetInvoiceMarkupDelegate = new BeginOperationDelegate(this.OnBeginGetInvoiceMarkup);
+            }
+            if ((this.onEndGetInvoiceMarkupDelegate == null)) {
+                this.onEndGetInvoiceMarkupDelegate = new EndOperationDelegate(this.OnEndGetInvoiceMarkup);
+            }
+            if ((this.onGetInvoiceMarkupCompletedDelegate == null)) {
+                this.onGetInvoiceMarkupCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInvoiceMarkupCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetInvoiceMarkupDelegate, new object[] {
+                        AutotaskIntegrations,
+                        InvoiceId,
+                        Format}, this.onEndGetInvoiceMarkupDelegate, this.onGetInvoiceMarkupCompletedDelegate, userState);
         }
     }
 }

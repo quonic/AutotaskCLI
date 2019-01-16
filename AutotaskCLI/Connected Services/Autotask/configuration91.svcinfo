@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="rOFyH8y8gYmW6aZFQo04GRco9N0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="1Ns+68+83ynTYgqWkSD6+KtZ14I=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ATWSSoap">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ATWSSoap" contract="Autotask.ATWSSoap" bindingType="basicHttpBinding" address="https://webservices.autotask.net/ATServices/1.5/atws.asmx" bindingConfiguration="ATWSSoap">
+    <endpoint name="ATWSSoap" contract="Autotask.ATWSSoap" bindingType="basicHttpBinding" address="https://webservices.autotask.net/ATServices/1.6/atws.asmx" bindingConfiguration="ATWSSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://webservices.autotask.net/ATServices/1.5/atws.asmx</serializedValue>
+          <serializedValue>https://webservices.autotask.net/ATServices/1.6/atws.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

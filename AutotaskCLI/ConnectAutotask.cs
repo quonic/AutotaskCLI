@@ -7,34 +7,43 @@ namespace AutotaskCLI
     [Cmdlet(VerbsCommunications.Connect, "Autotask")]
     public class ConnectAutotask : PSCmdlet
     {
-        public PSCredential Credential {
-            get { return creds; }
-            set { creds = value; }
-        }
-        private PSCredential creds;
+        [Parameter(
+            Mandatory = true
+            )]
+        public PSCredential Credential { get; set; }
+
         protected override void ProcessRecord()
         {
-            MailAddress emailAddress = new MailAddress(creds.UserName);
-            ATWSZoneInfo ZoneInfo = new ATWSZoneInfo(emailAddress.Address);
-            string url = ZoneInfo.URL.Replace(".wsdl", ".wsdl");
-            ATWSSoapClient a = new ATWSSoapClient(url);
+            // Validate username is an email address, might change this to regex if there is ever
+            //a SOAP library that can work under Powershell 6 under linux
+            MailAddress emailAddress = new MailAddress(Credential.UserName);
+            // Version 1.5 way of getting Zone Info
+            //ATWSZoneInfo ZoneInfo = new ATWSZoneInfo(emailAddress.Address);
+            ATWSSoapClient ZoneInfo = new ATWSSoapClient();
 
+            WriteVerbose("Looking up zone for user " + Credential.UserName + ".");
+            ATWSZoneInfo ZoneInfoData = ZoneInfo.getZoneInfo(Credential.UserName);
+
+            WriteDebug("User: " + Credential.UserName + "; Zone URL = " + ZoneInfoData.URL + ";");
+            
+            // Below comment might not be needed as 1.6 doesn't report back asmx, but wsdl back.
+            //string url = ZoneInfoData.URL.Replace(".asmx", ".wsdl");
+
+            WriteVerbose("Creating Soap Client");
+            ATWSSoapClient SoapClient = new ATWSSoapClient(ZoneInfoData.URL);
+
+            WriteVerbose("Creating Credential Object");
             AutotaskIntegrations AI = new AutotaskIntegrations
             {
                 PartnerID = emailAddress.Address,
-                IntegrationCode = creds.GetNetworkCredential().Password
+                IntegrationCode = Credential.GetNetworkCredential().Password
             };
 
-            //TODO: some how save AI or the PSCreds object in memory for other cmdlets to access
-
-
-            QueryXML sXML = new QueryXML();
-            sXML.Entity = "contact";
-            sXML.Children = new Query();
-            sXML.Children.Items.Add(new Field("firstname", Ops.Equal, "John"));
-            sXML.Children.Items.Add(new Field("lastname", Ops.Equal, "Doe"));
-
-            a.query(AI, sXML.ToXML());
+            WriteVerbose("Connected to Autotask...");
+            SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapEmail", AI.PartnerID);
+            SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapICode", AI.IntegrationCode);
+            SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapURL", ZoneInfoData.URL);
+            
         }
     }
     

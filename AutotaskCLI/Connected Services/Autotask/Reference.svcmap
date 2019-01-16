@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ea08d1cd-9994-4f33-b976-b65c9c03912a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
-    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -19,10 +18,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://webservices.autotask.net/atservices/1.5/atws.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://webservices.autotask.net/atservices/1.6/atws.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="atws.wsdl" MetadataType="Wsdl" ID="c71681ec-5248-4a39-8961-42a29e1d5e0d" SourceId="1" SourceUrl="https://webservices.autotask.net/atservices/1.5/atws.wsdl" />
+    <MetadataFile FileName="atws1.wsdl" MetadataType="Wsdl" ID="f5ab3a45-4f86-43fc-a119-cceec7dd4de0" SourceId="1" SourceUrl="https://webservices.autotask.net/atservices/1.6/atws.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

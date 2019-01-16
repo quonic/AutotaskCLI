@@ -10,3 +10,4 @@
 *.sqlite
 /scratch.ps1
 /temp.ps1
+/.vs

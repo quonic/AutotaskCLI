@@ -94,20 +94,27 @@ namespace AutotaskCLI
     public class Condition
     {
         private List<object> items;
+        private bool isOr;
+
         public List<object> Items { get => items; set => items = value; }
-        public string Field;
-        public Ops Op;
-        public string Expression;
-        
+        public bool IsOr { get => isOr; set => isOr = value; }
 
-        public Condition(string field, Ops op, string expression, List<object> Children)
+
+        public Condition()
         {
-            this.Field = field;
-            this.Op = op;
-            this.Expression = expression;
-            this.Items = Children;
-
+            this.IsOr = false;
         }
-
+        public Condition(bool IsOr)
+        {
+            this.IsOr = IsOr;
+        }
+        public void AddItem(Field SingleField)
+        {
+            this.Items.Add(SingleField);
+        }
+        public void AddItem(Condition SingleCondition)
+        {
+            this.Items.Add(SingleCondition);
+        }
     }
 }
