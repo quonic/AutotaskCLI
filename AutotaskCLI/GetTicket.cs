@@ -8,10 +8,9 @@ namespace AutotaskCLI
     [Cmdlet(VerbsCommon.Get, "Ticket")]
     public class GetTicket : PSCmdlet
     {
-        private QueryXML sXML = new QueryXML
+        private QueryXML sXML = new QueryXML()
         {
-            Entity = "Ticket",
-            Query = new Query()
+            Entity = "Ticket"
         };
         //private AutotaskIntegrations AI = new AutotaskIntegrations();
         //private ATWSSoapClient SoapClient = new ATWSSoapClient();
@@ -60,22 +59,29 @@ namespace AutotaskCLI
         {
             if(ParameterSetName == "Name") {
                 // This is (FirstName && LastName && Status) logic to AutoTask
-                sXML.Query.Field.Add(new Field("FirstName", new Expression(FirstName, ExpressionType.Like)));
-                sXML.Query.Field.Add(new Field("LastName", new Expression(LastName, ExpressionType.Like)));
-                sXML.Query.Field.Add(new Field("Status", new Expression(Status, ExpressionType.Like)));
+                List<Field> Filter = new List<Field>(3);
+                Filter.Insert(0, new Field("FirstName", new Expression(FirstName, ExpressionType.Like)));
+                Filter.Insert(1, new Field("LastName", new Expression(LastName, ExpressionType.Like)));
+                Filter.Insert(2, new Field("Status", new Expression(Status, ExpressionType.Like)));
+                sXML.Query = new Query(Filter);
+                    
             }
             else if (ParameterSetName == "TicketNumber") {
+
+                sXML.Query = new Query();
+
                 WriteDebug(text: "Tickets to search for: " + TicketNumber.Length);
                 WriteDebug(text: "TicketNumber is of object type: " + TicketNumber.GetType());
 
-                if (TicketNumber.Length >= 1 && TicketNumber is Array)
+                if (TicketNumber.Length > 1 && TicketNumber is Array)
                 {
                     Condition cList = new Condition(Operator.Or);
-                    foreach (var item in TicketNumber)
-                    {
-                        // Getting "System.NullReferenceException: 'Object reference not set to an instance of an object.'" here
-                        cList.Fields.Add(new Field("TicketNumber", new Expression(item, ExpressionType.Equal)));
+                    List<Field> FilterField = new List<Field>(TicketNumber.Length);
+                    for (int i = 0; i < TicketNumber.Length - 1; i++) {
+                        FilterField.Insert(i,new Field("TicketNumber", new Expression(TicketNumber[i], ExpressionType.Equal)));
                     }
+
+                    cList.Fields.AddRange(FilterField);
                     sXML.Query.Condition.Add(cList);
                 }
                 else
@@ -91,6 +97,24 @@ namespace AutotaskCLI
             base.EndProcessing();
 
             //WriteObject(SoapClient.query(AI, sXML.ToXML()));
+            /*
+             sample output:
+             <?xml version="1.0" encoding="utf-16"?>
+             <QueryXML xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                Ticket
+                <Query>
+                    <Field Expression="AutotaskCLI.Expression">
+                        FirstName
+                    </Field>
+                    <Field Expression="AutotaskCLI.Expression">
+                        LastName
+                    </Field>
+                    <Field Expression="AutotaskCLI.Expression">
+                        Status
+                    </Field>
+                </Query>
+            </QueryXML>
+             */
             WriteObject(sXML.ToXML());
         }
     }

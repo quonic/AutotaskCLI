@@ -3,6 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using System.Collections;
 
 namespace AutotaskCLI
 {
@@ -12,13 +13,7 @@ namespace AutotaskCLI
         [XmlText(DataType = "string")]
         public string Entity { get; set; }
         [XmlElement(
-            DataType = "Query",
-            ElementName = "Query",
-            Form = XmlSchemaForm.Unqualified,
-            IsNullable = false,
-            Namespace = "QueryXML",
-            Order = 0,
-            Type = typeof(Query)
+            ElementName = "Query"
             )]
         public Query Query { get; set; }
 
@@ -43,13 +38,18 @@ namespace AutotaskCLI
         [XmlAttribute(
             AttributeName = "Operator",
             DataType = "string")]
-        public ExpressionType Op;
-        [XmlText]
+        public string Operator;
+
+        [XmlText(
+            DataType = "string"
+            )]
         public string Text;
 
-        public Expression(string Text, ExpressionType Op) {
+        public Expression() { }
+
+        public Expression(string Text, ExpressionType Operator) {
             this.Text = Text;
-            this.Op = Op;
+            this.Operator = Operator.ToString();
         }
 
     }
@@ -76,6 +76,11 @@ namespace AutotaskCLI
         public static ExpressionType NotLike { get { return new ExpressionType("Not Like"); } }
         public static ExpressionType SoundsLike { get { return new ExpressionType("Sounds Like"); } }
 
+        public override string ToString()
+        {
+            return Value;
+        }
+
     }
 
     public class Operator
@@ -86,6 +91,11 @@ namespace AutotaskCLI
 
         public static Operator Or { get { return new Operator("Or"); } }
         public static Operator And { get { return new Operator("And"); } }
+
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 
     [Serializable]
@@ -94,7 +104,6 @@ namespace AutotaskCLI
         private List<Condition> condition;
         private List<Field> field;
         [XmlElement(
-            DataType = "Field",
             ElementName = "Field",
             Form = XmlSchemaForm.Unqualified,
             IsNullable = true,
@@ -103,7 +112,6 @@ namespace AutotaskCLI
             )]
         public List<Field> Field { get => field; set => field = value; }
         [XmlElement(
-            DataType = "Condition",
             ElementName = "Condition",
             Form = XmlSchemaForm.Unqualified,
             IsNullable = true,
@@ -115,46 +123,52 @@ namespace AutotaskCLI
         public Query(){}
         public Query(List<Field> field)
         {
-            this.field = field;
+            if(this.field == null)
+            {
+                this.field = new List<Field>(field);
+            }
+            else
+            {
+                this.field.AddRange(field);
+            }
+            
         }
         public Query(List<Condition> condition)
         {
-            this.condition = condition;
+            this.condition.AddRange(condition);
         }
     }
     [Serializable]
     public class Field
     {
-        private Expression op;
+        private string op;
 
         [XmlText]
         public string Text;
         [XmlAttribute(
-            AttributeName = "Expression",
-            DataType = "Expression"
+            AttributeName = "Expression"
             )]
-        public Expression Op { get => op; set => op = value; }
-        
-        public Field(string Text, Expression Op)
+        public string Operator { get => op; set => op = value; }
+
+        public Field() { }
+        public Field(string Text, Expression Operator)
         {
             this.Text = Text;
-            this.op = Op;
+            this.Operator = Operator.ToString();
         }
     }
     [Serializable]
     public class Condition
     {
-        private Operator isOr;
+        private string isOr;
         [XmlAttribute(
-            AttributeName = "Operator",
-            DataType = "Operator"
+            AttributeName = "Operator"
             )]
-        public Operator Operator { get => isOr; set => isOr = value; }
+        public string Operator { get => isOr; set => isOr = value; }
 
         private List<Condition> condition;
         private List<Field> field;
         [XmlElement(
-            DataType = "Field",
             ElementName = "Field",
             Form = XmlSchemaForm.Unqualified,
             IsNullable = true,
@@ -163,7 +177,6 @@ namespace AutotaskCLI
             )]
         public List<Field> Fields { get => field; set => field = value; }
         [XmlElement(
-            DataType = "Condition",
             ElementName = "Condition",
             Form = XmlSchemaForm.Unqualified,
             IsNullable = true,
@@ -172,20 +185,22 @@ namespace AutotaskCLI
             )]
         public List<Condition> Conditions { get => condition; set => condition = value; }
 
+        public Condition() { }
+
         public Condition(Operator Operator)
         {
-            this.Operator = Operator;
+            this.Operator = Operator.ToString();
         }
 
-        public Condition(Operator Operator, List<Field> field)
+        public Condition(Operator Operator, IEnumerable<Field> field)
         {
-            this.Operator = Operator;
+            this.Operator = Operator.ToString();
             this.field.AddRange(field);
         }
 
-        public Condition(Operator Operator, List<Condition> condition)
+        public Condition(Operator Operator, IEnumerable<Condition> condition)
         {
-            this.Operator = Operator;
+            this.Operator = Operator.ToString();
             this.condition.AddRange(condition);
         }
     }
