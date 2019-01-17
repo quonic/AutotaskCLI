@@ -73,7 +73,7 @@ namespace AutotaskCLI
         }
     }
 
-    public class Field
+    public class Field : Query
     {
         public string Text;
         public Ops Op;
@@ -85,36 +85,35 @@ namespace AutotaskCLI
             this.Text = Text;
             this.Op = Op;
             this.Expression = Expression;
+            base.IsField = true;
 
         }
-
-
     }
 
-    public class Condition
+    public class Condition : Query
     {
-        private List<object> items;
         private bool isOr;
 
-        public List<object> Items { get => items; set => items = value; }
         public bool IsOr { get => isOr; set => isOr = value; }
 
 
         public Condition()
         {
             this.IsOr = false;
+            base.IsCondition = true;
         }
         public Condition(bool IsOr)
         {
             this.IsOr = IsOr;
+            base.IsCondition = true;
         }
         public void AddItem(Field SingleField)
         {
-            this.Items.Add(SingleField);
+            base.Items.Add(SingleField);
         }
         public void AddItem(Condition SingleCondition)
         {
-            this.Items.Add(SingleCondition);
+            base.Items.Add(SingleCondition);
         }
     }
 }
