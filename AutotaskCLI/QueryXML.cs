@@ -2,16 +2,25 @@
 using System.Xml;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-
+using System.Xml.Schema;
 
 namespace AutotaskCLI
 {
     [Serializable]
     public class QueryXML
     {
-        [XmlAttribute]
+        [XmlText(DataType = "string")]
         public string Entity { get; set; }
-        public Query Children { get; set; }
+        [XmlElement(
+            DataType = "Query",
+            ElementName = "Query",
+            Form = XmlSchemaForm.Unqualified,
+            IsNullable = false,
+            Namespace = "QueryXML",
+            Order = 0,
+            Type = typeof(Query)
+            )]
+        public Query Query { get; set; }
 
         public override string ToString()
         {
@@ -24,96 +33,160 @@ namespace AutotaskCLI
             serializer.Serialize(stringwriter, this);
             return stringwriter.ToString();
         }
+
+        
     }
-    public class Ops
+
+    [Serializable]
+    public class Expression
     {
-        private Ops(string value) { Value = value; }
+        [XmlAttribute(
+            AttributeName = "Operator",
+            DataType = "string")]
+        public ExpressionType Op;
+        [XmlText]
+        public string Text;
+
+        public Expression(string Text, ExpressionType Op) {
+            this.Text = Text;
+            this.Op = Op;
+        }
+
+    }
+
+    public class ExpressionType
+    {
+        private ExpressionType(string value) { Value = value; }
 
         public string Value { get; set; }
 
-        public static Ops Equal { get { return new Ops("Equals"); } }
-        public static Ops NotEqual { get { return new Ops("Not Equals"); } }
-        public static Ops LessThan { get { return new Ops("Less Than"); } }
-        public static Ops LessThanOrEqual { get { return new Ops("Less Than Or Equal"); } }
-        public static Ops GreaterThan { get { return new Ops("Greater Than"); } }
-        public static Ops GreaterThanOrEqual { get { return new Ops("Greater Than Or Equal"); } }
-        public static Ops BeginsWith { get { return new Ops("Begins With"); } }
-        public static Ops EndsWith { get { return new Ops("Ends With"); } }
-        public static Ops Contains { get { return new Ops("Contains"); } }
-        public static Ops IsNull { get { return new Ops("Is Null"); } }
-        public static Ops IsNotNull { get { return new Ops("Is Not Null"); } }
-        public static Ops IsThisDay { get { return new Ops("Is This Day"); } }
-        public static Ops Like { get { return new Ops("Like"); } }
-        public static Ops NotLike { get { return new Ops("Not Like"); } }
-        public static Ops SoundsLike { get { return new Ops("Sounds Like"); } }
+        public static ExpressionType Equal { get { return new ExpressionType("Equals"); } }
+        public static ExpressionType NotEqual { get { return new ExpressionType("Not Equals"); } }
+        public static ExpressionType LessThan { get { return new ExpressionType("Less Than"); } }
+        public static ExpressionType LessThanOrEqual { get { return new ExpressionType("Less Than Or Equal"); } }
+        public static ExpressionType GreaterThan { get { return new ExpressionType("Greater Than"); } }
+        public static ExpressionType GreaterThanOrEqual { get { return new ExpressionType("Greater Than Or Equal"); } }
+        public static ExpressionType BeginsWith { get { return new ExpressionType("Begins With"); } }
+        public static ExpressionType EndsWith { get { return new ExpressionType("Ends With"); } }
+        public static ExpressionType Contains { get { return new ExpressionType("Contains"); } }
+        public static ExpressionType IsNull { get { return new ExpressionType("Is Null"); } }
+        public static ExpressionType IsNotNull { get { return new ExpressionType("Is Not Null"); } }
+        public static ExpressionType IsThisDay { get { return new ExpressionType("Is This Day"); } }
+        public static ExpressionType Like { get { return new ExpressionType("Like"); } }
+        public static ExpressionType NotLike { get { return new ExpressionType("Not Like"); } }
+        public static ExpressionType SoundsLike { get { return new ExpressionType("Sounds Like"); } }
 
     }
+
+    public class Operator
+    {
+        private Operator(string value) { Value = value; }
+
+        public string Value { get; set; }
+
+        public static Operator Or { get { return new Operator("Or"); } }
+        public static Operator And { get { return new Operator("And"); } }
+    }
+
+    [Serializable]
     public class Query
     {
-        private List<object> items;
+        private List<Condition> condition;
+        private List<Field> field;
+        [XmlElement(
+            DataType = "Field",
+            ElementName = "Field",
+            Form = XmlSchemaForm.Unqualified,
+            IsNullable = true,
+            Order = 1,
+            Type = typeof(Field)
+            )]
+        public List<Field> Field { get => field; set => field = value; }
+        [XmlElement(
+            DataType = "Condition",
+            ElementName = "Condition",
+            Form = XmlSchemaForm.Unqualified,
+            IsNullable = true,
+            Order = 2,
+            Type = typeof(Condition)
+            )]
+        public List<Condition> Condition { get => condition; set => condition = value; }
 
-        public bool IsField;
-        public bool IsCondition;
-        public bool IsChild;
-        public List<object> Items { get => items; set => items = value; }
-
-        public Query()
+        public Query(){}
+        public Query(List<Field> field)
         {
-            this.IsCondition = false;
-            this.IsField = false;
-            this.IsChild = false;
-            this.Items = new List<object>();
+            this.field = field;
         }
-        public Query(List<object> Children)
+        public Query(List<Condition> condition)
         {
-            this.IsCondition = false;
-            this.IsField = false;
-            this.IsChild = false;
-            this.Items = Children;
+            this.condition = condition;
         }
     }
-
-    public class Field : Query
+    [Serializable]
+    public class Field
     {
+        private Expression op;
+
+        [XmlText]
         public string Text;
-        public Ops Op;
-        public string Expression;
-
-
-        public Field(string Text, Ops Op, string Expression)
+        [XmlAttribute(
+            AttributeName = "Expression",
+            DataType = "Expression"
+            )]
+        public Expression Op { get => op; set => op = value; }
+        
+        public Field(string Text, Expression Op)
         {
             this.Text = Text;
-            this.Op = Op;
-            this.Expression = Expression;
-            base.IsField = true;
-
+            this.op = Op;
         }
     }
-
-    public class Condition : Query
+    [Serializable]
+    public class Condition
     {
-        private bool isOr;
+        private Operator isOr;
+        [XmlAttribute(
+            AttributeName = "Operator",
+            DataType = "Operator"
+            )]
+        public Operator Operator { get => isOr; set => isOr = value; }
 
-        public bool IsOr { get => isOr; set => isOr = value; }
+        private List<Condition> condition;
+        private List<Field> field;
+        [XmlElement(
+            DataType = "Field",
+            ElementName = "Field",
+            Form = XmlSchemaForm.Unqualified,
+            IsNullable = true,
+            Order = 1,
+            Type = typeof(Field)
+            )]
+        public List<Field> Fields { get => field; set => field = value; }
+        [XmlElement(
+            DataType = "Condition",
+            ElementName = "Condition",
+            Form = XmlSchemaForm.Unqualified,
+            IsNullable = true,
+            Order = 2,
+            Type = typeof(Condition)
+            )]
+        public List<Condition> Conditions { get => condition; set => condition = value; }
 
+        public Condition(Operator Operator)
+        {
+            this.Operator = Operator;
+        }
 
-        public Condition()
+        public Condition(Operator Operator, List<Field> field)
         {
-            this.IsOr = false;
-            base.IsCondition = true;
+            this.Operator = Operator;
+            this.field.AddRange(field);
         }
-        public Condition(bool IsOr)
+
+        public Condition(Operator Operator, List<Condition> condition)
         {
-            this.IsOr = IsOr;
-            base.IsCondition = true;
-        }
-        public void AddItem(Field SingleField)
-        {
-            base.Items.Add(SingleField);
-        }
-        public void AddItem(Condition SingleCondition)
-        {
-            base.Items.Add(SingleCondition);
+            this.Operator = Operator;
+            this.condition.AddRange(condition);
         }
     }
 }
