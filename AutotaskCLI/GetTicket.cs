@@ -60,33 +60,33 @@ namespace AutotaskCLI
             if(ParameterSetName == "Name") {
                 // This is (FirstName && LastName && Status) logic to AutoTask
                 List<Field> Filter = new List<Field>(3);
-                Filter.Insert(0, new Field("FirstName", new Expression(FirstName, ExpressionType.Like)));
-                Filter.Insert(1, new Field("LastName", new Expression(LastName, ExpressionType.Like)));
-                Filter.Insert(2, new Field("Status", new Expression(Status, ExpressionType.Like)));
+                Filter.Insert(0, new Field("FirstName", new Expression(FirstName, Expression.ExpressionType.Like)));
+                Filter.Insert(1, new Field("LastName", new Expression(LastName, Expression.ExpressionType.Like)));
+                Filter.Insert(2, new Field("Status", new Expression(Status, Expression.ExpressionType.Like)));
                 sXML.Query = new Query(Filter);
                     
             }
             else if (ParameterSetName == "TicketNumber") {
 
-                sXML.Query = new Query();
+                
 
                 WriteDebug(text: "Tickets to search for: " + TicketNumber.Length);
                 WriteDebug(text: "TicketNumber is of object type: " + TicketNumber.GetType());
 
                 if (TicketNumber.Length > 1 && TicketNumber is Array)
                 {
-                    Condition cList = new Condition(Operator.Or);
+                    
                     List<Field> FilterField = new List<Field>(TicketNumber.Length);
                     for (int i = 0; i < TicketNumber.Length - 1; i++) {
-                        FilterField.Insert(i,new Field("TicketNumber", new Expression(TicketNumber[i], ExpressionType.Equal)));
+                        FilterField.Insert(i,new Field("TicketNumber", new Expression(TicketNumber[i], Expression.ExpressionType.Equal)));
                     }
 
-                    cList.Fields.AddRange(FilterField);
-                    sXML.Query.Condition.Add(cList);
+                    Condition cList = new Condition(OperatorType.Or, FilterField);
+                    sXML.Query = new Query(cList);
                 }
                 else
                 {
-                    sXML.Query.Field.Add(new Field("TicketNumber", new Expression(TicketNumber[0], ExpressionType.Like)));
+                    sXML.Query.Field.Add(new Field("TicketNumber", new Expression(TicketNumber[0], Expression.ExpressionType.Like)));
                 }
             }
             
@@ -99,20 +99,30 @@ namespace AutotaskCLI
             //WriteObject(SoapClient.query(AI, sXML.ToXML()));
             /*
              sample output:
-             <?xml version="1.0" encoding="utf-16"?>
-             <QueryXML xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                Ticket
-                <Query>
-                    <Field Expression="AutotaskCLI.Expression">
-                        FirstName
-                    </Field>
-                    <Field Expression="AutotaskCLI.Expression">
-                        LastName
-                    </Field>
-                    <Field Expression="AutotaskCLI.Expression">
-                        Status
-                    </Field>
-                </Query>
+            Get-Ticket -TicketNumber "asdf","asdff"
+            <QueryXML>
+              <Entity>Ticket</Entity>
+              <Query>
+                <Condition>
+                  <Condition Operator="Or">
+                    <Fields>
+                      <Field>TicketNumber<expression op="Equals">asdf</expression></Field>
+                    </Fields>
+                  </Condition>
+                </Condition>
+              </Query>
+            </QueryXML>
+
+            Get-Ticket -FirstName "asdf" -LastName "asdff" -Status "Closed"
+            <QueryXML>
+              <Entity>Ticket</Entity>
+              <Query>
+                <Field>
+                  <Field>FirstName<expression op="Like">asdf</expression></Field>
+                  <Field>LastName<expression op="Like">asdff</expression></Field>
+                  <Field>Status<expression op="Like">Closed</expression></Field>
+                </Field>
+              </Query>
             </QueryXML>
              */
             WriteObject(sXML.ToXML());

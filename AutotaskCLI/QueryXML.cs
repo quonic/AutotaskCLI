@@ -8,9 +8,12 @@ using System.Collections;
 namespace AutotaskCLI
 {
     [Serializable]
+    [XmlRoot(Namespace = "")]
     public class QueryXML
     {
-        [XmlText(DataType = "string")]
+        [XmlElement(
+            DataType = "string",
+            ElementName = "Entity")]
         public string Entity { get; set; }
         [XmlElement(
             ElementName = "Query"
@@ -23,74 +26,89 @@ namespace AutotaskCLI
         }
         public string ToXML()
         {
-            var stringwriter = new System.IO.StringWriter();
             var serializer = new XmlSerializer(this.GetType());
-            serializer.Serialize(stringwriter, this);
-            return stringwriter.ToString();
+            var emptyNamespaces = new XmlSerializerNamespaces(new[] { XmlQualifiedName.Empty });
+            var settings = new XmlWriterSettings
+            {
+                Indent = true,
+                OmitXmlDeclaration = true
+            };
+            using (System.IO.StringWriter stream = new System.IO.StringWriter())
+            using (XmlWriter writer = XmlWriter.Create(stream, settings))
+            {
+                serializer.Serialize(writer, this, emptyNamespaces);
+                return stream.ToString();
+            }
         }
 
         
     }
 
     [Serializable]
+    [XmlType]
     public class Expression
     {
+        private string op;
+        
         [XmlAttribute(
-            AttributeName = "Operator",
-            DataType = "string")]
-        public string Operator;
+            AttributeName = "op")]
+        public string Operator { get => op; set => op = value; }
 
-        [XmlText(
-            DataType = "string"
-            )]
+        [XmlText]
         public string Text;
 
         public Expression() { }
 
         public Expression(string Text, ExpressionType Operator) {
             this.Text = Text;
-            this.Operator = Operator.ToString();
+            this.Operator = Operator.Value;
         }
 
-    }
-
-    public class ExpressionType
-    {
-        private ExpressionType(string value) { Value = value; }
-
-        public string Value { get; set; }
-
-        public static ExpressionType Equal { get { return new ExpressionType("Equals"); } }
-        public static ExpressionType NotEqual { get { return new ExpressionType("Not Equals"); } }
-        public static ExpressionType LessThan { get { return new ExpressionType("Less Than"); } }
-        public static ExpressionType LessThanOrEqual { get { return new ExpressionType("Less Than Or Equal"); } }
-        public static ExpressionType GreaterThan { get { return new ExpressionType("Greater Than"); } }
-        public static ExpressionType GreaterThanOrEqual { get { return new ExpressionType("Greater Than Or Equal"); } }
-        public static ExpressionType BeginsWith { get { return new ExpressionType("Begins With"); } }
-        public static ExpressionType EndsWith { get { return new ExpressionType("Ends With"); } }
-        public static ExpressionType Contains { get { return new ExpressionType("Contains"); } }
-        public static ExpressionType IsNull { get { return new ExpressionType("Is Null"); } }
-        public static ExpressionType IsNotNull { get { return new ExpressionType("Is Not Null"); } }
-        public static ExpressionType IsThisDay { get { return new ExpressionType("Is This Day"); } }
-        public static ExpressionType Like { get { return new ExpressionType("Like"); } }
-        public static ExpressionType NotLike { get { return new ExpressionType("Not Like"); } }
-        public static ExpressionType SoundsLike { get { return new ExpressionType("Sounds Like"); } }
-
-        public override string ToString()
+        
+        public class ExpressionType
         {
-            return Value;
-        }
+            private ExpressionType() { }
+            private ExpressionType(string value) { Value = value; }
+            [XmlElement]
+            public string Value { get; set; }
 
+            public static ExpressionType Equal { get { return new ExpressionType("Equals"); } }
+            public static ExpressionType NotEqual { get { return new ExpressionType("Not Equals"); } }
+            public static ExpressionType LessThan { get { return new ExpressionType("Less Than"); } }
+            public static ExpressionType LessThanOrEqual { get { return new ExpressionType("Less Than Or Equal"); } }
+            public static ExpressionType GreaterThan { get { return new ExpressionType("Greater Than"); } }
+            public static ExpressionType GreaterThanOrEqual { get { return new ExpressionType("Greater Than Or Equal"); } }
+            public static ExpressionType BeginsWith { get { return new ExpressionType("Begins With"); } }
+            public static ExpressionType EndsWith { get { return new ExpressionType("Ends With"); } }
+            public static ExpressionType Contains { get { return new ExpressionType("Contains"); } }
+            public static ExpressionType IsNull { get { return new ExpressionType("Is Null"); } }
+            public static ExpressionType IsNotNull { get { return new ExpressionType("Is Not Null"); } }
+            public static ExpressionType IsThisDay { get { return new ExpressionType("Is This Day"); } }
+            public static ExpressionType Like { get { return new ExpressionType("Like"); } }
+            public static ExpressionType NotLike { get { return new ExpressionType("Not Like"); } }
+            public static ExpressionType SoundsLike { get { return new ExpressionType("Sounds Like"); } }
+
+            public override string ToString()
+            {
+                return Value;
+            }
+
+        }
     }
 
-    public class Operator
-    {
-        private Operator(string value) { Value = value; }
+    
 
+    [Serializable]
+    public class OperatorType
+    {
+        private OperatorType() { }
+        private OperatorType(string value) { Value = value; }
+
+        [XmlText]
         public string Value { get; set; }
 
-        public static Operator Or { get { return new Operator("Or"); } }
-        public static Operator And { get { return new Operator("And"); } }
+        public static OperatorType Or { get { return new OperatorType("Or"); } }
+        public static OperatorType And { get { return new OperatorType("And"); } }
 
         public override string ToString()
         {
@@ -103,60 +121,63 @@ namespace AutotaskCLI
     {
         private List<Condition> condition;
         private List<Field> field;
-        [XmlElement(
+
+        [XmlArrayItem(Type = typeof(Field),
             ElementName = "Field",
-            Form = XmlSchemaForm.Unqualified,
-            IsNullable = true,
-            Order = 1,
-            Type = typeof(Field)
-            )]
+            IsNullable = true)]
         public List<Field> Field { get => field; set => field = value; }
-        [XmlElement(
+
+        [XmlArrayItem(Type = typeof(Condition),
             ElementName = "Condition",
-            Form = XmlSchemaForm.Unqualified,
-            IsNullable = true,
-            Order = 2,
-            Type = typeof(Condition)
-            )]
+            IsNullable = true)]
         public List<Condition> Condition { get => condition; set => condition = value; }
 
-        public Query(){}
-        public Query(List<Field> field)
+        public Query() {}
+        public Query(Condition condition)
         {
-            if(this.field == null)
+            this.condition = new List<Condition>
             {
-                this.field = new List<Field>(field);
-            }
-            else
-            {
-                this.field.AddRange(field);
-            }
-            
+                condition
+            };
         }
-        public Query(List<Condition> condition)
+        public Query(Field field)
         {
-            this.condition.AddRange(condition);
+            this.field = new List<Field>
+            {
+                field
+            };
+        }
+        public Query(IEnumerable<Field> field)
+        {
+            this.field = new List<Field>(field);
+        }
+        public Query(IEnumerable<Condition> condition)
+        {
+            this.condition = new List<Condition>(condition);
         }
     }
+
     [Serializable]
     public class Field
     {
-        private string op;
+        private string text;
+        private Expression op;
 
         [XmlText]
-        public string Text;
-        [XmlAttribute(
-            AttributeName = "Expression"
-            )]
-        public string Operator { get => op; set => op = value; }
+        public string Text { get => text; set => text = value; }
+
+        [XmlElement(
+            ElementName = "expression")]
+        public Expression Operator { get => op; set => op = value; }
 
         public Field() { }
         public Field(string Text, Expression Operator)
         {
             this.Text = Text;
-            this.Operator = Operator.ToString();
+            this.Operator = Operator;
         }
     }
+
     [Serializable]
     public class Condition
     {
@@ -168,40 +189,34 @@ namespace AutotaskCLI
 
         private List<Condition> condition;
         private List<Field> field;
-        [XmlElement(
+
+        [XmlArrayItem(Type = typeof(Field),
             ElementName = "Field",
-            Form = XmlSchemaForm.Unqualified,
-            IsNullable = true,
-            Order = 1,
-            Type = typeof(Field)
-            )]
+            IsNullable = true)]
         public List<Field> Fields { get => field; set => field = value; }
-        [XmlElement(
+
+        [XmlArrayItem(Type = typeof(Condition),
             ElementName = "Condition",
-            Form = XmlSchemaForm.Unqualified,
-            IsNullable = true,
-            Order = 2,
-            Type = typeof(Condition)
-            )]
+            IsNullable = true)]
         public List<Condition> Conditions { get => condition; set => condition = value; }
 
         public Condition() { }
 
-        public Condition(Operator Operator)
+        public Condition(OperatorType Operator)
         {
             this.Operator = Operator.ToString();
         }
 
-        public Condition(Operator Operator, IEnumerable<Field> field)
+        public Condition(OperatorType Operator, IEnumerable<Field> field)
         {
             this.Operator = Operator.ToString();
-            this.field.AddRange(field);
+            this.field = new List<Field>(field);
         }
 
-        public Condition(Operator Operator, IEnumerable<Condition> condition)
+        public Condition(OperatorType Operator, IEnumerable<Condition> condition)
         {
             this.Operator = Operator.ToString();
-            this.condition.AddRange(condition);
+            this.condition = new List<Condition>(condition);
         }
     }
 }
