@@ -103,9 +103,9 @@ namespace AutotaskCLI
             <QueryXML>
               <Entity>Ticket</Entity>
               <Query>
-                <Condition>
+                <Condition> // TODO: Need to remove this
                   <Condition Operator="Or">
-                    <Fields>
+                    <Fields> // TODO: Need to remove this
                       <Field>TicketNumber<expression op="Equals">asdf</expression></Field>
                     </Fields>
                   </Condition>
