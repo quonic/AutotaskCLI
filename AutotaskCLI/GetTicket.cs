@@ -12,8 +12,8 @@ namespace AutotaskCLI
         {
             Entity = "Ticket"
         };
-        //private AutotaskIntegrations AI = new AutotaskIntegrations();
-        //private ATWSSoapClient SoapClient = new ATWSSoapClient();
+        private AutotaskIntegrations AI = new AutotaskIntegrations();
+        private ATWSSoapClient SoapClient = new ATWSSoapClient();
 
         [Parameter(
             Mandatory = true,
@@ -44,16 +44,23 @@ namespace AutotaskCLI
             ParameterSetName = "Name"
             )]
         public string Status { get; set; }
+        [Parameter(
+            Mandatory = false
+            )]
+        public bool OutXml { get; set; }
 
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
 
             // Get our session data
-            //AI.PartnerID = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapEmail").Value.ToString();
-            //AI.IntegrationCode = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapICode").Value.ToString();
-            //ATWSSoapClient SoapClient = new ATWSSoapClient(SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapURL").Value.ToString());
-            
+            if (!OutXml)
+            {
+                AI.PartnerID = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapEmail").Value.ToString();
+                AI.IntegrationCode = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapICode").Value.ToString();
+                ATWSSoapClient SoapClient = new ATWSSoapClient(SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapURL").Value.ToString());
+            }
+
         }
         protected override void ProcessRecord()
         {
@@ -96,7 +103,14 @@ namespace AutotaskCLI
         {
             base.EndProcessing();
 
-            //WriteObject(SoapClient.query(AI, sXML.ToXML()));
+            if (OutXml)
+            {
+                WriteObject(sXML.ToXML());
+            }
+            else
+            {
+                WriteObject(SoapClient.query(AI, sXML.ToXML()));
+            }
             /*
              sample output:
             Get-Ticket -TicketNumber "asdf","asdff"
@@ -125,7 +139,7 @@ namespace AutotaskCLI
               </Query>
             </QueryXML>
              */
-            WriteObject(sXML.ToXML());
+            
         }
     }
 }
