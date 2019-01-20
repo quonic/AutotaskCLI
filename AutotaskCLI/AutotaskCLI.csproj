@@ -43,15 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectAutotask.cs" />
+    <Compile Include="Cmdlets\ConnectAutotask.cs" />
     <Compile Include="Connected Services\Autotask\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="GetTicket.cs" />
+    <Compile Include="Cmdlets\GetTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryXML.cs" />
+    <Compile Include="Classes\QueryXML.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
