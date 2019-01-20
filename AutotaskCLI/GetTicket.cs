@@ -1,7 +1,10 @@
 ﻿using AutotaskCLI.Autotask;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Management.Automation;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace AutotaskCLI
 {
@@ -13,7 +16,7 @@ namespace AutotaskCLI
             Entity = "Ticket"
         };
         private AutotaskIntegrations AI = new AutotaskIntegrations();
-        private ATWSSoapClient SoapClient = new ATWSSoapClient();
+        
 
         [Parameter(
             Mandatory = true,
@@ -47,14 +50,14 @@ namespace AutotaskCLI
         [Parameter(
             Mandatory = false
             )]
-        public bool OutXml { get; set; }
+        public SwitchParameter OutXml { get; set; }
 
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
 
             // Get our session data
-            if (!OutXml)
+            if (!OutXml == true)
             {
                 AI.PartnerID = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapEmail").Value.ToString();
                 AI.IntegrationCode = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapICode").Value.ToString();
@@ -64,14 +67,38 @@ namespace AutotaskCLI
         }
         protected override void ProcessRecord()
         {
-            if(ParameterSetName == "Name") {
+
+            if (ParameterSetName == "Name") {
                 // This is (FirstName && LastName && Status) logic to AutoTask
-                List<Field> Filter = new List<Field>(3);
-                Filter.Insert(0, new Field("FirstName", new Expression(FirstName, Expression.ExpressionType.Like)));
-                Filter.Insert(1, new Field("LastName", new Expression(LastName, Expression.ExpressionType.Like)));
-                Filter.Insert(2, new Field("Status", new Expression(Status, Expression.ExpressionType.Like)));
-                sXML.Query = new Query(Filter);
-                    
+                sXML.Query = new Query(new List<Field> {
+                    new Field
+                    {
+                        Text = "FirstName",
+                        Expression = new Expression
+                        {
+                            Text = FirstName,
+                            Op = Expression.ExpressionType.Like.Value
+                        }
+                    },
+                    new Field
+                    {
+                        Text = "LastName",
+                        Expression = new Expression
+                        {
+                            Text = LastName,
+                            Op = Expression.ExpressionType.Like.Value
+                        }
+                    },
+                    new Field
+                    {
+                        Text = "Status",
+                        Expression = new Expression
+                        {
+                            Text = Status,
+                            Op = Expression.ExpressionType.Like.Value
+                        }
+                    }
+                });
             }
             else if (ParameterSetName == "TicketNumber") {
 
@@ -82,18 +109,36 @@ namespace AutotaskCLI
 
                 if (TicketNumber.Length > 1 && TicketNumber is Array)
                 {
-                    
-                    List<Field> FilterField = new List<Field>(TicketNumber.Length);
-                    for (int i = 0; i < TicketNumber.Length - 1; i++) {
-                        FilterField.Insert(i,new Field("TicketNumber", new Expression(TicketNumber[i], Expression.ExpressionType.Equal)));
+                    //sXML.Query.Condition = new List<Condition>();
+                    sXML.Query = new Query();
+                    foreach (var ticketNumber in TicketNumber)
+                    {
+                        Condition ticketOr = new Condition { Operator = Condition.OperatorType.Or.Value };
+                        ticketOr.Field = new List<Field> {
+                            new Field
+                            {
+                                Text = "TicketNumber",
+                                Expression = new Expression
+                                {
+                                    Text = ticketNumber,
+                                    Op = Expression.ExpressionType.Like.Value
+                                }
+                            }
+                        };
+                        sXML.Query.Condition.Add(ticketOr);
                     }
-
-                    Condition cList = new Condition(OperatorType.Or, FilterField);
-                    sXML.Query = new Query(cList);
                 }
                 else
                 {
-                    sXML.Query.Field.Add(new Field("TicketNumber", new Expression(TicketNumber[0], Expression.ExpressionType.Like)));
+                    sXML.Query.Field.Add(new Field
+                    {
+                        Text = "TicketNumber",
+                        Expression = new Expression
+                        {
+                            Text = TicketNumber[0],
+                            Op = Expression.ExpressionType.Like.Value
+                        }
+                    });
                 }
             }
             
@@ -103,43 +148,46 @@ namespace AutotaskCLI
         {
             base.EndProcessing();
 
-            if (OutXml)
+            if (OutXml == true)
             {
                 WriteObject(sXML.ToXML());
             }
             else
             {
+                ATWSSoapClient SoapClient = new ATWSSoapClient();
                 WriteObject(SoapClient.query(AI, sXML.ToXML()));
             }
             /*
              sample output:
-            Get-Ticket -TicketNumber "asdf","asdff"
+            Get-Ticket -TicketNumber "asdf","asdff" -OutXml
             <QueryXML>
               <Entity>Ticket</Entity>
               <Query>
-                <Condition> // TODO: Need to remove this
-                  <Condition Operator="Or">
-                    <Fields> // TODO: Need to remove this
-                      <Field>TicketNumber<expression op="Equals">asdf</expression></Field>
-                    </Fields>
-                  </Condition>
+                <Condition Operator="Or">
+                  <Field>
+                    <expression op="Like">asdf</expression>TicketNumber</Field>
+                </Condition>
+                <Condition Operator="Or">
+                  <Field>
+                    <expression op="Like">asdff</expression>TicketNumber</Field>
                 </Condition>
               </Query>
             </QueryXML>
 
-            Get-Ticket -FirstName "asdf" -LastName "asdff" -Status "Closed"
+            Get-Ticket -FirstName "asdf" -LastName "asdff" -Status "Closed" -OutXml
             <QueryXML>
               <Entity>Ticket</Entity>
               <Query>
                 <Field>
-                  <Field>FirstName<expression op="Like">asdf</expression></Field>
-                  <Field>LastName<expression op="Like">asdff</expression></Field>
-                  <Field>Status<expression op="Like">Closed</expression></Field>
-                </Field>
+                  <expression op="Like">asdf</expression>FirstName</Field>
+                <Field>
+                  <expression op="Like">asdff</expression>LastName</Field>
+                <Field>
+                  <expression op="Like">Closed</expression>Status</Field>
               </Query>
             </QueryXML>
              */
-            
+
         }
     }
 }
