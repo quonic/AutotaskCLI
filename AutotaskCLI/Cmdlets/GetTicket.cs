@@ -59,6 +59,7 @@ namespace AutotaskCLI
             // Get our session data
             if (!OutXml == true)
             {
+                // Check that Connect-Autotask was called
                 if (SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapEmail") != null && 
                     SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapICode") != null &&
                     SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapURL") != null)
@@ -89,6 +90,7 @@ namespace AutotaskCLI
 
             if (ParameterSetName == "Name") {
                 // This is (FirstName && LastName && Status) logic to AutoTask
+                // TODO: Expand this into a more selectable method
                 sXML.Query = new Query(new List<Field> {
                     new Field
                     {
@@ -121,14 +123,12 @@ namespace AutotaskCLI
             }
             else if (ParameterSetName == "TicketNumber") {
 
-                
-
                 WriteDebug(text: "Tickets to search for: " + TicketNumber.Length);
                 WriteDebug(text: "TicketNumber is of object type: " + TicketNumber.GetType());
 
                 if (TicketNumber.Length > 1 && TicketNumber is Array)
                 {
-                    //sXML.Query.Condition = new List<Condition>();
+                    // More than one ticket was asked to be searched for, construct (Ticket1 or Ticket2 or ...) query
                     sXML.Query = new Query();
                     foreach (var ticketNumber in TicketNumber)
                     {
@@ -149,6 +149,7 @@ namespace AutotaskCLI
                 }
                 else
                 {
+                    // Only one ticket was asked to be searched for, constuct (Ticket1) query
                     sXML.Query.Field.Add(new Field
                     {
                         Text = "TicketNumber",
@@ -169,10 +170,12 @@ namespace AutotaskCLI
 
             if (OutXml == true)
             {
+                // Output raw XML, usually for debug porposes
                 WriteObject(sXML.ToXML());
             }
             else
             {
+                // Send query to Autotask and check for errors from Autotask
                 ATWSSoapClient SoapClient = new ATWSSoapClient();
                 ATWSResponse response = SoapClient.query(AI, sXML.ToXML());
                 if(response.Errors != null && response.Errors.Length > 0)

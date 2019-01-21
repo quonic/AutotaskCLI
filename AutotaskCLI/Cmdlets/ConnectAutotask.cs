@@ -40,6 +40,8 @@ namespace AutotaskCLI
             };
 
             WriteVerbose("Connected to Autotask...");
+
+            // Save email, API code, and URL to the module's private ?memory?
             SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapEmail", AI.PartnerID);
             SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapICode", AI.IntegrationCode);
             SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapURL", ZoneInfoData.URL);
