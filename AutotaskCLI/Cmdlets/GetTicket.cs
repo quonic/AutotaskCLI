@@ -16,7 +16,7 @@ namespace AutotaskCLI
             Entity = "Ticket"
         };
         private AutotaskIntegrations AI = new AutotaskIntegrations();
-        
+        private string partnerID, ICode, Url;
 
         [Parameter(
             Mandatory = true,
@@ -59,9 +59,28 @@ namespace AutotaskCLI
             // Get our session data
             if (!OutXml == true)
             {
-                AI.PartnerID = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapEmail").Value.ToString();
-                AI.IntegrationCode = SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapICode").Value.ToString();
-                ATWSSoapClient SoapClient = new ATWSSoapClient(SessionState.Module.SessionState.PSVariable.Get("AutotaskAPISoapURL").Value.ToString());
+                if (SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapEmail") != null && 
+                    SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapICode") != null &&
+                    SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapURL") != null)
+                {
+                    partnerID = SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapEmail").ToString();
+                    ICode = SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapICode").ToString();
+                    Url = SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapURL").ToString();
+                    AI.PartnerID = partnerID;
+                    AI.IntegrationCode = ICode;
+                    ATWSSoapClient SoapClient = new ATWSSoapClient(Url);
+                }
+                else
+                {
+                    WriteError(
+                        errorRecord: new ErrorRecord(
+                            exception: new Exception("Please run Connect-Autotask"),
+                            errorId: "1000",
+                            errorCategory: ErrorCategory.ObjectNotFound,
+                            targetObject: partnerID));
+                }
+                
+                
             }
 
         }
