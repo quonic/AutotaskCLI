@@ -172,37 +172,6 @@ namespace AutotaskCLI
                     WriteObject(response.EntityResults);
                 }
             }
-            /*
-             sample output:
-            Get-Ticket -TicketNumber "asdf","asdff" -OutXml
-            <QueryXML>
-              <Entity>Ticket</Entity>
-              <Query>
-                <Condition Operator="Or">
-                  <Field>
-                    <expression op="Like">asdf</expression>TicketNumber</Field>
-                </Condition>
-                <Condition Operator="Or">
-                  <Field>
-                    <expression op="Like">asdff</expression>TicketNumber</Field>
-                </Condition>
-              </Query>
-            </QueryXML>
-
-            Get-Ticket -FirstName "asdf" -LastName "asdff" -Status "Closed" -OutXml
-            <QueryXML>
-              <Entity>Ticket</Entity>
-              <Query>
-                <Field>
-                  <expression op="Like">asdf</expression>FirstName</Field>
-                <Field>
-                  <expression op="Like">asdff</expression>LastName</Field>
-                <Field>
-                  <expression op="Like">Closed</expression>Status</Field>
-              </Query>
-            </QueryXML>
-             */
-
         }
     }
 }
