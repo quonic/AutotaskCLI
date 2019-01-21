@@ -155,7 +155,22 @@ namespace AutotaskCLI
             else
             {
                 ATWSSoapClient SoapClient = new ATWSSoapClient();
-                WriteObject(SoapClient.query(AI, sXML.ToXML()));
+                ATWSResponse response = SoapClient.query(AI, sXML.ToXML());
+                if(response.Errors != null && response.Errors.Length > 0)
+                {
+                    Exception exception = new Exception(response.Errors[0].Message);
+                    ErrorRecord errorRecord = new ErrorRecord(
+                        exception: exception,
+                        errorId: response.ReturnCode.ToString(),
+                        errorCategory: ErrorCategory.NotSpecified,
+                        targetObject: response.ReturnCode);
+
+                    WriteError(errorRecord);
+                }
+                else
+                {
+                    WriteObject(response.EntityResults);
+                }
             }
             /*
              sample output:
