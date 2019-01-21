@@ -1,20 +1,19 @@
 # AutotaskCLI
 
-AutoTask SOAP API interface for Powershell
+AutoTaskCLI is a SOAP API interface for Powershell written in C#.
+
+This is still a work in progress and any help is greatly appreciated.
 
 ## Features
 
-* Get Tickets and Tasks
-* Get Notes from Tickets and Tasks
-* Get Resources(users)
-* DSL(Domain Specific Language) for building custom Queries
-* Automatic selection of reagion for spcified user account
+* Get Tickets
+* Query builder from object to XML via the AutotaskCLI.QueryXML class
+* Automatic selection of region for spcified user account
 
-## Planned Features
+## Planned
 
-* Add Update and Create functionality for other Entities
-* Add Query functionality for other Entities
-* Get TimeEntries
+* Rewrite everything in C#
+* Get it working under Linux with Powershell Core(Only work under Windows at the moment)
 
 ## GitPitch PitchMe presentation
 
@@ -36,6 +35,3 @@ For more information
 * [AutotaskCLI.readthedocs.io](http://AutotaskCLI.readthedocs.io)
 * [github.com/quonic/AutotaskCLI](https://github.com/quonic/AutotaskCLI)
 * [quonic.github.io](https://quonic.github.io)
-
-
-This project was generated using [Kevin Marquette](http://kevinmarquette.github.io)'s [Full Module Plaster Template](https://github.com/KevinMarquette/PlasterTemplates/tree/master/FullModuleTemplate).
