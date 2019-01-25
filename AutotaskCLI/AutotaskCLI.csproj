@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Classes\Example.md" />
     <None Include="Connected Services\Autotask\atws1.wsdl" />
     <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.Attachment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
