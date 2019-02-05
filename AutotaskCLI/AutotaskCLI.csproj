@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cmdlets\ConnectAutotask.cs" />
+    <Compile Include="Cmdlets\GetResource.cs" />
     <Compile Include="Cmdlets\NewTicket.cs" />
     <Compile Include="Cmdlets\UpdateTicket.cs" />
     <Compile Include="Connected Services\Autotask\Reference.cs">
@@ -68,10 +69,49 @@
     <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.ATWSZoneInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.CreateAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.createResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.DeleteAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.EntityInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.Field.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.GetAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.GetEntityInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.GetFieldInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.GetInvoiceMarkupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.getUDFInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.GetWsdlVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.queryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Autotask\AutotaskCLI.Autotask.updateResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Start-Debug.ps1" />
