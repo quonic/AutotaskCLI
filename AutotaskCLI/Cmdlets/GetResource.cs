@@ -1,4 +1,5 @@
 ﻿using AutotaskCLI.Autotask;
+using AutotaskCLI.Classes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,8 +16,7 @@ namespace AutotaskCLI.Cmdlets
         {
             Entity = "Resource"
         };
-        private AutotaskIntegrations AI = new AutotaskIntegrations();
-        private string partnerID, ICode, Url;
+        private PostQuery pQuery = new PostQuery();
 
         [Parameter(
             Mandatory = false,
@@ -50,27 +50,19 @@ namespace AutotaskCLI.Cmdlets
             // Get our session data
             if (!OutXml == true)
             {
-                // Check that Connect-Autotask was called
-                if (SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapEmail") != null &&
-                    SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapICode") != null &&
-                    SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapURL") != null)
+                try
                 {
-                    partnerID = SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapEmail").ToString();
-                    ICode = SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapICode").ToString();
-                    Url = SessionState.Module.SessionState.PSVariable.GetValue("AutotaskAPISoapURL").ToString();
-                    AI.PartnerID = partnerID;
-                    AI.IntegrationCode = ICode;
-                    ATWSSoapClient SoapClient = new ATWSSoapClient(Url);
+                    pQuery.SetSessionState(SessionState.Module.SessionState);
                 }
-                else
+                catch (Exception ex)
                 {
                     WriteError(
                         errorRecord: new ErrorRecord(
-                            exception: new Exception("Please run Connect-Autotask"),
+                            exception: ex,
                             errorId: "1000",
                             errorCategory: ErrorCategory.ObjectNotFound,
-                            targetObject: partnerID));
-                    throw new Exception("Please run Connect-Autotask");
+                            targetObject: pQuery.PartnerID));
+                    throw ex;
                 }
             }
 
@@ -138,22 +130,20 @@ namespace AutotaskCLI.Cmdlets
             else
             {
                 // Send query to Autotask and check for errors from Autotask
-                ATWSSoapClient SoapClient = new ATWSSoapClient();
-                ATWSResponse response = SoapClient.query(AI, sXML.ToXML());
-                if (response.Errors != null && response.Errors.Length > 0)
+                try
                 {
-                    Exception exception = new Exception(response.Errors[0].Message);
-                    ErrorRecord errorRecord = new ErrorRecord(
-                        exception: exception,
-                        errorId: response.ReturnCode.ToString(),
-                        errorCategory: ErrorCategory.NotSpecified,
-                        targetObject: response.ReturnCode);
-
-                    WriteError(errorRecord);
-                }
-                else
-                {
+                    ATWSResponse response = pQuery.Query(sXML.ToXML());
                     WriteObject(response.EntityResults);
+                }
+                catch (Exception ex)
+                {
+                    WriteError(
+                        errorRecord: new ErrorRecord(
+                            exception: ex,
+                            errorId: "1000",
+                            errorCategory: ErrorCategory.ObjectNotFound,
+                            targetObject: sXML.Query));
+                    throw ex;
                 }
             }
         }
