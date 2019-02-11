@@ -18,10 +18,12 @@ namespace AutotaskCLI.Classes
         private string url;
         private string partnerID;
         private string iCode;
+        private ATWSSoapClient soapClient;
 
         public string PartnerID { get => partnerID; set => partnerID = value; }
         public string ICode { get => iCode; set => iCode = value; }
         public string Url { get => url; set => url = value; }
+        public ATWSSoapClient SoapClient { get => soapClient; set => soapClient = value; }
 
         public PostQuery() {}
 
@@ -42,7 +44,7 @@ namespace AutotaskCLI.Classes
                 Url = sessionState.PSVariable.GetValue("AutotaskAPISoapURL").ToString();
                 AI.PartnerID = PartnerID;
                 AI.IntegrationCode = ICode;
-                ATWSSoapClient SoapClient = new ATWSSoapClient(Url);
+                SoapClient = new ATWSSoapClient(Url);
             }
             else
             {
@@ -53,7 +55,6 @@ namespace AutotaskCLI.Classes
         public ATWSResponse Query(string XML)
         {
             // Send query to Autotask and check for errors from Autotask
-            ATWSSoapClient SoapClient = new ATWSSoapClient();
             ATWSResponse response = SoapClient.query(AI, XML);
             if (response.Errors != null && response.Errors.Length > 0)
             {
@@ -61,6 +62,7 @@ namespace AutotaskCLI.Classes
             }
             else
             {
+                //TODO: Add a bit of code to get more data if there are more than 500 items returned
                 return response;
             }
         }
