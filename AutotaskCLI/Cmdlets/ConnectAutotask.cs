@@ -1,7 +1,6 @@
 ﻿using System.Management.Automation;
 using System.Net.Mail;
 using AutotaskCLI.Autotask;
-using ATLegacy = AutotaskCLI.AutotaskLegacy;
 
 namespace AutotaskCLI
 {
@@ -13,26 +12,10 @@ namespace AutotaskCLI
             )]
         public PSCredential Credential { get; set; }
 
-        [Parameter(Mandatory = false)]
-        public bool UseLegacy { get; set; }
-
         protected override void ProcessRecord()
         {
             // Validate username is an email address, might change this to regex if there is ever
             //a SOAP library that can work under Powershell 6 under linux
-            if(UseLegacy == true)
-            {
-                ATLegacy.ATWSSoapClient ZoneInfo15 = new ATLegacy.ATWSSoapClient();
-                ATLegacy.ATWSZoneInfo ZoneInfoData15 =  ZoneInfo15.getZoneInfo(Credential.UserName);
-                ATLegacy.ATWSSoapClient SoapClient15 = new ATLegacy.ATWSSoapClient(ZoneInfoData15.URL);
-                SoapClient15.DisplayInitializationUI();
-                ATLegacy.ATWSSoapClient.CacheSetting = System.ServiceModel.CacheSetting.AlwaysOn;
-                
-            }
-            else
-            {
-
-            }
             MailAddress emailAddress = new MailAddress(Credential.UserName);
             // Version 1.5 way of getting Zone Info
             //ATWSZoneInfo ZoneInfo = new ATWSZoneInfo(emailAddress.Address);
