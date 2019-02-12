@@ -20,143 +20,115 @@ namespace AutotaskCLI.Autotask {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetAttachmentResponse GetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetAttachment", ReplyAction="*")]
-        System.IAsyncResult BeginGetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.GetAttachmentResponse EndGetAttachment(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetAttachment", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetAttachmentResponse> GetAttachmentAsync(AutotaskCLI.Autotask.GetAttachmentRequest request);
         
         // CODEGEN: Generating message contract since message CreateAttachmentRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/CreateAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.CreateAttachmentResponse CreateAttachment(AutotaskCLI.Autotask.CreateAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/CreateAttachment", ReplyAction="*")]
-        System.IAsyncResult BeginCreateAttachment(AutotaskCLI.Autotask.CreateAttachmentRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.CreateAttachmentResponse EndCreateAttachment(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/CreateAttachment", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.CreateAttachmentResponse> CreateAttachmentAsync(AutotaskCLI.Autotask.CreateAttachmentRequest request);
         
         // CODEGEN: Generating message contract since message DeleteAttachmentRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/DeleteAttachment", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.DeleteAttachmentResponse DeleteAttachment(AutotaskCLI.Autotask.DeleteAttachmentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/DeleteAttachment", ReplyAction="*")]
-        System.IAsyncResult BeginDeleteAttachment(AutotaskCLI.Autotask.DeleteAttachmentRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.DeleteAttachmentResponse EndDeleteAttachment(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/DeleteAttachment", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.DeleteAttachmentResponse> DeleteAttachmentAsync(AutotaskCLI.Autotask.DeleteAttachmentRequest request);
         
         // CODEGEN: Generating message contract since the wrapper name (GetEntityInfo) of message GetEntityInfo does not match the default value (getEntityInfo)
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetEntityInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetEntityInfo1 getEntityInfo(AutotaskCLI.Autotask.GetEntityInfo request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetEntityInfo", ReplyAction="*")]
-        System.IAsyncResult BegingetEntityInfo(AutotaskCLI.Autotask.GetEntityInfo request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.GetEntityInfo1 EndgetEntityInfo(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetEntityInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetEntityInfo1> getEntityInfoAsync(AutotaskCLI.Autotask.GetEntityInfo request);
         
         // CODEGEN: Generating message contract since message GetFieldInfoRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetFieldInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetFieldInfoResponse GetFieldInfo(AutotaskCLI.Autotask.GetFieldInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetFieldInfo", ReplyAction="*")]
-        System.IAsyncResult BeginGetFieldInfo(AutotaskCLI.Autotask.GetFieldInfoRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.GetFieldInfoResponse EndGetFieldInfo(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetFieldInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetFieldInfoResponse> GetFieldInfoAsync(AutotaskCLI.Autotask.GetFieldInfoRequest request);
         
         // CODEGEN: Generating message contract since message getUDFInfoRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getUDFInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.getUDFInfoResponse getUDFInfo(AutotaskCLI.Autotask.getUDFInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/getUDFInfo", ReplyAction="*")]
-        System.IAsyncResult BegingetUDFInfo(AutotaskCLI.Autotask.getUDFInfoRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.getUDFInfoResponse EndgetUDFInfo(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getUDFInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getUDFInfoResponse> getUDFInfoAsync(AutotaskCLI.Autotask.getUDFInfoRequest request);
         
         // CODEGEN: Generating message contract since message queryRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/query", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.queryResponse query(AutotaskCLI.Autotask.queryRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/query", ReplyAction="*")]
-        System.IAsyncResult Beginquery(AutotaskCLI.Autotask.queryRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.queryResponse Endquery(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/query", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.queryResponse> queryAsync(AutotaskCLI.Autotask.queryRequest request);
         
         // CODEGEN: Generating message contract since message createRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/create", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.createResponse create(AutotaskCLI.Autotask.createRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/create", ReplyAction="*")]
-        System.IAsyncResult Begincreate(AutotaskCLI.Autotask.createRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.createResponse Endcreate(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/create", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.createResponse> createAsync(AutotaskCLI.Autotask.createRequest request);
         
         // CODEGEN: Generating message contract since message updateRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/update", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.updateResponse update(AutotaskCLI.Autotask.updateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/update", ReplyAction="*")]
-        System.IAsyncResult Beginupdate(AutotaskCLI.Autotask.updateRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.updateResponse Endupdate(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/update", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.updateResponse> updateAsync(AutotaskCLI.Autotask.updateRequest request);
         
         // CODEGEN: Generating message contract since message deleteRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/delete", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.deleteResponse delete(AutotaskCLI.Autotask.deleteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/delete", ReplyAction="*")]
-        System.IAsyncResult Begindelete(AutotaskCLI.Autotask.deleteRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.deleteResponse Enddelete(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/delete", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.deleteResponse> deleteAsync(AutotaskCLI.Autotask.deleteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getZoneInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.ATWSZoneInfo getZoneInfo(string UserName);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/getZoneInfo", ReplyAction="*")]
-        System.IAsyncResult BegingetZoneInfo(string UserName, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.ATWSZoneInfo EndgetZoneInfo(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getZoneInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.ATWSZoneInfo> getZoneInfoAsync(string UserName);
         
         // CODEGEN: Generating message contract since message getThresholdAndUsageInfoRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse getThresholdAndUsageInfo(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo", ReplyAction="*")]
-        System.IAsyncResult BegingetThresholdAndUsageInfo(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse EndgetThresholdAndUsageInfo(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/getThresholdAndUsageInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse> getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request);
         
         // CODEGEN: Generating message contract since message GetWsdlVersionRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetWsdlVersion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetWsdlVersionResponse GetWsdlVersion(AutotaskCLI.Autotask.GetWsdlVersionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetWsdlVersion", ReplyAction="*")]
-        System.IAsyncResult BeginGetWsdlVersion(AutotaskCLI.Autotask.GetWsdlVersionRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.GetWsdlVersionResponse EndGetWsdlVersion(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetWsdlVersion", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetWsdlVersionResponse> GetWsdlVersionAsync(AutotaskCLI.Autotask.GetWsdlVersionRequest request);
         
         // CODEGEN: Generating message contract since message GetInvoiceMarkupRequest has headers
         [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         AutotaskCLI.Autotask.GetInvoiceMarkupResponse GetInvoiceMarkup(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup", ReplyAction="*")]
-        System.IAsyncResult BeginGetInvoiceMarkup(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request, System.AsyncCallback callback, object asyncState);
-        
-        AutotaskCLI.Autotask.GetInvoiceMarkupResponse EndGetInvoiceMarkup(System.IAsyncResult result);
+        [System.ServiceModel.OperationContractAttribute(Action="http://autotask.net/ATWS/v1_6/GetInvoiceMarkup", ReplyAction="*")]
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetInvoiceMarkupResponse> GetInvoiceMarkupAsync(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -244,7 +216,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -332,7 +304,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -392,7 +364,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -466,7 +438,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://autotask.net/ATWS/v1_6/")]
     public enum EntityReturnInfoDatabaseAction {
@@ -482,7 +454,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -514,7 +486,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -730,7 +702,7 @@ namespace AutotaskCLI.Autotask {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ClassificationIcon))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(QuoteLocation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AttachmentInfo))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -790,7 +762,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1004,7 +976,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1148,7 +1120,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1194,7 +1166,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1231,7 +1203,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1310,7 +1282,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1347,7 +1319,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1384,7 +1356,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1449,7 +1421,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1598,7 +1570,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1649,7 +1621,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1700,7 +1672,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1877,7 +1849,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2110,7 +2082,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2189,7 +2161,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2310,7 +2282,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2543,7 +2515,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2580,7 +2552,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2631,7 +2603,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2682,7 +2654,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2733,7 +2705,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3358,7 +3330,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3409,7 +3381,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3446,7 +3418,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3525,7 +3497,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3618,7 +3590,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3697,7 +3669,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3762,7 +3734,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3827,7 +3799,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3892,7 +3864,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3957,7 +3929,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4022,7 +3994,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4171,7 +4143,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4208,7 +4180,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4483,7 +4455,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4534,7 +4506,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4571,7 +4543,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4650,7 +4622,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4701,7 +4673,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4738,7 +4710,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4789,7 +4761,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4840,7 +4812,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4905,7 +4877,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4970,7 +4942,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5329,7 +5301,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5380,7 +5352,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5445,7 +5417,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5692,7 +5664,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5855,7 +5827,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6228,7 +6200,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6321,7 +6293,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6358,7 +6330,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6745,7 +6717,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7118,7 +7090,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7183,7 +7155,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7346,7 +7318,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7495,7 +7467,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7882,7 +7854,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8143,7 +8115,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8264,7 +8236,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8889,7 +8861,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9388,7 +9360,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9481,7 +9453,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9700,7 +9672,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9765,7 +9737,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9802,7 +9774,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10987,7 +10959,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11024,7 +10996,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11061,7 +11033,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11490,7 +11462,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11527,7 +11499,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12264,7 +12236,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12329,7 +12301,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12534,7 +12506,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12739,7 +12711,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12888,7 +12860,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13471,7 +13443,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14404,7 +14376,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14623,7 +14595,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14940,7 +14912,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15075,7 +15047,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15266,7 +15238,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15849,7 +15821,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15942,7 +15914,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16245,7 +16217,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16702,7 +16674,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16739,7 +16711,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16776,7 +16748,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16981,7 +16953,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17018,7 +16990,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17055,7 +17027,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17176,7 +17148,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17591,7 +17563,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17740,7 +17712,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17875,7 +17847,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17996,7 +17968,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18173,7 +18145,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18238,7 +18210,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18303,7 +18275,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18354,7 +18326,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18531,7 +18503,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18708,7 +18680,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18913,7 +18885,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19034,7 +19006,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19169,7 +19141,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19346,7 +19318,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19509,7 +19481,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20274,7 +20246,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20339,7 +20311,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20502,7 +20474,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20539,7 +20511,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20674,7 +20646,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20781,7 +20753,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21168,7 +21140,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21345,7 +21317,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21746,7 +21718,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21867,7 +21839,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22226,7 +22198,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22515,7 +22487,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22958,7 +22930,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23023,7 +22995,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23088,7 +23060,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23321,7 +23293,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23540,7 +23512,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23605,7 +23577,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23642,7 +23614,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23679,7 +23651,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23730,7 +23702,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23809,7 +23781,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23888,7 +23860,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23967,7 +23939,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24144,7 +24116,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24246,7 +24218,7 @@ namespace AutotaskCLI.Autotask {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24783,357 +24755,7 @@ namespace AutotaskCLI.Autotask {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetAttachmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetAttachmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.Attachment Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.Attachment)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CreateAttachmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public CreateAttachmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public long Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((long)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DeleteAttachmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public DeleteAttachmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class getEntityInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public getEntityInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.EntityInfo[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.EntityInfo[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetFieldInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetFieldInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.Field[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.Field[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class getUDFInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public getUDFInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.Field[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.Field[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class queryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public queryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.ATWSResponse Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class createCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public createCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.ATWSResponse Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class updateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public updateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.ATWSResponse Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class deleteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public deleteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.ATWSResponse Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class getZoneInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public getZoneInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.ATWSZoneInfo Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.ATWSZoneInfo)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class getThresholdAndUsageInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public getThresholdAndUsageInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public AutotaskCLI.Autotask.ATWSResponse Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((AutotaskCLI.Autotask.ATWSResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetWsdlVersionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetWsdlVersionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetInvoiceMarkupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetInvoiceMarkupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ATWSSoapClient : System.ServiceModel.ClientBase<AutotaskCLI.Autotask.ATWSSoap>, AutotaskCLI.Autotask.ATWSSoap {
-        
-        private BeginOperationDelegate onBeginGetAttachmentDelegate;
-        
-        private EndOperationDelegate onEndGetAttachmentDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetAttachmentCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginCreateAttachmentDelegate;
-        
-        private EndOperationDelegate onEndCreateAttachmentDelegate;
-        
-        private System.Threading.SendOrPostCallback onCreateAttachmentCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginDeleteAttachmentDelegate;
-        
-        private EndOperationDelegate onEndDeleteAttachmentDelegate;
-        
-        private System.Threading.SendOrPostCallback onDeleteAttachmentCompletedDelegate;
-        
-        private BeginOperationDelegate onBegingetEntityInfoDelegate;
-        
-        private EndOperationDelegate onEndgetEntityInfoDelegate;
-        
-        private System.Threading.SendOrPostCallback ongetEntityInfoCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetFieldInfoDelegate;
-        
-        private EndOperationDelegate onEndGetFieldInfoDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetFieldInfoCompletedDelegate;
-        
-        private BeginOperationDelegate onBegingetUDFInfoDelegate;
-        
-        private EndOperationDelegate onEndgetUDFInfoDelegate;
-        
-        private System.Threading.SendOrPostCallback ongetUDFInfoCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginqueryDelegate;
-        
-        private EndOperationDelegate onEndqueryDelegate;
-        
-        private System.Threading.SendOrPostCallback onqueryCompletedDelegate;
-        
-        private BeginOperationDelegate onBegincreateDelegate;
-        
-        private EndOperationDelegate onEndcreateDelegate;
-        
-        private System.Threading.SendOrPostCallback oncreateCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginupdateDelegate;
-        
-        private EndOperationDelegate onEndupdateDelegate;
-        
-        private System.Threading.SendOrPostCallback onupdateCompletedDelegate;
-        
-        private BeginOperationDelegate onBegindeleteDelegate;
-        
-        private EndOperationDelegate onEnddeleteDelegate;
-        
-        private System.Threading.SendOrPostCallback ondeleteCompletedDelegate;
-        
-        private BeginOperationDelegate onBegingetZoneInfoDelegate;
-        
-        private EndOperationDelegate onEndgetZoneInfoDelegate;
-        
-        private System.Threading.SendOrPostCallback ongetZoneInfoCompletedDelegate;
-        
-        private BeginOperationDelegate onBegingetThresholdAndUsageInfoDelegate;
-        
-        private EndOperationDelegate onEndgetThresholdAndUsageInfoDelegate;
-        
-        private System.Threading.SendOrPostCallback ongetThresholdAndUsageInfoCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetWsdlVersionDelegate;
-        
-        private EndOperationDelegate onEndGetWsdlVersionDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetWsdlVersionCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGetInvoiceMarkupDelegate;
-        
-        private EndOperationDelegate onEndGetInvoiceMarkupDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetInvoiceMarkupCompletedDelegate;
         
         public ATWSSoapClient() {
         }
@@ -25154,34 +24776,6 @@ namespace AutotaskCLI.Autotask {
                 base(binding, remoteAddress) {
         }
         
-        public event System.EventHandler<GetAttachmentCompletedEventArgs> GetAttachmentCompleted;
-        
-        public event System.EventHandler<CreateAttachmentCompletedEventArgs> CreateAttachmentCompleted;
-        
-        public event System.EventHandler<DeleteAttachmentCompletedEventArgs> DeleteAttachmentCompleted;
-        
-        public event System.EventHandler<getEntityInfoCompletedEventArgs> getEntityInfoCompleted;
-        
-        public event System.EventHandler<GetFieldInfoCompletedEventArgs> GetFieldInfoCompleted;
-        
-        public event System.EventHandler<getUDFInfoCompletedEventArgs> getUDFInfoCompleted;
-        
-        public event System.EventHandler<queryCompletedEventArgs> queryCompleted;
-        
-        public event System.EventHandler<createCompletedEventArgs> createCompleted;
-        
-        public event System.EventHandler<updateCompletedEventArgs> updateCompleted;
-        
-        public event System.EventHandler<deleteCompletedEventArgs> deleteCompleted;
-        
-        public event System.EventHandler<getZoneInfoCompletedEventArgs> getZoneInfoCompleted;
-        
-        public event System.EventHandler<getThresholdAndUsageInfoCompletedEventArgs> getThresholdAndUsageInfoCompleted;
-        
-        public event System.EventHandler<GetWsdlVersionCompletedEventArgs> GetWsdlVersionCompleted;
-        
-        public event System.EventHandler<GetInvoiceMarkupCompletedEventArgs> GetInvoiceMarkupCompleted;
-        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AutotaskCLI.Autotask.GetAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.GetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request) {
             return base.Channel.GetAttachment(request);
@@ -25196,65 +24790,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetAttachment(AutotaskCLI.Autotask.GetAttachmentRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAttachment(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetAttachmentResponse> AutotaskCLI.Autotask.ATWSSoap.GetAttachmentAsync(AutotaskCLI.Autotask.GetAttachmentRequest request) {
+            return base.Channel.GetAttachmentAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetAttachment(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetAttachmentResponse> GetAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
             AutotaskCLI.Autotask.GetAttachmentRequest inValue = new AutotaskCLI.Autotask.GetAttachmentRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.attachmentId = attachmentId;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetAttachment(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.GetAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.EndGetAttachment(System.IAsyncResult result) {
-            return base.Channel.EndGetAttachment(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.Attachment EndGetAttachment(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.GetAttachmentResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetAttachment(result);
-            return retVal.GetAttachmentResult;
-        }
-        
-        private System.IAsyncResult OnBeginGetAttachment(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            long attachmentId = ((long)(inValues[1]));
-            return this.BeginGetAttachment(AutotaskIntegrations, attachmentId, callback, asyncState);
-        }
-        
-        private object[] OnEndGetAttachment(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.Attachment retVal = this.EndGetAttachment(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetAttachmentCompleted(object state) {
-            if ((this.GetAttachmentCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetAttachmentCompleted(this, new GetAttachmentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
-            this.GetAttachmentAsync(AutotaskIntegrations, attachmentId, null);
-        }
-        
-        public void GetAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, object userState) {
-            if ((this.onBeginGetAttachmentDelegate == null)) {
-                this.onBeginGetAttachmentDelegate = new BeginOperationDelegate(this.OnBeginGetAttachment);
-            }
-            if ((this.onEndGetAttachmentDelegate == null)) {
-                this.onEndGetAttachmentDelegate = new EndOperationDelegate(this.OnEndGetAttachment);
-            }
-            if ((this.onGetAttachmentCompletedDelegate == null)) {
-                this.onGetAttachmentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAttachmentCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetAttachmentDelegate, new object[] {
-                        AutotaskIntegrations,
-                        attachmentId}, this.onEndGetAttachmentDelegate, this.onGetAttachmentCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25271,65 +24815,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginCreateAttachment(AutotaskCLI.Autotask.CreateAttachmentRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginCreateAttachment(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.CreateAttachmentResponse> AutotaskCLI.Autotask.ATWSSoap.CreateAttachmentAsync(AutotaskCLI.Autotask.CreateAttachmentRequest request) {
+            return base.Channel.CreateAttachmentAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginCreateAttachment(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.CreateAttachmentResponse> CreateAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment) {
             AutotaskCLI.Autotask.CreateAttachmentRequest inValue = new AutotaskCLI.Autotask.CreateAttachmentRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.attachment = attachment;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginCreateAttachment(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.CreateAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.EndCreateAttachment(System.IAsyncResult result) {
-            return base.Channel.EndCreateAttachment(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public long EndCreateAttachment(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.CreateAttachmentResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndCreateAttachment(result);
-            return retVal.CreateAttachmentResult;
-        }
-        
-        private System.IAsyncResult OnBeginCreateAttachment(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            AutotaskCLI.Autotask.Attachment attachment = ((AutotaskCLI.Autotask.Attachment)(inValues[1]));
-            return this.BeginCreateAttachment(AutotaskIntegrations, attachment, callback, asyncState);
-        }
-        
-        private object[] OnEndCreateAttachment(System.IAsyncResult result) {
-            long retVal = this.EndCreateAttachment(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnCreateAttachmentCompleted(object state) {
-            if ((this.CreateAttachmentCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.CreateAttachmentCompleted(this, new CreateAttachmentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void CreateAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment) {
-            this.CreateAttachmentAsync(AutotaskIntegrations, attachment, null);
-        }
-        
-        public void CreateAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Attachment attachment, object userState) {
-            if ((this.onBeginCreateAttachmentDelegate == null)) {
-                this.onBeginCreateAttachmentDelegate = new BeginOperationDelegate(this.OnBeginCreateAttachment);
-            }
-            if ((this.onEndCreateAttachmentDelegate == null)) {
-                this.onEndCreateAttachmentDelegate = new EndOperationDelegate(this.OnEndCreateAttachment);
-            }
-            if ((this.onCreateAttachmentCompletedDelegate == null)) {
-                this.onCreateAttachmentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateAttachmentCompleted);
-            }
-            base.InvokeAsync(this.onBeginCreateAttachmentDelegate, new object[] {
-                        AutotaskIntegrations,
-                        attachment}, this.onEndCreateAttachmentDelegate, this.onCreateAttachmentCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).CreateAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25346,65 +24840,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginDeleteAttachment(AutotaskCLI.Autotask.DeleteAttachmentRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginDeleteAttachment(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.DeleteAttachmentResponse> AutotaskCLI.Autotask.ATWSSoap.DeleteAttachmentAsync(AutotaskCLI.Autotask.DeleteAttachmentRequest request) {
+            return base.Channel.DeleteAttachmentAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginDeleteAttachment(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.DeleteAttachmentResponse> DeleteAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
             AutotaskCLI.Autotask.DeleteAttachmentRequest inValue = new AutotaskCLI.Autotask.DeleteAttachmentRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.attachmentId = attachmentId;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginDeleteAttachment(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.DeleteAttachmentResponse AutotaskCLI.Autotask.ATWSSoap.EndDeleteAttachment(System.IAsyncResult result) {
-            return base.Channel.EndDeleteAttachment(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndDeleteAttachment(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.DeleteAttachmentResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndDeleteAttachment(result);
-            return retVal.DeleteAttachmentResult;
-        }
-        
-        private System.IAsyncResult OnBeginDeleteAttachment(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            long attachmentId = ((long)(inValues[1]));
-            return this.BeginDeleteAttachment(AutotaskIntegrations, attachmentId, callback, asyncState);
-        }
-        
-        private object[] OnEndDeleteAttachment(System.IAsyncResult result) {
-            string retVal = this.EndDeleteAttachment(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnDeleteAttachmentCompleted(object state) {
-            if ((this.DeleteAttachmentCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.DeleteAttachmentCompleted(this, new DeleteAttachmentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void DeleteAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId) {
-            this.DeleteAttachmentAsync(AutotaskIntegrations, attachmentId, null);
-        }
-        
-        public void DeleteAttachmentAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, long attachmentId, object userState) {
-            if ((this.onBeginDeleteAttachmentDelegate == null)) {
-                this.onBeginDeleteAttachmentDelegate = new BeginOperationDelegate(this.OnBeginDeleteAttachment);
-            }
-            if ((this.onEndDeleteAttachmentDelegate == null)) {
-                this.onEndDeleteAttachmentDelegate = new EndOperationDelegate(this.OnEndDeleteAttachment);
-            }
-            if ((this.onDeleteAttachmentCompletedDelegate == null)) {
-                this.onDeleteAttachmentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteAttachmentCompleted);
-            }
-            base.InvokeAsync(this.onBeginDeleteAttachmentDelegate, new object[] {
-                        AutotaskIntegrations,
-                        attachmentId}, this.onEndDeleteAttachmentDelegate, this.onDeleteAttachmentCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).DeleteAttachmentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25420,62 +24864,14 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BegingetEntityInfo(AutotaskCLI.Autotask.GetEntityInfo request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegingetEntityInfo(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetEntityInfo1> AutotaskCLI.Autotask.ATWSSoap.getEntityInfoAsync(AutotaskCLI.Autotask.GetEntityInfo request) {
+            return base.Channel.getEntityInfoAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BegingetEntityInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetEntityInfo1> getEntityInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
             AutotaskCLI.Autotask.GetEntityInfo inValue = new AutotaskCLI.Autotask.GetEntityInfo();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BegingetEntityInfo(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.GetEntityInfo1 AutotaskCLI.Autotask.ATWSSoap.EndgetEntityInfo(System.IAsyncResult result) {
-            return base.Channel.EndgetEntityInfo(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.EntityInfo[] EndgetEntityInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.GetEntityInfo1 retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndgetEntityInfo(result);
-            return retVal.GetEntityInfoResult;
-        }
-        
-        private System.IAsyncResult OnBegingetEntityInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            return this.BegingetEntityInfo(AutotaskIntegrations, callback, asyncState);
-        }
-        
-        private object[] OnEndgetEntityInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.EntityInfo[] retVal = this.EndgetEntityInfo(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OngetEntityInfoCompleted(object state) {
-            if ((this.getEntityInfoCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.getEntityInfoCompleted(this, new getEntityInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void getEntityInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
-            this.getEntityInfoAsync(AutotaskIntegrations, null);
-        }
-        
-        public void getEntityInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, object userState) {
-            if ((this.onBegingetEntityInfoDelegate == null)) {
-                this.onBegingetEntityInfoDelegate = new BeginOperationDelegate(this.OnBegingetEntityInfo);
-            }
-            if ((this.onEndgetEntityInfoDelegate == null)) {
-                this.onEndgetEntityInfoDelegate = new EndOperationDelegate(this.OnEndgetEntityInfo);
-            }
-            if ((this.ongetEntityInfoCompletedDelegate == null)) {
-                this.ongetEntityInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetEntityInfoCompleted);
-            }
-            base.InvokeAsync(this.onBegingetEntityInfoDelegate, new object[] {
-                        AutotaskIntegrations}, this.onEndgetEntityInfoDelegate, this.ongetEntityInfoCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).getEntityInfoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25492,65 +24888,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetFieldInfo(AutotaskCLI.Autotask.GetFieldInfoRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetFieldInfo(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetFieldInfoResponse> AutotaskCLI.Autotask.ATWSSoap.GetFieldInfoAsync(AutotaskCLI.Autotask.GetFieldInfoRequest request) {
+            return base.Channel.GetFieldInfoAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetFieldInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetFieldInfoResponse> GetFieldInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType) {
             AutotaskCLI.Autotask.GetFieldInfoRequest inValue = new AutotaskCLI.Autotask.GetFieldInfoRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.psObjectType = psObjectType;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetFieldInfo(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.GetFieldInfoResponse AutotaskCLI.Autotask.ATWSSoap.EndGetFieldInfo(System.IAsyncResult result) {
-            return base.Channel.EndGetFieldInfo(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.Field[] EndGetFieldInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.GetFieldInfoResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetFieldInfo(result);
-            return retVal.GetFieldInfoResult;
-        }
-        
-        private System.IAsyncResult OnBeginGetFieldInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            string psObjectType = ((string)(inValues[1]));
-            return this.BeginGetFieldInfo(AutotaskIntegrations, psObjectType, callback, asyncState);
-        }
-        
-        private object[] OnEndGetFieldInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.Field[] retVal = this.EndGetFieldInfo(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetFieldInfoCompleted(object state) {
-            if ((this.GetFieldInfoCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetFieldInfoCompleted(this, new GetFieldInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetFieldInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType) {
-            this.GetFieldInfoAsync(AutotaskIntegrations, psObjectType, null);
-        }
-        
-        public void GetFieldInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psObjectType, object userState) {
-            if ((this.onBeginGetFieldInfoDelegate == null)) {
-                this.onBeginGetFieldInfoDelegate = new BeginOperationDelegate(this.OnBeginGetFieldInfo);
-            }
-            if ((this.onEndGetFieldInfoDelegate == null)) {
-                this.onEndGetFieldInfoDelegate = new EndOperationDelegate(this.OnEndGetFieldInfo);
-            }
-            if ((this.onGetFieldInfoCompletedDelegate == null)) {
-                this.onGetFieldInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFieldInfoCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetFieldInfoDelegate, new object[] {
-                        AutotaskIntegrations,
-                        psObjectType}, this.onEndGetFieldInfoDelegate, this.onGetFieldInfoCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetFieldInfoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25567,65 +24913,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BegingetUDFInfo(AutotaskCLI.Autotask.getUDFInfoRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegingetUDFInfo(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getUDFInfoResponse> AutotaskCLI.Autotask.ATWSSoap.getUDFInfoAsync(AutotaskCLI.Autotask.getUDFInfoRequest request) {
+            return base.Channel.getUDFInfoAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BegingetUDFInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.getUDFInfoResponse> getUDFInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable) {
             AutotaskCLI.Autotask.getUDFInfoRequest inValue = new AutotaskCLI.Autotask.getUDFInfoRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.psTable = psTable;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BegingetUDFInfo(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.getUDFInfoResponse AutotaskCLI.Autotask.ATWSSoap.EndgetUDFInfo(System.IAsyncResult result) {
-            return base.Channel.EndgetUDFInfo(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.Field[] EndgetUDFInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.getUDFInfoResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndgetUDFInfo(result);
-            return retVal.getUDFInfoResult;
-        }
-        
-        private System.IAsyncResult OnBegingetUDFInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            string psTable = ((string)(inValues[1]));
-            return this.BegingetUDFInfo(AutotaskIntegrations, psTable, callback, asyncState);
-        }
-        
-        private object[] OnEndgetUDFInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.Field[] retVal = this.EndgetUDFInfo(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OngetUDFInfoCompleted(object state) {
-            if ((this.getUDFInfoCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.getUDFInfoCompleted(this, new getUDFInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void getUDFInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable) {
-            this.getUDFInfoAsync(AutotaskIntegrations, psTable, null);
-        }
-        
-        public void getUDFInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string psTable, object userState) {
-            if ((this.onBegingetUDFInfoDelegate == null)) {
-                this.onBegingetUDFInfoDelegate = new BeginOperationDelegate(this.OnBegingetUDFInfo);
-            }
-            if ((this.onEndgetUDFInfoDelegate == null)) {
-                this.onEndgetUDFInfoDelegate = new EndOperationDelegate(this.OnEndgetUDFInfo);
-            }
-            if ((this.ongetUDFInfoCompletedDelegate == null)) {
-                this.ongetUDFInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetUDFInfoCompleted);
-            }
-            base.InvokeAsync(this.onBegingetUDFInfoDelegate, new object[] {
-                        AutotaskIntegrations,
-                        psTable}, this.onEndgetUDFInfoDelegate, this.ongetUDFInfoCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).getUDFInfoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25642,65 +24938,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Beginquery(AutotaskCLI.Autotask.queryRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.Beginquery(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.queryResponse> AutotaskCLI.Autotask.ATWSSoap.queryAsync(AutotaskCLI.Autotask.queryRequest request) {
+            return base.Channel.queryAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult Beginquery(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.queryResponse> queryAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML) {
             AutotaskCLI.Autotask.queryRequest inValue = new AutotaskCLI.Autotask.queryRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.sXML = sXML;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Beginquery(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.queryResponse AutotaskCLI.Autotask.ATWSSoap.Endquery(System.IAsyncResult result) {
-            return base.Channel.Endquery(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.ATWSResponse Endquery(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.queryResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Endquery(result);
-            return retVal.queryResult;
-        }
-        
-        private System.IAsyncResult OnBeginquery(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            string sXML = ((string)(inValues[1]));
-            return this.Beginquery(AutotaskIntegrations, sXML, callback, asyncState);
-        }
-        
-        private object[] OnEndquery(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.ATWSResponse retVal = this.Endquery(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnqueryCompleted(object state) {
-            if ((this.queryCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.queryCompleted(this, new queryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void queryAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML) {
-            this.queryAsync(AutotaskIntegrations, sXML, null);
-        }
-        
-        public void queryAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, string sXML, object userState) {
-            if ((this.onBeginqueryDelegate == null)) {
-                this.onBeginqueryDelegate = new BeginOperationDelegate(this.OnBeginquery);
-            }
-            if ((this.onEndqueryDelegate == null)) {
-                this.onEndqueryDelegate = new EndOperationDelegate(this.OnEndquery);
-            }
-            if ((this.onqueryCompletedDelegate == null)) {
-                this.onqueryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnqueryCompleted);
-            }
-            base.InvokeAsync(this.onBeginqueryDelegate, new object[] {
-                        AutotaskIntegrations,
-                        sXML}, this.onEndqueryDelegate, this.onqueryCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).queryAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25717,65 +24963,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Begincreate(AutotaskCLI.Autotask.createRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.Begincreate(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.createResponse> AutotaskCLI.Autotask.ATWSSoap.createAsync(AutotaskCLI.Autotask.createRequest request) {
+            return base.Channel.createAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult Begincreate(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.createResponse> createAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
             AutotaskCLI.Autotask.createRequest inValue = new AutotaskCLI.Autotask.createRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.Entities = Entities;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Begincreate(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.createResponse AutotaskCLI.Autotask.ATWSSoap.Endcreate(System.IAsyncResult result) {
-            return base.Channel.Endcreate(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.ATWSResponse Endcreate(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.createResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Endcreate(result);
-            return retVal.createResult;
-        }
-        
-        private System.IAsyncResult OnBegincreate(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            AutotaskCLI.Autotask.Entity[] Entities = ((AutotaskCLI.Autotask.Entity[])(inValues[1]));
-            return this.Begincreate(AutotaskIntegrations, Entities, callback, asyncState);
-        }
-        
-        private object[] OnEndcreate(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.ATWSResponse retVal = this.Endcreate(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OncreateCompleted(object state) {
-            if ((this.createCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.createCompleted(this, new createCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void createAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
-            this.createAsync(AutotaskIntegrations, Entities, null);
-        }
-        
-        public void createAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, object userState) {
-            if ((this.onBegincreateDelegate == null)) {
-                this.onBegincreateDelegate = new BeginOperationDelegate(this.OnBegincreate);
-            }
-            if ((this.onEndcreateDelegate == null)) {
-                this.onEndcreateDelegate = new EndOperationDelegate(this.OnEndcreate);
-            }
-            if ((this.oncreateCompletedDelegate == null)) {
-                this.oncreateCompletedDelegate = new System.Threading.SendOrPostCallback(this.OncreateCompleted);
-            }
-            base.InvokeAsync(this.onBegincreateDelegate, new object[] {
-                        AutotaskIntegrations,
-                        Entities}, this.onEndcreateDelegate, this.oncreateCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).createAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25792,65 +24988,15 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Beginupdate(AutotaskCLI.Autotask.updateRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.Beginupdate(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.updateResponse> AutotaskCLI.Autotask.ATWSSoap.updateAsync(AutotaskCLI.Autotask.updateRequest request) {
+            return base.Channel.updateAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult Beginupdate(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.updateResponse> updateAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
             AutotaskCLI.Autotask.updateRequest inValue = new AutotaskCLI.Autotask.updateRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.Entities = Entities;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Beginupdate(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.updateResponse AutotaskCLI.Autotask.ATWSSoap.Endupdate(System.IAsyncResult result) {
-            return base.Channel.Endupdate(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.ATWSResponse Endupdate(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.updateResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Endupdate(result);
-            return retVal.updateResult;
-        }
-        
-        private System.IAsyncResult OnBeginupdate(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            AutotaskCLI.Autotask.Entity[] Entities = ((AutotaskCLI.Autotask.Entity[])(inValues[1]));
-            return this.Beginupdate(AutotaskIntegrations, Entities, callback, asyncState);
-        }
-        
-        private object[] OnEndupdate(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.ATWSResponse retVal = this.Endupdate(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnupdateCompleted(object state) {
-            if ((this.updateCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.updateCompleted(this, new updateCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void updateAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
-            this.updateAsync(AutotaskIntegrations, Entities, null);
-        }
-        
-        public void updateAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, object userState) {
-            if ((this.onBeginupdateDelegate == null)) {
-                this.onBeginupdateDelegate = new BeginOperationDelegate(this.OnBeginupdate);
-            }
-            if ((this.onEndupdateDelegate == null)) {
-                this.onEndupdateDelegate = new EndOperationDelegate(this.OnEndupdate);
-            }
-            if ((this.onupdateCompletedDelegate == null)) {
-                this.onupdateCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnupdateCompleted);
-            }
-            base.InvokeAsync(this.onBeginupdateDelegate, new object[] {
-                        AutotaskIntegrations,
-                        Entities}, this.onEndupdateDelegate, this.onupdateCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).updateAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25867,115 +25013,23 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.Begindelete(AutotaskCLI.Autotask.deleteRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.Begindelete(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.deleteResponse> AutotaskCLI.Autotask.ATWSSoap.deleteAsync(AutotaskCLI.Autotask.deleteRequest request) {
+            return base.Channel.deleteAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult Begindelete(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.deleteResponse> deleteAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
             AutotaskCLI.Autotask.deleteRequest inValue = new AutotaskCLI.Autotask.deleteRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.Entities = Entities;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).Begindelete(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.deleteResponse AutotaskCLI.Autotask.ATWSSoap.Enddelete(System.IAsyncResult result) {
-            return base.Channel.Enddelete(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.ATWSResponse Enddelete(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.deleteResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).Enddelete(result);
-            return retVal.deleteResult;
-        }
-        
-        private System.IAsyncResult OnBegindelete(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            AutotaskCLI.Autotask.Entity[] Entities = ((AutotaskCLI.Autotask.Entity[])(inValues[1]));
-            return this.Begindelete(AutotaskIntegrations, Entities, callback, asyncState);
-        }
-        
-        private object[] OnEnddelete(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.ATWSResponse retVal = this.Enddelete(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OndeleteCompleted(object state) {
-            if ((this.deleteCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.deleteCompleted(this, new deleteCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void deleteAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities) {
-            this.deleteAsync(AutotaskIntegrations, Entities, null);
-        }
-        
-        public void deleteAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, AutotaskCLI.Autotask.Entity[] Entities, object userState) {
-            if ((this.onBegindeleteDelegate == null)) {
-                this.onBegindeleteDelegate = new BeginOperationDelegate(this.OnBegindelete);
-            }
-            if ((this.onEnddeleteDelegate == null)) {
-                this.onEnddeleteDelegate = new EndOperationDelegate(this.OnEnddelete);
-            }
-            if ((this.ondeleteCompletedDelegate == null)) {
-                this.ondeleteCompletedDelegate = new System.Threading.SendOrPostCallback(this.OndeleteCompleted);
-            }
-            base.InvokeAsync(this.onBegindeleteDelegate, new object[] {
-                        AutotaskIntegrations,
-                        Entities}, this.onEnddeleteDelegate, this.ondeleteCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).deleteAsync(inValue);
         }
         
         public AutotaskCLI.Autotask.ATWSZoneInfo getZoneInfo(string UserName) {
             return base.Channel.getZoneInfo(UserName);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BegingetZoneInfo(string UserName, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegingetZoneInfo(UserName, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.ATWSZoneInfo EndgetZoneInfo(System.IAsyncResult result) {
-            return base.Channel.EndgetZoneInfo(result);
-        }
-        
-        private System.IAsyncResult OnBegingetZoneInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string UserName = ((string)(inValues[0]));
-            return this.BegingetZoneInfo(UserName, callback, asyncState);
-        }
-        
-        private object[] OnEndgetZoneInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.ATWSZoneInfo retVal = this.EndgetZoneInfo(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OngetZoneInfoCompleted(object state) {
-            if ((this.getZoneInfoCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.getZoneInfoCompleted(this, new getZoneInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void getZoneInfoAsync(string UserName) {
-            this.getZoneInfoAsync(UserName, null);
-        }
-        
-        public void getZoneInfoAsync(string UserName, object userState) {
-            if ((this.onBegingetZoneInfoDelegate == null)) {
-                this.onBegingetZoneInfoDelegate = new BeginOperationDelegate(this.OnBegingetZoneInfo);
-            }
-            if ((this.onEndgetZoneInfoDelegate == null)) {
-                this.onEndgetZoneInfoDelegate = new EndOperationDelegate(this.OnEndgetZoneInfo);
-            }
-            if ((this.ongetZoneInfoCompletedDelegate == null)) {
-                this.ongetZoneInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetZoneInfoCompleted);
-            }
-            base.InvokeAsync(this.onBegingetZoneInfoDelegate, new object[] {
-                        UserName}, this.onEndgetZoneInfoDelegate, this.ongetZoneInfoCompletedDelegate, userState);
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.ATWSZoneInfo> getZoneInfoAsync(string UserName) {
+            return base.Channel.getZoneInfoAsync(UserName);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -25991,62 +25045,14 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BegingetThresholdAndUsageInfo(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegingetThresholdAndUsageInfo(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse> AutotaskCLI.Autotask.ATWSSoap.getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest request) {
+            return base.Channel.getThresholdAndUsageInfoAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BegingetThresholdAndUsageInfo(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse> getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
             AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest inValue = new AutotaskCLI.Autotask.getThresholdAndUsageInfoRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BegingetThresholdAndUsageInfo(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse AutotaskCLI.Autotask.ATWSSoap.EndgetThresholdAndUsageInfo(System.IAsyncResult result) {
-            return base.Channel.EndgetThresholdAndUsageInfo(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public AutotaskCLI.Autotask.ATWSResponse EndgetThresholdAndUsageInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.getThresholdAndUsageInfoResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndgetThresholdAndUsageInfo(result);
-            return retVal.getThresholdAndUsageInfoResult;
-        }
-        
-        private System.IAsyncResult OnBegingetThresholdAndUsageInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            return this.BegingetThresholdAndUsageInfo(AutotaskIntegrations, callback, asyncState);
-        }
-        
-        private object[] OnEndgetThresholdAndUsageInfo(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.ATWSResponse retVal = this.EndgetThresholdAndUsageInfo(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OngetThresholdAndUsageInfoCompleted(object state) {
-            if ((this.getThresholdAndUsageInfoCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.getThresholdAndUsageInfoCompleted(this, new getThresholdAndUsageInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
-            this.getThresholdAndUsageInfoAsync(AutotaskIntegrations, null);
-        }
-        
-        public void getThresholdAndUsageInfoAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, object userState) {
-            if ((this.onBegingetThresholdAndUsageInfoDelegate == null)) {
-                this.onBegingetThresholdAndUsageInfoDelegate = new BeginOperationDelegate(this.OnBegingetThresholdAndUsageInfo);
-            }
-            if ((this.onEndgetThresholdAndUsageInfoDelegate == null)) {
-                this.onEndgetThresholdAndUsageInfoDelegate = new EndOperationDelegate(this.OnEndgetThresholdAndUsageInfo);
-            }
-            if ((this.ongetThresholdAndUsageInfoCompletedDelegate == null)) {
-                this.ongetThresholdAndUsageInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetThresholdAndUsageInfoCompleted);
-            }
-            base.InvokeAsync(this.onBegingetThresholdAndUsageInfoDelegate, new object[] {
-                        AutotaskIntegrations}, this.onEndgetThresholdAndUsageInfoDelegate, this.ongetThresholdAndUsageInfoCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).getThresholdAndUsageInfoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -26062,62 +25068,14 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetWsdlVersion(AutotaskCLI.Autotask.GetWsdlVersionRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetWsdlVersion(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetWsdlVersionResponse> AutotaskCLI.Autotask.ATWSSoap.GetWsdlVersionAsync(AutotaskCLI.Autotask.GetWsdlVersionRequest request) {
+            return base.Channel.GetWsdlVersionAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetWsdlVersion(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetWsdlVersionResponse> GetWsdlVersionAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
             AutotaskCLI.Autotask.GetWsdlVersionRequest inValue = new AutotaskCLI.Autotask.GetWsdlVersionRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetWsdlVersion(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.GetWsdlVersionResponse AutotaskCLI.Autotask.ATWSSoap.EndGetWsdlVersion(System.IAsyncResult result) {
-            return base.Channel.EndGetWsdlVersion(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndGetWsdlVersion(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.GetWsdlVersionResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetWsdlVersion(result);
-            return retVal.GetWsdlVersionResult;
-        }
-        
-        private System.IAsyncResult OnBeginGetWsdlVersion(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            return this.BeginGetWsdlVersion(AutotaskIntegrations, callback, asyncState);
-        }
-        
-        private object[] OnEndGetWsdlVersion(System.IAsyncResult result) {
-            string retVal = this.EndGetWsdlVersion(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetWsdlVersionCompleted(object state) {
-            if ((this.GetWsdlVersionCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetWsdlVersionCompleted(this, new GetWsdlVersionCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetWsdlVersionAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations) {
-            this.GetWsdlVersionAsync(AutotaskIntegrations, null);
-        }
-        
-        public void GetWsdlVersionAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, object userState) {
-            if ((this.onBeginGetWsdlVersionDelegate == null)) {
-                this.onBeginGetWsdlVersionDelegate = new BeginOperationDelegate(this.OnBeginGetWsdlVersion);
-            }
-            if ((this.onEndGetWsdlVersionDelegate == null)) {
-                this.onEndGetWsdlVersionDelegate = new EndOperationDelegate(this.OnEndGetWsdlVersion);
-            }
-            if ((this.onGetWsdlVersionCompletedDelegate == null)) {
-                this.onGetWsdlVersionCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetWsdlVersionCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetWsdlVersionDelegate, new object[] {
-                        AutotaskIntegrations}, this.onEndGetWsdlVersionDelegate, this.onGetWsdlVersionCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetWsdlVersionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -26135,68 +25093,16 @@ namespace AutotaskCLI.Autotask {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult AutotaskCLI.Autotask.ATWSSoap.BeginGetInvoiceMarkup(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetInvoiceMarkup(request, callback, asyncState);
+        System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetInvoiceMarkupResponse> AutotaskCLI.Autotask.ATWSSoap.GetInvoiceMarkupAsync(AutotaskCLI.Autotask.GetInvoiceMarkupRequest request) {
+            return base.Channel.GetInvoiceMarkupAsync(request);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetInvoiceMarkup(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format, System.AsyncCallback callback, object asyncState) {
+        public System.Threading.Tasks.Task<AutotaskCLI.Autotask.GetInvoiceMarkupResponse> GetInvoiceMarkupAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format) {
             AutotaskCLI.Autotask.GetInvoiceMarkupRequest inValue = new AutotaskCLI.Autotask.GetInvoiceMarkupRequest();
             inValue.AutotaskIntegrations = AutotaskIntegrations;
             inValue.InvoiceId = InvoiceId;
             inValue.Format = Format;
-            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).BeginGetInvoiceMarkup(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AutotaskCLI.Autotask.GetInvoiceMarkupResponse AutotaskCLI.Autotask.ATWSSoap.EndGetInvoiceMarkup(System.IAsyncResult result) {
-            return base.Channel.EndGetInvoiceMarkup(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndGetInvoiceMarkup(System.IAsyncResult result) {
-            AutotaskCLI.Autotask.GetInvoiceMarkupResponse retVal = ((AutotaskCLI.Autotask.ATWSSoap)(this)).EndGetInvoiceMarkup(result);
-            return retVal.GetInvoiceMarkupResult;
-        }
-        
-        private System.IAsyncResult OnBeginGetInvoiceMarkup(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations = ((AutotaskCLI.Autotask.AutotaskIntegrations)(inValues[0]));
-            int InvoiceId = ((int)(inValues[1]));
-            string Format = ((string)(inValues[2]));
-            return this.BeginGetInvoiceMarkup(AutotaskIntegrations, InvoiceId, Format, callback, asyncState);
-        }
-        
-        private object[] OnEndGetInvoiceMarkup(System.IAsyncResult result) {
-            string retVal = this.EndGetInvoiceMarkup(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetInvoiceMarkupCompleted(object state) {
-            if ((this.GetInvoiceMarkupCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetInvoiceMarkupCompleted(this, new GetInvoiceMarkupCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetInvoiceMarkupAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format) {
-            this.GetInvoiceMarkupAsync(AutotaskIntegrations, InvoiceId, Format, null);
-        }
-        
-        public void GetInvoiceMarkupAsync(AutotaskCLI.Autotask.AutotaskIntegrations AutotaskIntegrations, int InvoiceId, string Format, object userState) {
-            if ((this.onBeginGetInvoiceMarkupDelegate == null)) {
-                this.onBeginGetInvoiceMarkupDelegate = new BeginOperationDelegate(this.OnBeginGetInvoiceMarkup);
-            }
-            if ((this.onEndGetInvoiceMarkupDelegate == null)) {
-                this.onEndGetInvoiceMarkupDelegate = new EndOperationDelegate(this.OnEndGetInvoiceMarkup);
-            }
-            if ((this.onGetInvoiceMarkupCompletedDelegate == null)) {
-                this.onGetInvoiceMarkupCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInvoiceMarkupCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetInvoiceMarkupDelegate, new object[] {
-                        AutotaskIntegrations,
-                        InvoiceId,
-                        Format}, this.onEndGetInvoiceMarkupDelegate, this.onGetInvoiceMarkupCompletedDelegate, userState);
+            return ((AutotaskCLI.Autotask.ATWSSoap)(this)).GetInvoiceMarkupAsync(inValue);
         }
     }
 }

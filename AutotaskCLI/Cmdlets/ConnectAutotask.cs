@@ -1,5 +1,7 @@
-﻿using System.Management.Automation;
+﻿using System.Collections.Generic;
+using System.Management.Automation;
 using System.Net.Mail;
+using System.Reflection;
 using AutotaskCLI.Autotask;
 
 namespace AutotaskCLI
@@ -7,10 +9,18 @@ namespace AutotaskCLI
     [Cmdlet(VerbsCommunications.Connect, "Autotask")]
     public class ConnectAutotask : PSCmdlet
     {
+        
         [Parameter(
             Mandatory = true
             )]
         public PSCredential Credential { get; set; }
+
+        // For future backwords compatibility
+        //[Parameter(
+        //    Mandatory = false
+        //    )]
+        //[ValidateSet(new string[]{ "1.5", "1.6" }, IgnoreCase = true)]
+        //public string Version { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -41,11 +51,27 @@ namespace AutotaskCLI
 
             WriteVerbose("Connected to Autotask...");
 
+            WriteVerbose("Getting Entity Information...");
+
+            EntityInfo[] EntitiesInfo = SoapClient.getEntityInfo(AI);
+
+            object[] Entities = new object[EntitiesInfo.Length];
+            for (int i = 0; i < EntitiesInfo.Length; i++)
+            {
+                Autotask.Field[] CurFieldList = SoapClient.GetFieldInfo(AI, EntitiesInfo[i].Name);
+                Entities[i] = CurFieldList;
+            }
+            
+            
+
+
             // Save email, API code, and URL to the module's private ?memory?
             SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapEmail", AI.PartnerID);
             SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapICode", AI.IntegrationCode);
             SessionState.Module.SessionState.PSVariable.Set("AutotaskAPISoapURL", ZoneInfoData.URL);
-            
+
+            SessionState.Module.SessionState.PSVariable.Set("AutotaskAPIEntitiesInfo", Entities);
+
         }
     }
     
