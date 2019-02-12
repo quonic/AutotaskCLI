@@ -46,6 +46,7 @@
     <Compile Include="Classes\PostQuery.cs" />
     <Compile Include="Cmdlets\ConnectAutotask.cs" />
     <Compile Include="Cmdlets\GetResource.cs" />
+    <Compile Include="Cmdlets\GetTimeEntry.cs" />
     <Compile Include="Cmdlets\NewTicket.cs" />
     <Compile Include="Cmdlets\UpdateTicket.cs" />
     <Compile Include="Connected Services\Autotask\Reference.cs">
