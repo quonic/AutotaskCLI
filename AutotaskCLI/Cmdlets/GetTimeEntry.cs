@@ -17,11 +17,12 @@ namespace AutotaskCLI.Cmdlets
             Entity = "TimeEntry"
         };
         private PostQuery pQuery = new PostQuery();
+        private string CustomValidateDateRange = "";
 
         // START Identity methods
         // Resource object, First and Last name, or E-Mail
         [Parameter(Mandatory = true, ParameterSetName = "ResourceID")]
-        private int ResourceID; // from Resource.id
+        private int[] ResourceID; // from Resource.id // Can be found with Get-Resource
 
         [Parameter(Mandatory = true, ParameterSetName = "Name")]
         private string FirstName;
@@ -32,21 +33,45 @@ namespace AutotaskCLI.Cmdlets
         [Parameter(Mandatory = true, ParameterSetName = "Email")]
         private string Email;
         // END Identity methods
+        
+        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = true, ParameterSetName = "ResourceID")]
+        [Parameter(Mandatory = true, ParameterSetName = "Name")]
+        [Parameter(Mandatory = true, ParameterSetName = "Email")]
+        [Parameter(Mandatory = true, ParameterSetName = "DateRange")]
+        public DateTime StartDate { get; set; }
 
-        [Parameter(
-            Mandatory = false
-            )]
+        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = true, ParameterSetName = "ResourceID")]
+        [Parameter(Mandatory = true, ParameterSetName = "Name")]
+        [Parameter(Mandatory = true, ParameterSetName = "Email")]
+        [Parameter(Mandatory = true, ParameterSetName = "DateRange")]
+        public DateTime EndDate { get; set; }
+
+        [Parameter(Mandatory = false)]
+        [Parameter(Mandatory = true, ParameterSetName = "ResourceID")]
+        [Parameter(Mandatory = true, ParameterSetName = "Name")]
+        [Parameter(Mandatory = true, ParameterSetName = "Email")]
+        [Parameter(Mandatory = true, ParameterSetName = "Week")]
+        [ValidateSet(new string[] { "Current", "Last"}, IgnoreCase = true)]
+        public string SelectWeek { get; set; }
+
+        [Parameter(Mandatory = false)]
         [ValidateSet(new string[] { "Ticket", "Task", "Both" }, IgnoreCase = true)]
         public string Type { get; set; }
 
-        [Parameter(
-            Mandatory = false
-            )]
+        [Parameter(Mandatory = false)]
         public SwitchParameter OutXml { get; set; }
 
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
+
+            // Check if StartDate is before EndDate
+            if(null == StartDate & null == EndDate & StartDate.Ticks >= EndDate.Ticks)
+            {
+                throw new Exception("EndDate is null or StartDate is >= to EndDate");
+            }
 
             // Get our session data
             if (!OutXml == true)
