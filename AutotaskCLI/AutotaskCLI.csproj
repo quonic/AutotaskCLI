@@ -47,14 +47,14 @@
     <Compile Include="Cmdlets\ConnectAutotask.cs" />
     <Compile Include="Cmdlets\GetResource.cs" />
     <Compile Include="Cmdlets\GetTimeEntry.cs" />
-    <Compile Include="Cmdlets\NewTicket.cs" />
-    <Compile Include="Cmdlets\UpdateTicket.cs" />
+    <Compile Include="Cmdlets\Ticket\NewTicket.cs" />
+    <Compile Include="Cmdlets\Ticket\UpdateTicket.cs" />
     <Compile Include="Connected Services\Autotask\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Cmdlets\GetTicket.cs" />
+    <Compile Include="Cmdlets\Ticket\GetTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\QueryXML.cs" />
   </ItemGroup>
