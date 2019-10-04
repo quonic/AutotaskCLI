@@ -33,12 +33,12 @@ function Get-Query {
         }"
         # Verify that the Query is valid to conver to XML
         $scriptB = [ScriptBlock]::Create($sbString)
-        [System.Xml.Linq.XElement]$Xml = New-XmlDocument -ScriptBlock $scriptB
+        [System.Xml.Linq.XElement]$Xml = NewXmlDocument.ps1 -ScriptBlock $scriptB
         try {
             # TODO: either remove this or create error handling code
         }
         catch {
-            throw "Field is not formated correctly, see Get-Help New-XmlDocument."
+            throw "Field is not formated correctly, see Get-Help NewXmlDocument.ps1."
         }
     }
     end {
@@ -309,7 +309,7 @@ function Invoke-ATQuery {
             # Create new id field
             $IdField = Get-Field "id" -GreaterThan "$ID"
             $IdFieldScript = [ScriptBlock]::Create($IdField)
-            [System.Xml.Linq.XElement]$XmlID = New-XmlDocument -ScriptBlock $IdFieldScript
+            [System.Xml.Linq.XElement]$XmlID = NewXmlDocument.ps1 -ScriptBlock $IdFieldScript
             $Xml.LastNode.AddFirst($XmlID)
             $NewQuery = $Xml.ToString()
             Write-Debug -Message "Query:`r`n$NewQuery"

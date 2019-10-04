@@ -1,0 +1,1 @@
+Install-Script -Name NewXmlDocument -Scope CurrentUser
